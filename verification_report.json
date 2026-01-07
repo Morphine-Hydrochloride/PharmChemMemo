@@ -1,0 +1,151 @@
+{
+  "mismatches": [
+    {
+      "status": "mismatch",
+      "name": "Phenytoin sodium",
+      "cn": "苯妥英钠",
+      "local": "O=C1NC(=O)C(N1)(c2ccccc2)c3ccccc3",
+      "official": "[Na+].O=C1NC(C(=O)[N-]1)(c2ccccc2)c3ccccc3",
+      "canon_local": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+      "canon_official": "O=C1[N-]C(=O)C(c2ccccc2)(c2ccccc2)N1"
+    },
+    {
+      "status": "mismatch",
+      "name": "Pramipexole hydrochloride",
+      "cn": "盐酸普拉克索",
+      "local": "CCCN[C@@H]1CCc2nc(N)sc2C1",
+      "official": "[Cl-].[Cl-].CCCN[C@H]1CCc2nc(N)sc2C1.[H+].[H+]",
+      "canon_local": "CCCN[C@@H]1CCc2nc(N)sc2C1",
+      "canon_official": "CCCN[C@H]1CCc2nc(N)sc2C1"
+    },
+    {
+      "status": "mismatch",
+      "name": "Diclofenac sodium",
+      "cn": "双氯芬酸钠",
+      "local": "OC(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl",
+      "official": "[Na+].[O-]C(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl",
+      "canon_local": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+      "canon_official": "O=C([O-])Cc1ccccc1Nc1c(Cl)cccc1Cl"
+    },
+    {
+      "status": "mismatch",
+      "name": "Montelukast sodium",
+      "cn": "孟鲁司特钠",
+      "local": "CC(C)(O)c1ccccc1CC[C@@H](SCC2(CC2)CC(O)=O)c3cccc(\\C=C\\c4ccc5ccc(Cl)cc5n4)c3",
+      "official": "[Na+].CC(C)(O)c1ccccc1CC[C@@H](SCC2(CC2)CC([O-])=O)c3cccc(\\C=C\\c4ccc5ccc(Cl)cc5n4)c3",
+      "canon_local": "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)O)CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1",
+      "canon_official": "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)[O-])CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1"
+    },
+    {
+      "status": "mismatch",
+      "name": "Tropisetron hydrochloride",
+      "cn": "盐酸托烷司琼",
+      "local": "[H+].[Cl-].CN1C2CCC1CC(C2)OC(=O)c3c[nH]c4ccccc34",
+      "official": "[Cl-].CN1[C@@H]2CC[C@H]1CC(C2)OC(=O)c3c[nH]c4ccccc34.[H+]",
+      "canon_local": "CN1C2CCC1CC(OC(=O)c1c[nH]c3ccccc13)C2",
+      "canon_official": "CN1[C@@H]2CC[C@H]1CC(OC(=O)c1c[nH]c3ccccc13)C2"
+    },
+    {
+      "status": "mismatch",
+      "name": "Palonosetron hydrochloride",
+      "cn": "盐酸帕洛诺司琼",
+      "local": "O=C1N(C[C@@H]2CCCc3cccc1c23)[C@@H]4CN5CCC4CC5",
+      "official": "[Cl-].O=C1N(C[C@H]2CCCc3cccc1c23)[C@@H]4CN5CCC4CC5.[H+]",
+      "canon_local": "O=C1c2cccc3c2[C@@H](CCC3)CN1[C@@H]1CN2CCC1CC2",
+      "canon_official": "O=C1c2cccc3c2[C@H](CCC3)CN1[C@@H]1CN2CCC1CC2"
+    },
+    {
+      "status": "mismatch",
+      "name": "Rosiglitazone maleate",
+      "cn": "马来酸罗格列酮",
+      "local": "CN(CCOc1ccc(C[C@@H]2SC(=O)NC2=O)cc1)c3ccccn3",
+      "official": "CN(CCOc1ccc(CC2SC(=O)NC2=O)cc1)c3ccccn3.OC(=O)\\C=C/C(O)=O",
+      "canon_local": "CN(CCOc1ccc(C[C@@H]2SC(=O)NC2=O)cc1)c1ccccn1",
+      "canon_official": "CN(CCOc1ccc(CC2SC(=O)NC2=O)cc1)c1ccccn1"
+    },
+    {
+      "status": "mismatch",
+      "name": "Enalapril maleate",
+      "cn": "马来酸依那普利",
+      "local": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N2CCC[C@H]2C(O)=O",
+      "official": "CCOC(=O)[C@@H](CCc1ccccc1)N[C@@H](C)C(=O)N2CCC[C@H]2C(O)=O.OC(=O)\\C=C/C(O)=O",
+      "canon_local": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1CCC[C@H]1C(=O)O",
+      "canon_official": "CCOC(=O)[C@@H](CCc1ccccc1)N[C@@H](C)C(=O)N1CCC[C@H]1C(=O)O"
+    },
+    {
+      "status": "mismatch",
+      "name": "Fluvastatin sodium",
+      "cn": "氟伐他汀钠",
+      "local": "CC(C)n1c2ccccc2c(c3ccc(F)cc3)c1\\C=C\\[C@@H](O)C[C@H](O)CC(O)=O",
+      "official": "[Na+].CC(C)n1c2ccccc2c(c3ccc(F)cc3)c1\\C=C\\[C@H](O)C[C@H](O)CC([O-])=O",
+      "canon_local": "CC(C)n1c(/C=C/[C@@H](O)C[C@H](O)CC(=O)O)c(-c2ccc(F)cc2)c2ccccc21",
+      "canon_official": "CC(C)n1c(/C=C/[C@H](O)C[C@H](O)CC(=O)[O-])c(-c2ccc(F)cc2)c2ccccc21"
+    },
+    {
+      "status": "mismatch",
+      "name": "Hydrocortisone acetate",
+      "cn": "醋酸氢化可的松",
+      "local": "C[C@]12CCC(=O)C=C1CC[C@H]3[C@@H]4CC[C@](O)(C(=O)CO)[C@@]4(C)C[C@H](O)[C@H]23",
+      "official": "CC(=O)OCC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3[C@@H](O)C[C@]12C",
+      "canon_local": "C[C@]12CCC(=O)C=C1CC[C@@H]1[C@@H]2[C@@H](O)C[C@@]2(C)[C@H]1CC[C@]2(O)C(=O)CO",
+      "canon_official": "CC(=O)OCC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3[C@@H](O)C[C@@]21C"
+    },
+    {
+      "status": "mismatch",
+      "name": "Megestrol acetate",
+      "cn": "醋酸甲地孕酮",
+      "local": "CC(=O)[C@@]1(O)CC[C@H]2[C@@H]3C=C(C)C4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C",
+      "official": "CC(=O)O[C@@]1(CC[C@H]2[C@@H]3C=C(C)C4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C)C(C)=O",
+      "canon_local": "CC(=O)[C@@]1(O)CC[C@H]2[C@@H]3C=C(C)C4=CC(=O)CC[C@]4(C)[C@H]3CC[C@@]21C",
+      "canon_official": "CC(=O)O[C@]1(C(C)=O)CC[C@H]2[C@@H]3C=C(C)C4=CC(=O)CC[C@]4(C)[C@H]3CC[C@@]21C"
+    },
+    {
+      "status": "mismatch",
+      "name": "Prednisolone acetate",
+      "cn": "醋酸氢化泼尼松",
+      "local": "C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)C=C[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO",
+      "official": "CC(=O)OCC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@H]3[C@@H](O)C[C@]12C",
+      "canon_local": "C[C@]12C=CC(=O)C=C1CC[C@@H]1[C@@H]2[C@@H](O)C[C@@]2(C)[C@H]1CC[C@]2(O)C(=O)CO",
+      "canon_official": "CC(=O)OCC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@H]3[C@@H](O)C[C@@]21C"
+    },
+    {
+      "status": "mismatch",
+      "name": "Dexamethasone acetate",
+      "cn": "醋酸地塞米松",
+      "local": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CO",
+      "official": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)COC(C)=O",
+      "canon_local": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CO",
+      "canon_official": "CC(=O)OCC(=O)[C@@]1(O)[C@H](C)C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C"
+    },
+    {
+      "status": "mismatch",
+      "name": "Doxycycline hydrochloride",
+      "cn": "盐酸多西环素",
+      "local": "O.C[C@@H]1[C@H]2[C@H](O)[C@H]3[C@H](N(C)C)C(=O)C(=C(N)/O)/C(=O)[C@@]3(O)C(=O)C2=C(O)c4c(O)cccc14",
+      "official": "[Cl-].C[C@@H]1[C@H]2[C@H](O)[C@H]3[C@H]([NH+](C)C)C(=O)C(=C(N)/O)/C(=O)[C@@]3(O)C(=O)C2=C(O)c4c(O)cccc14",
+      "canon_local": "C[C@H]1c2cccc(O)c2C(O)=C2C(=O)[C@]3(O)C(=O)/C(=C(/N)O)C(=O)[C@@H](N(C)C)[C@@H]3[C@@H](O)[C@@H]21",
+      "canon_official": "C[C@H]1c2cccc(O)c2C(O)=C2C(=O)[C@]3(O)C(=O)/C(=C(/N)O)C(=O)[C@@H]([NH+](C)C)[C@@H]3[C@@H](O)[C@@H]21"
+    },
+    {
+      "status": "mismatch",
+      "name": "Doxorubicin hydrochloride",
+      "cn": "盐酸多柔比星",
+      "local": "COc1cccc2C(=O)c3c(O)c4C[C@](O)(C[C@H](O[C@H]5C[C@H](N)[C@H](O)[C@H](C)O5)c4c(O)c3C(=O)c12)C(=O)CO",
+      "official": "[Cl-].COc1cccc2C(=O)c3c(O)c4C[C@](O)(C[C@H](OC5CC(N)C(O)C(C)O5)c4c(O)c3C(=O)c12)C(=O)CO.[H+]",
+      "canon_local": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)C[C@@](O)(C(=O)CO)C[C@@H]3O[C@H]1C[C@H](N)[C@H](O)[C@H](C)O1",
+      "canon_official": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)C[C@@](O)(C(=O)CO)C[C@@H]3OC1CC(N)C(O)C(C)O1"
+    }
+  ],
+  "missing": [
+    "Piribedil",
+    "Lesinurad",
+    "Imrecoxib",
+    "Empagliflozin",
+    "Mirabegron",
+    "Cefpirome",
+    "Rifampicin",
+    "Sofosbuvir",
+    "Chidamide"
+  ],
+  "timestamp": "2025-12-22 19:05:44"
+}
