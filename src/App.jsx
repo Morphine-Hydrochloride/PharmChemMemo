@@ -2404,8 +2404,7 @@ function App() {
   const progressPercent = ((currentIndex + 1) / filteredCards.length) * 100;
 
   const keyPoints = currentCard ? (KEY_POINTS_DB[currentCard.en] || KEY_POINTS_DB[currentCard.cn] || [
-    currentCard.type === 'master' ? "【掌握】结构、理化性质、体内代谢及临床用途" : "【熟悉】结构特点及临床用途",
-    "【提示】请参考教材详细内容"
+    currentCard.type === 'master' ? "【掌握】结构、理化性质、体内代谢及临床用途" : "【熟悉】结构特点及临床用途"
   ]) : [];
 
   return (

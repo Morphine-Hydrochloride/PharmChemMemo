@@ -28,7 +28,7 @@ KEY_MAPPING = {
     "构效关系": "【SAR】",
 }
 
-def parse_markdown_file(filepath):
+def parse_markdown_file(filepath, cn_map, en_map):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -85,73 +85,83 @@ def parse_markdown_file(filepath):
                      drugs[current_drug]["points"].append(f"{prefix}{point_content}")
             continue
             
-        # Detect Drug Name (Only if NOT a bullet point)
         # Pattern 1: **中文名 (English Name)**
         # Pattern 2: #### 1. 中文名 (English Name)
-        # We look for the (...) part.
-        drug_match = re.search(r'(?:\*\*|####\s*\d+\.\s*)(?:.*?)[\(（](.*?)[\)）]', line)
+        drug_match = re.search(r'(?:\*\*|####\s*\d+\.\s*)(?:.*?)([\u4e00-\u9fa5]+).*?[\(（](.*?)[\)）]', line)
+        
+        canonical_name = None
+        
         if drug_match:
-            raw_en_name = drug_match.group(1).split('/')[0].strip() # Take first name if "Name/Alias"
-            
-            # Basic validation: If the name is too long or contains Chinese, it's probably not an English Name
-            # (PPT sometimes has (例如...) or (see page...))
-            if len(raw_en_name) > 50 or re.search(r'[\u4e00-\u9fff]', raw_en_name):
-                continue
+            raw_cn_name = drug_match.group(1).strip()
+            raw_en_name = drug_match.group(2).split('/')[0].strip() # Take first name if "Name/Alias"
+
+            # 1. Try match by Chinese Name (Highest Priority)
+            if raw_cn_name in cn_map:
+                canonical_name = cn_map[raw_cn_name]
+            else:
+                # 2. Try match by English Name (exact or cleaned)
                 
-            # specific cleanup
-            if " Hydrochloride" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Hydrochloride", "")
-            if " hydrochloride" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" hydrochloride", "")
-            if " Sulfate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Sulfate", "")
-            if " sulfate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" sulfate", "")
-            if " Nitrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Nitrate", "")
-            if " nitrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" nitrate", "")
-            if " Citrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Citrate", "") 
-            if " citrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" citrate", "")
-            if " Maleate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Maleate", "")
-            if " maleate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" maleate", "")
-            if " Tartrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Tartrate", "")
-            if " tartrate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" tartrate", "")
-            if " Sodium" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Sodium", "")
-            if " sodium" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" sodium", "")
-            if " Acetate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" Acetate", "")
-            if " acetate" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" acetate", "")
-            if " HCl" in raw_en_name:
-                raw_en_name = raw_en_name.replace(" HCl", "")
-            
-            # Clean up parenthesis inside name if any
-            raw_en_name = re.sub(r'\s*\(.*?\)', '', raw_en_name)
-            
-            current_drug = raw_en_name.strip()
-            # Standardize capitalization
-            current_drug = current_drug[0].upper() + current_drug[1:]
+                # specific cleanup for matching attempts
+                clean_en_name = raw_en_name
+                
+                # Common suffix removal for matching attempt
+                suffixes = [" Hydrochloride", " hydrochloride", " Sulfate", " sulfate", " Nitrate", " nitrate", 
+                           " Citrate", " citrate", " Maleate", " maleate", " Tartrate", " tartrate", 
+                           " Sodium", " sodium", " Acetate", " acetate", " HCl", " Besylate", " besylate"]
+                
+                for s in suffixes:
+                    clean_en_name = clean_en_name.replace(s, "")
+                
+                clean_en_name = re.sub(r'\s*\(.*?\)', '', clean_en_name).strip()
+                
+                # Check mapping
+                if raw_en_name.lower() in en_map:
+                    canonical_name = en_map[raw_en_name.lower()]
+                elif clean_en_name.lower() in en_map: 
+                     # This creates a risk: if we map "Risedronate" to "Risedronate sodium", that's good.
+                     # But we must be sure.
+                     # Let's check if the clean name exists as a key in en_map (which are lowercased official names)
+                     # Actually en_map keys are lower cased official names.
+                     # So if data.json has "Risedronate sodium", en_map has "risedronate sodium".
+                     # "Risedronate" won't match "risedronate sodium".
+                     
+                     # We need to do a reverse partial match or just trust the clean name if no match found?
+                     # No, if we want to fix "Risedronate" -> "Risedronate sodium", we rely on the Chinese name match primarily.
+                     
+                     # If Chinese name fails, we fall back to:
+                     pass
+
+            # If still no canonical name found, we use the cleaned English Name as fallback (current behavior)
+            if not canonical_name:
+                 # Standard cleanup logic (same as before)
+                 raw_en_name = clean_en_name
+                 if len(raw_en_name) > 50 or re.search(r'[\u4e00-\u9fff]', raw_en_name):
+                    continue
+                 canonical_name = raw_en_name[0].upper() + raw_en_name[1:]
+
+            current_drug = canonical_name
             
             drugs[current_drug] = {
                 "category": current_category,
                 "points": []
             }
             continue
+            
+
 
     return drugs
 
 def main():
     all_drugs = {}
     
+    # Load data.json for name mapping
+    with open('src/data.json', 'r', encoding='utf-8') as f:
+        data_json = json.load(f)
+    
+    # helper maps
+    cn_map = {d['cn']: d['en'] for d in data_json if 'cn' in d and 'en' in d}
+    en_map = {d['en'].lower(): d['en'] for d in data_json if 'en' in d}
+
     # List files numeric sort
     files = [f for f in os.listdir(PPT_CONTENT_DIR) if f.endswith('.md')]
     # simple sort by number
@@ -160,7 +170,7 @@ def main():
     for filename in files:
         filepath = os.path.join(PPT_CONTENT_DIR, filename)
         print(f"Processing {filename}...")
-        parsed = parse_markdown_file(filepath)
+        parsed = parse_markdown_file(filepath, cn_map, en_map)
         all_drugs.update(parsed)
 
     # Generate JS content
