@@ -44,11 +44,10 @@ def parse_markdown_file(filepath, cn_map, en_map):
         if not line:
             continue
             
-        # Detect Category
-        if "掌握" in line and ("###" in line or "1." in line):
-            current_category = "master"
-        elif "熟悉" in line and ("###" in line or "1." in line or "2." in line):
+        if "熟悉" in line and ("###" in line or "1." in line or "2." in line):
             current_category = "familiar"
+        elif "掌握" in line and ("###" in line or "1." in line):
+            current_category = "master"
             
 
 
@@ -107,28 +106,34 @@ def parse_markdown_file(filepath, cn_map, en_map):
                 # Common suffix removal for matching attempt
                 suffixes = [" Hydrochloride", " hydrochloride", " Sulfate", " sulfate", " Nitrate", " nitrate", 
                            " Citrate", " citrate", " Maleate", " maleate", " Tartrate", " tartrate", 
-                           " Sodium", " sodium", " Acetate", " acetate", " HCl", " Besylate", " besylate"]
+                           " Sodium", " sodium", " Acetate", " acetate", " HCl", " Besylate", " besylate",
+                           " Bitartrate", " bitartrate"]
                 
                 for s in suffixes:
                     clean_en_name = clean_en_name.replace(s, "")
                 
                 clean_en_name = re.sub(r'\s*\(.*?\)', '', clean_en_name).strip()
+
+                # Chinese name cleaning (Salt stripping)
+                cn_prefixes = ["盐酸", "硫酸", "硝酸", "磷酸", "氢溴酸", "枸橼酸", "酒石酸", "重酒石酸", "马来酸", "琥珀酸", "醋酸", "甲磺酸"]
+                cn_suffixes = ["钠", "钾", "钙"]
+                
+                clean_cn_name = raw_cn_name
+                for p in cn_prefixes:
+                    if clean_cn_name.startswith(p):
+                        clean_cn_name = clean_cn_name[len(p):]
+                for s in cn_suffixes:
+                    if clean_cn_name.endswith(s):
+                        clean_cn_name = clean_cn_name[:-len(s)]
                 
                 # Check mapping
-                if raw_en_name.lower() in en_map:
+                if raw_cn_name in cn_map:
+                    canonical_name = cn_map[raw_cn_name]
+                elif clean_cn_name in cn_map:
+                    canonical_name = cn_map[clean_cn_name]
+                elif raw_en_name.lower() in en_map:
                     canonical_name = en_map[raw_en_name.lower()]
                 elif clean_en_name.lower() in en_map: 
-                     # This creates a risk: if we map "Risedronate" to "Risedronate sodium", that's good.
-                     # But we must be sure.
-                     # Let's check if the clean name exists as a key in en_map (which are lowercased official names)
-                     # Actually en_map keys are lower cased official names.
-                     # So if data.json has "Risedronate sodium", en_map has "risedronate sodium".
-                     # "Risedronate" won't match "risedronate sodium".
-                     
-                     # We need to do a reverse partial match or just trust the clean name if no match found?
-                     # No, if we want to fix "Risedronate" -> "Risedronate sodium", we rely on the Chinese name match primarily.
-                     
-                     # If Chinese name fails, we fall back to:
                      pass
 
             # If still no canonical name found, we use the cleaned English Name as fallback (current behavior)
@@ -140,12 +145,34 @@ def parse_markdown_file(filepath, cn_map, en_map):
                  canonical_name = raw_en_name[0].upper() + raw_en_name[1:]
 
             current_drug = canonical_name
+            # if '去甲肾上' in raw_cn_name:
+            #    print(f"DEBUG: Found {raw_cn_name}, mapped to {current_drug}")
             
             drugs[current_drug] = {
                 "category": current_category,
                 "points": []
             }
             continue
+            
+        # Fallback: Handle broken formatting where points start with ** but no bullet
+        # (Only if we are inside a drug and it wasn't a header)
+        if current_drug and line.startswith('**'):
+             # Reuse point logic (simplified)
+             point_content = line.strip()
+             if "：" in point_content or ":" in point_content:
+                 parts = re.split(r'[:：]', point_content, 1)
+                 key_raw = parts[0].strip().replace("**", "")
+                 val = parts[1].strip()
+                 
+                 std_key = "【其他】"
+                 for k, v in KEY_MAPPING.items():
+                     if k in key_raw:
+                         std_key = v
+                         break
+                 
+                 prefix = "【掌握】" if drugs[current_drug]["category"] == "master" else ""
+                 final_str = f"{prefix}{std_key}{val}"
+                 drugs[current_drug]["points"].append(final_str)
             
 
 
