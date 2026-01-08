@@ -191,14 +191,22 @@ function DataManagementModal({ isOpen, onClose, onImport, onExport }) {
                 <Download size={24} weight="bold" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-slate-800 mb-1">导出进度备份</h3>
-                <p className="text-sm text-slate-500 mb-4">将您的学习进度、禁用药物列表等数据导出为文件，以便备份或迁移。</p>
-                <button
-                  onClick={onExport}
-                  className="px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 flex items-center gap-2"
-                >
-                  <FloppyDisk weight="fill" /> 立即导出
-                </button>
+                <h3 className="font-bold text-slate-800 mb-1">导出备份</h3>
+                <p className="text-sm text-slate-500 mb-4">选择导出内容，以便备份或迁移。</p>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => onExport('progress')}
+                    className="flex-1 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                  >
+                    <ListChecks weight="fill" /> 仅学习进度
+                  </button>
+                  <button
+                    onClick={() => onExport('settings')}
+                    className="flex-1 px-4 py-2 bg-white border-2 border-indigo-100 text-indigo-600 text-sm font-bold rounded-lg hover:bg-indigo-50 transition flex items-center justify-center gap-2"
+                  >
+                    <Gear weight="fill" /> 仅设置
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1856,26 +1864,39 @@ function App() {
 
 
   // --- Import / Export Logic ---
-  const handleExportData = () => {
+  const handleExportData = (type = 'all') => {
+    const backupData = {};
+
+    if (type === 'all' || type === 'settings') {
+      backupData.disabledDrugs = disabledDrugs;
+      backupData.preferences = {
+        currentMajor,
+        realisticMode
+      };
+    }
+
+    if (type === 'all' || type === 'progress') {
+      backupData.progress = progress;
+    }
+
     const data = {
       version: "1.0",
+      type: type, // Record what was exported
       exportedAt: new Date().toISOString(),
-      data: {
-        disabledDrugs,
-        progress: progress,
-        // Also export preferences if needed, but maybe optional
-        preferences: {
-          currentMajor,
-          realisticMode
-        }
-      }
+      data: backupData
     };
 
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `drug_cards_backup_${new Date().toISOString().split('T')[0]}.json`;
+    // Filename based on type
+    const filenameMap = {
+      'all': 'full_backup',
+      'progress': 'progress_backup',
+      'settings': 'settings_backup'
+    };
+    a.download = `drug_${filenameMap[type]}_${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -1892,8 +1913,17 @@ function App() {
         const json = JSON.parse(event.target.result);
         if (!json.data) throw new Error("无效的备份文件格式");
 
+        // Generate confirmation message based on content
+        const hasProgress = !!json.data.progress;
+        const hasSettings = !!json.data.disabledDrugs || !!json.data.preferences;
+
+        let msg = "确定要导入该文件吗？\n";
+        if (hasProgress) msg += "⚠️ 注意：当前【学习进度】将被覆盖！\n";
+        if (hasSettings) msg += "⚠️ 注意：当前【偏好设置/禁用列表】将被覆盖！\n";
+        msg += "此操作不可撤销！";
+
         // Confirm before overwrite
-        if (window.confirm("确定要导入该文件吗？\n当前的所有学习进度将被覆盖，此操作不可撤销！")) {
+        if (window.confirm(msg)) {
           if (json.data.disabledDrugs && Array.isArray(json.data.disabledDrugs)) {
             setDisabledDrugs(json.data.disabledDrugs);
           }
@@ -1906,7 +1936,10 @@ function App() {
             if (json.data.preferences.realisticMode !== undefined) setRealisticMode(json.data.preferences.realisticMode);
           }
 
-          alert("✅ 数据恢复成功！");
+          let successMsg = "✅ 数据恢复成功！\n";
+          if (hasProgress) successMsg += "- 学习进度已更新\n";
+          if (hasSettings) successMsg += "- 偏好设置已更新";
+          alert(successMsg);
           setShowSettingsModal(false);
         }
       } catch (err) {
