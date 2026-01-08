@@ -99,6 +99,5 @@ local_project/
 └── dist/                  # 构建产物
 ```
 
-## 📄 许可证
 
-MIT License
+
