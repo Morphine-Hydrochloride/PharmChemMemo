@@ -43,9 +43,10 @@ else:
 
 # -----------------------------------------------------------------------------
 
-def extract_parent_molecule(smiles):
+def extract_parent_molecule(smiles, keep_sodium=False):
     """
     从复合 SMILES 中提取药物母核（最大片段），去除盐/酸
+    keep_sodium: 如果为 True，则不去除钠离子
     """
     if not smiles:
         return None
@@ -63,12 +64,17 @@ def extract_parent_molecule(smiles):
     best_fragment = None
     best_size = 0
     
+    # Define salt/ion list
+    base_salts = ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[K+]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]
+    if not keep_sodium:
+        base_salts.extend(["[Na+]", "[Na]"])
+    
     # First pass: try to find a clear "parent" that isn't a salt/acid
     for frag in fragments:
         is_salt = False
         
         # 1. Simple metal ions/halogens - Always exclude
-        if frag in ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[Na+]", "[K+]", "[Na]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]"]:
+        if frag in base_salts:
             is_salt = True
         
         # 2. Check molecular properties
@@ -99,6 +105,18 @@ def extract_parent_molecule(smiles):
     # Logic:
     # 1. If we found a "best_fragment" that is explicitly NOT a salt, return it.
     if best_fragment:
+        # If keeping sodium, and we found a parent, we should try to return the full set if possible?
+        # Actually, for salts like "Phenytoin Sodium", SMILES is "[Na+].[Anion-]".
+        # If we just return `[Na+].[Anion-]` it works?
+        # But `extract_parent_molecule` is usually "return ONE fragment".
+        # If keep_sodium is True, we generally want to return the whole thing IF it looks like a sodium salt.
+        # But wait, `render_molecule_svg` takes a SMILES string. RDKit draws multiple fragments if passed "A.B".
+        
+        if keep_sodium:
+             # Check if original SMILES contains Na+ and we want to keep it
+             if "[Na+]" in smiles or "[Na]" in smiles:
+                 return smiles # Return the FULL original SMILES (cleaned)
+
         return best_fragment
     
     # 2. Fallback: If ALL fragments looked like salts (e.g. Sodium Valproate -> [Na+] and Valproate ion),
@@ -107,7 +125,7 @@ def extract_parent_molecule(smiles):
     candidates = []
     for frag in fragments:
         # Exclude inorganic ions again
-        if frag in ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[Na+]", "[K+]", "[Na]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]"]:
+        if frag in base_salts:
             continue
             
         mol = Chem.MolFromSmiles(frag)
@@ -117,6 +135,9 @@ def extract_parent_molecule(smiles):
     if candidates:
         # Sort by size (descending)
         candidates.sort(key=lambda x: x[1], reverse=True)
+        # Check keep_sodium fallback
+        if keep_sodium and ("[Na+]" in smiles or "[Na]" in smiles):
+            return smiles
         return candidates[0][0]
 
     # 3. Last resort: just return the first one (likely the string was just ions?)
@@ -158,7 +179,8 @@ def render_molecule_svg(smiles, output_path, width=400, height=400):
             17: (0.1, 0.8, 0.1),  # Cl: 浅绿色
             16: (0.9, 0.6, 0.1),  # S: 橙色
             9: (0.2, 0.9, 0.4),   # F: 亮绿色
-            15: (0.6, 0.1, 0.8)   # P: 紫色
+            15: (0.6, 0.1, 0.8),  # P: 紫色
+            11: (0.5, 0.0, 0.5)   # Na: Purple/Dark (add specifically if visible)
         }
         
         # 应用颜色 (使用 setAtomPalette 确保生效)
@@ -225,13 +247,15 @@ def main():
             continue
             
         # 3. 提取母核 (去除盐)
-        parent_smiles = extract_parent_molecule(smiles)
+        # 特殊逻辑：如果是钠盐且药名含“钠”，则保留钠离子
+        is_sodium_salt = "sodium" in en_name.lower() or "钠" in cn_name
+        parent_smiles = extract_parent_molecule(smiles, keep_sodium=is_sodium_salt)
         
         # 4. 生成 SVG
         output_filename = f"{drug_id}.svg"
         output_path = OUTPUT_DIR / output_filename
         
-        print(f"[{i+1}] 生成: {cn_name} -> {parent_smiles[:30]}...")
+        print(f"[{i+1}] 生成: {cn_name} -> {str(parent_smiles)[:30]}...")
         if render_molecule_svg(parent_smiles, output_path):
             drug["image"] = f"/assets/images/{output_filename}"
             drug["smiles"] = smiles # 确保 data.json 也保存了最新的 SMILES

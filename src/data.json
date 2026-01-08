@@ -159,7 +159,7 @@
     "type": "master",
     "id": "mas-Phenytoin-sodium",
     "image": "/assets/images/Phenytoin-sodium.svg",
-    "smiles": "O=C1NC(=O)C(N1)(c2ccccc2)c3ccccc3"
+    "smiles": "[Na+].[N-]1C(=O)NC(=O)C1(c2ccccc2)c3ccccc3"
   },
   {
     "cn": "卡马西平",
@@ -618,7 +618,7 @@
     "type": "familiarize",
     "id": "fam-Lesinurad",
     "image": "/assets/images/Lesinurad.svg",
-    "smiles": "C1CC1C2=CC=C(C3=CC=CC=C23)N4C(=NN=C4Br)SCC(=O)O"
+    "smiles": "[Na+].C1CC1C2=CC=C(C3=CC=CC=C23)N4C(=NN=C4Br)SCC([O-])=O"
   },
   {
     "cn": "非布司他",
@@ -663,7 +663,7 @@
     "type": "master",
     "id": "mas-Diclofenac-sodium",
     "image": "/assets/images/Diclofenac-sodium.svg",
-    "smiles": "OC(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl"
+    "smiles": "[Na+].[O-]C(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl"
   },
   {
     "cn": "布洛芬",
@@ -843,7 +843,7 @@
     "type": "familiarize",
     "id": "fam-Montelukast-sodium",
     "image": "/assets/images/Montelukast-sodium.svg",
-    "smiles": "CC(C)(O)c1ccccc1CC[C@@H](SCC2(CC2)CC(O)=O)c3cccc(\\C=C\\c4ccc5ccc(Cl)cc5n4)c3"
+    "smiles": "[Na+].CC(C)(O)c1ccccc1CC[C@@H](SCC2(CC2)CC([O-])=O)c3cccc(\\C=C\\c4ccc5ccc(Cl)cc5n4)c3"
   },
   {
     "cn": "马来酸氯苯那敏",
@@ -1041,7 +1041,7 @@
     "type": "familiarize",
     "id": "fam-Risedronate-sodium",
     "image": "/assets/images/Risedronate-sodium.svg",
-    "smiles": "OC(Cc1cccnc1)([P](O)(O)=O)[P](O)(O)=O"
+    "smiles": "[Na+].OC(Cc1cccnc1)(P(O)(O)=O)P(O)([O-])=O"
   },
   {
     "cn": "格列美脲",
@@ -1104,7 +1104,7 @@
     "type": "master",
     "id": "mas-Alendronate-sodium",
     "image": "/assets/images/Alendronate-sodium.svg",
-    "smiles": "NCCCC(O)([P](O)(O)=O)[P](O)(O)=O"
+    "smiles": "[Na+].NCCCC(O)(P(O)(O)=O)P(O)([O-])=O"
   },
   {
     "cn": "去甲肾上腺素",
@@ -1572,7 +1572,7 @@
     "type": "master",
     "id": "mas-Fluvastatin-sodium",
     "image": "/assets/images/Fluvastatin-sodium.svg",
-    "smiles": "CC(C)n1c2ccccc2c(c3ccc(F)cc3)c1\\C=C\\[C@@H](O)C[C@H](O)CC(O)=O"
+    "smiles": "[Na+].CC(C)n1c2ccccc2c(c3ccc(F)cc3)c1\\C=C\\[C@@H](O)C[C@H](O)CC([O-])=O"
   },
   {
     "cn": "吉非罗齐",

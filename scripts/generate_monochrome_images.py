@@ -47,7 +47,7 @@ else:
 
 # -----------------------------------------------------------------------------
 
-def extract_parent_molecule(smiles):
+def extract_parent_molecule(smiles, keep_sodium=False):
     """从复合 SMILES 中提取药物母核（最大片段），去除盐/酸"""
     if not smiles:
         return None
@@ -60,11 +60,15 @@ def extract_parent_molecule(smiles):
     
     best_fragment = None
     best_size = 0
+
+    base_salts = ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[K+]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]
+    if not keep_sodium:
+        base_salts.extend(["[Na+]", "[Na]"])
     
     for frag in fragments:
         is_salt = False
         
-        if frag in ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[Na+]", "[K+]", "[Na]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]:
+        if frag in base_salts:
             is_salt = True
         
         if not is_salt:
@@ -85,11 +89,13 @@ def extract_parent_molecule(smiles):
                         best_fragment = frag
 
     if best_fragment:
+        if keep_sodium and ("[Na+]" in smiles or "[Na]" in smiles):
+            return smiles
         return best_fragment
     
     candidates = []
     for frag in fragments:
-        if frag in ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[Na+]", "[K+]", "[Na]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]:
+        if frag in base_salts:
             continue
             
         mol = Chem.MolFromSmiles(frag)
@@ -98,6 +104,8 @@ def extract_parent_molecule(smiles):
     
     if candidates:
         candidates.sort(key=lambda x: x[1], reverse=True)
+        if keep_sodium and ("[Na+]" in smiles or "[Na]" in smiles):
+            return smiles
         return candidates[0][0]
 
     return fragments[0]
@@ -169,6 +177,7 @@ def render_molecule_svg_monochrome(smiles, output_path, width=400, height=400, r
         atom_colors = {
             6: BLACK, 8: BLACK, 7: BLACK, 17: BLACK,
             16: BLACK, 9: BLACK, 15: BLACK, 35: BLACK, 53: BLACK,
+            11: BLACK # Na also Black
         }
         opts.setAtomPalette(atom_colors)
 
@@ -221,7 +230,9 @@ def process_data_file(data_file):
             print(f"[{i+1}] 跳过 (无数据): {cn_name} | {en_name}")
             continue
             
-        parent_smiles = extract_parent_molecule(smiles)
+        # Check for sodium salt to keep Na+
+        is_sodium_salt = "sodium" in en_name.lower() or "钠" in cn_name
+        parent_smiles = extract_parent_molecule(smiles, keep_sodium=is_sodium_salt)
         
         # 为每个旋转角度生成图像
         for angle in ROTATION_ANGLES:
