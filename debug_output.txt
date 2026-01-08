@@ -1,0 +1,7 @@
+DEBUG: Processing line: '*'
+DEBUG: startswith('**'): False
+LOOP START: '#### 2. 甲基多巴 (Methyldopa)' | Drug: Norepinephrine
+LOOP START: '*' | Drug: Methyldopa
+DEBUG: Processing line: '*'
+DEBUG: startswith('**'): False
+LOOP START: '**结构**：PPT列出了其S-(+)异构体结构 。' | Drug: Methyldopa
