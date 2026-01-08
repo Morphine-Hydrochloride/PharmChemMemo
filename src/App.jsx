@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
-import { CaretLeft, CaretRight, WarningCircle, Flask, Check, X, ArrowCounterClockwise, CheckCircle, XCircle, Warning, Eye, Spinner, BookOpen, Brain, ListChecks, PlayCircle, MagnifyingGlass, Books, CaretDown, Gear, Exam, Download, Upload, FloppyDisk } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight, WarningCircle, Flask, Check, X, ArrowCounterClockwise, CheckCircle, XCircle, Warning, Eye, Spinner, BookOpen, Brain, ListChecks, PlayCircle, MagnifyingGlass, Books, CaretDown, Gear, Exam, Download, Upload, FloppyDisk, GithubLogo } from '@phosphor-icons/react';
 import { KEY_POINTS_DB } from './keyPointsData';
 import cardData from './data.json';
 import nonMedData from './非药化专业.json';
@@ -433,6 +433,18 @@ function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, 
           </div>
         </button>
       </div>
+
+      <footer className="mt-16 mb-6 text-slate-400 text-sm">
+        <a
+          href="https://github.com/Morphine-Hydrochloride/NoMedChem"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-indigo-600 transition-colors"
+        >
+          <GithubLogo size={20} weight="fill" />
+          <span>Morphine-Hydrochloride / NoMedChem</span>
+        </a>
+      </footer>
     </div >
   );
 }
