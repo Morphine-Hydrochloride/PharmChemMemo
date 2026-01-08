@@ -50,9 +50,7 @@ def parse_markdown_file(filepath, cn_map, en_map):
             current_category = "master"
             
 
-
         # Detect Knowledge Points (Bullet points)
-        # Must strictly start with "* " or "- " to avoid catching "**Bold**" headers
         if line.startswith('* ') or line.startswith('- '):
             if current_drug:
                 # Remove bullet point
@@ -83,6 +81,27 @@ def parse_markdown_file(filepath, cn_map, en_map):
                      prefix = "【掌握】" if drugs[current_drug]["category"] == "master" else ""
                      drugs[current_drug]["points"].append(f"{prefix}{point_content}")
             continue
+
+        # Fallback: Handle broken formatting where points start with ** but no bullet
+        # Must be BEFORE drug regex to prevent false positives like "**Structure**... (S)-(+)..." matching drug pattern
+        if current_drug and line.startswith('**') and ("：" in line or ":" in line):
+             # Reuse point logic (simplified)
+             point_content = line.strip()
+             if "：" in point_content or ":" in point_content:
+                 parts = re.split(r'[:：]', point_content, 1)
+                 key_raw = parts[0].strip().replace("**", "")
+                 val = parts[1].strip()
+                 
+                 std_key = "【其他】"
+                 for k, v in KEY_MAPPING.items():
+                     if k in key_raw:
+                         std_key = v
+                         break
+                 
+                 prefix = "【掌握】" if drugs[current_drug]["category"] == "master" else ""
+                 final_str = f"{prefix}{std_key}{val}"
+                 drugs[current_drug]["points"].append(final_str)
+             continue
             
         # Pattern 1: **中文名 (English Name)**
         # Pattern 2: #### 1. 中文名 (English Name)
@@ -145,7 +164,7 @@ def parse_markdown_file(filepath, cn_map, en_map):
                  canonical_name = raw_en_name[0].upper() + raw_en_name[1:]
 
             current_drug = canonical_name
-            # if '去甲肾上' in raw_cn_name:
+            # if '甲基多巴' in raw_cn_name:
             #    print(f"DEBUG: Found {raw_cn_name}, mapped to {current_drug}")
             
             drugs[current_drug] = {
@@ -172,6 +191,8 @@ def parse_markdown_file(filepath, cn_map, en_map):
                  
                  prefix = "【掌握】" if drugs[current_drug]["category"] == "master" else ""
                  final_str = f"{prefix}{std_key}{val}"
+                 if current_drug == "Methyldopa":
+                     print(f"DEBUG: Adding point to Methyldopa: {final_str}")
                  drugs[current_drug]["points"].append(final_str)
             
 
