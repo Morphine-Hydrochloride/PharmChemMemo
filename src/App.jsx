@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
-import { CaretLeft, CaretRight, WarningCircle, Flask, Check, X, ArrowCounterClockwise, CheckCircle, XCircle, Warning, Eye, Spinner, BookOpen, Brain, ListChecks, PlayCircle, MagnifyingGlass, Books, CaretDown, Gear, Exam } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight, WarningCircle, Flask, Check, X, ArrowCounterClockwise, CheckCircle, XCircle, Warning, Eye, Spinner, BookOpen, Brain, ListChecks, PlayCircle, MagnifyingGlass, Books, CaretDown, Gear, Exam, Download, Upload, FloppyDisk } from '@phosphor-icons/react';
 import { KEY_POINTS_DB } from './keyPointsData';
 import cardData from './data.json';
 import nonMedData from './非药化专业.json';
@@ -165,8 +165,73 @@ const generateEfficacyOptions = (correctCard, allCards, count = 4) => {
   return [correctDesc, ...distractors].sort(() => Math.random() - 0.5);
 };
 
+
+
+// --- Component: Data Management Modal ---
+function DataManagementModal({ isOpen, onClose, onImport, onExport }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden" onClick={e => e.stopPropagation()}>
+        <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+          <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <Gear weight="fill" className="text-slate-500" /> 数据管理
+          </h2>
+          <button onClick={onClose} className="p-2 hover:bg-slate-200 rounded-full transition text-slate-500">
+            <X size={20} />
+          </button>
+        </div>
+
+        <div className="p-8 space-y-6">
+          {/* Export */}
+          <div className="bg-indigo-50 rounded-2xl p-6 border border-indigo-100 hover:shadow-md transition">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-indigo-100 text-indigo-600 rounded-xl">
+                <Download size={24} weight="bold" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-slate-800 mb-1">导出进度备份</h3>
+                <p className="text-sm text-slate-500 mb-4">将您的学习进度、禁用药物列表等数据导出为文件，以便备份或迁移。</p>
+                <button
+                  onClick={onExport}
+                  className="px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 flex items-center gap-2"
+                >
+                  <FloppyDisk weight="fill" /> 立即导出
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Import */}
+          <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100 hover:shadow-md transition">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-amber-100 text-amber-600 rounded-xl">
+                <Upload size={24} weight="bold" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-slate-800 mb-1">导入数据恢复</h3>
+                <p className="text-sm text-slate-500 mb-4">从备份文件恢复数据。<br /><span className="text-rose-500 font-bold">注意：当前进度将被覆盖！</span></p>
+                <label className="px-4 py-2 bg-amber-500 text-white text-sm font-bold rounded-lg hover:bg-amber-600 transition shadow-lg shadow-amber-200 flex items-center gap-2 w-fit cursor-pointer">
+                  <Upload weight="fill" /> 选择文件导入
+                  <input
+                    type="file"
+                    accept=".json"
+                    onChange={onImport}
+                    className="hidden"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // --- Component: MainMenu ---
-function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, realisticMode, onToggleRealisticMode }) {
+function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, realisticMode, onToggleRealisticMode, onOpenSettings }) {
   const [isRandom, setIsRandom] = useState(false);
   const [selectedChapter, setSelectedChapter] = useState('all');
   const [showChapterDropdown, setShowChapterDropdown] = useState(false);
@@ -192,19 +257,31 @@ function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, 
         )}
       </div>
 
-      {/* Major Switcher */}
-      <div className="absolute top-6 right-6 flex bg-white/50 backdrop-blur-sm p-1 rounded-xl border border-slate-200 shadow-sm">
+
+
+      {/* Settings Button */}
+      <div className="absolute top-6 right-6 flex items-center gap-3">
+        <div className="flex bg-white/50 backdrop-blur-sm p-1 rounded-xl border border-slate-200 shadow-sm">
+          <button
+            onClick={() => onSwitchMajor('med')}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${currentMajor === 'med' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-500 hover:text-indigo-600'}`}
+          >
+            药化专业
+          </button>
+          <button
+            onClick={() => onSwitchMajor('non-med')}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${currentMajor === 'non-med' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-500 hover:text-indigo-600'}`}
+          >
+            非药化专业
+          </button>
+        </div>
+
         <button
-          onClick={() => onSwitchMajor('med')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${currentMajor === 'med' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-500 hover:text-indigo-600'}`}
+          onClick={onOpenSettings}
+          className="p-3 bg-white/50 backdrop-blur-sm rounded-xl border border-slate-200 shadow-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition"
+          title="数据管理"
         >
-          药化专业
-        </button>
-        <button
-          onClick={() => onSwitchMajor('non-med')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${currentMajor === 'non-med' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-500 hover:text-indigo-600'}`}
-        >
-          非药化专业
+          <Gear size={24} weight="fill" />
         </button>
       </div>
 
@@ -348,7 +425,7 @@ function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, 
           </div>
         </button>
       </div>
-    </div>
+    </div >
   );
 }
 
@@ -1644,6 +1721,9 @@ function App() {
   const jsmeRef = useRef(null);
   const showTimerRef = useRef(null);
 
+  // Data Management State
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+
   // Progress Persistence
   const [progress, setProgress] = useState(() => {
     try {
@@ -1773,305 +1853,372 @@ function App() {
     });
   };
 
-  // View Switching Logic which prepares cards
-  const enterMode = (mode, orderMode = 'sequential', chapter = 'all') => {
-    let cards = [];
+};
 
-    // 获取基础卡片集（按章节筛选）
-    let baseCards = allCards;
-    if (chapter !== 'all') {
-      baseCards = allCards.filter(c => c.chapter === chapter);
-    }
-
-    // 全局过滤：移除被禁用的药物
-    // 注意：Catalog模式不过滤，因为我们需要在目录里去开关它
-    if (mode !== 'catalog') {
-      baseCards = baseCards.filter(c => !disabledDrugs.includes(c.id));
-    }
-
-    if (mode === 'learning') {
-      cards = generateLearningBatch(baseCards, progress, orderMode, 15);
-    } else if (mode === 'review') {
-      // Filter: Mastered
-      cards = baseCards.filter(c => progress[c.id]?.status === 'mastered');
-      // Inject review temp stage (if exists)
-      cards = cards.map(c => ({
-        ...c,
-        learningStage: 3,
-        reviewTempStage: (progress[c.id]?.reviewTempStage)
-      }));
-
-      // Sort: Prioritize those with reviewTempStage (in-progress re-learning)
-      cards.sort((a, b) => {
-        const aHas = a.reviewTempStage != null;
-        const bHas = b.reviewTempStage != null;
-        if (aHas && !bHas) return -1;
-        if (!aHas && bHas) return 1;
-        return Math.random() - 0.5;
-      });
-
-      // For normal review items, set tempStage to 'check' (special stage for Deep Review init)
-      cards = cards.map(c => c.reviewTempStage == null ? { ...c, reviewTempStage: 'check' } : c);
-
-    } else if (mode === 'card') {
-      // Classic Mode (Filtered by existing UI controls)
-      // Logic handled in existing useEffect, but we need to trigger it.
-      // We'll just set view.
-      // (Existing useEffect [allCards, selectedChapter...] will run and setFilteredCards)
-    } else if (mode === 'exam') {
-      // Exam setup mode - no card prep needed
-      setCurrentView('exam');
-      return;
-    } else if (mode === 'catalog') {
-      // Catalog mode doesn't need filtered cards, it manages its own state
-      setCurrentView(mode);
-      return;
-    }
-
-    if ((mode === 'learning' || mode === 'review') && cards.length === 0) {
-      alert(mode === 'learning' ? "太棒了！所有卡片都已掌握！(或者所有卡片都被禁用了)" : "暂无需要深度复习的卡片。");
-      return;
-    }
-
-    if (mode !== 'card') {
-      setFilteredCards(cards);
-    }
-    setCurrentView(mode);
-  };
-
-  // Keyboard Shortcuts
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
-      if (e.code === "Space") {
-        e.preventDefault();
-        setIsFlipped(prev => !prev);
-      } else if (e.code === "ArrowRight") {
-        if (isFlipped) markResult('known');
-      } else if (e.code === "ArrowLeft") {
-        if (isFlipped) markResult('unknown');
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isFlipped, markResult]);
-
-  // --- 使用JSME内置的InChI功能进行离线验证 ---
-  // InChI是标准化的分子标识符，同一分子会生成相同的InChI
-  const computeInchiFromSmiles = async (smiles, timeout = 5000) => {
-    return new Promise((resolve) => {
-      // 设置超时
-      const timer = setTimeout(() => {
-        console.warn('InChI计算超时');
-        resolve(null);
-      }, timeout);
-
-      if (!window.JSApplet) {
-        console.warn('JSApplet未定义');
-        clearTimeout(timer);
-        resolve(null);
-        return;
-      }
-
-      if (!window.JSApplet.Inchi) {
-        console.warn('JSME InChI模块未加载，尝试加载...');
-        // InChI模块可能需要单独加载
-        clearTimeout(timer);
-        resolve(null);
-        return;
-      }
-
-      try {
-        // JSME的InChI计算是异步的
-        window.JSApplet.Inchi.computeInchi(smiles, (inchi) => {
-          clearTimeout(timer);
-          console.log('InChI计算结果:', inchi);
-          resolve(inchi || null);
-        });
-      } catch (e) {
-        console.warn('InChI计算异常:', e);
-        clearTimeout(timer);
-        resolve(null);
-        return; // Fixed: returned early
-      }
-    });
-  };
-
-  // 对SMILES进行排序规范化（简单的离线规范化）
-  const sortSmiles = (smiles) => {
-    if (!smiles) return '';
-    // 移除立体化学标记
-    let s = smiles.replace(/@+/g, '').replace(/[\/\\]/g, '');
-    // 分割成片段，排序后重组
-    const fragments = s.split('.');
-    return fragments.map(f => f.toUpperCase()).sort().join('.');
-  };
-
-  // 从SMILES提取精确的分子式（用于比较）
-  const extractMolecularFormula = (smiles) => {
-    if (!smiles) return {};
-    const counts = { C: 0, H: 0, N: 0, O: 0, S: 0, F: 0, Cl: 0, Br: 0, I: 0, P: 0 };
-
-    // 移除立体化学标记和电荷
-    let s = smiles.replace(/@+/g, '').replace(/[\/\\]/g, '');
-
-    // 计算双键和环的数量（会影响氢原子数）
-    let doubleBonds = (s.match(/=/g) || []).length;
-    let tripleBonds = (s.match(/#/g) || []).length;
-    let rings = 0;
-    for (let i = 1; i <= 9; i++) {
-      const ringMatches = s.match(new RegExp(i.toString(), 'g')) || [];
-      rings += Math.floor(ringMatches.length / 2);
-    }
-
-    // 计算各原子数量
-    // 处理 Cl 和 Br（两个字符的原子）
-    const clMatches = s.match(/Cl/gi) || [];
-    counts.Cl = clMatches.length;
-    s = s.replace(/Cl/gi, '');
-
-    const brMatches = s.match(/Br/gi) || [];
-    counts.Br = brMatches.length;
-    s = s.replace(/Br/gi, '');
-
-    // 单字符原子
-    counts.C = (s.match(/c/gi) || []).length;
-    counts.N = (s.match(/n/gi) || []).length;
-    counts.O = (s.match(/o/gi) || []).length;
-    counts.S = (s.match(/s/gi) || []).length;
-    counts.F = (s.match(/F/gi) || []).length;
-    counts.I = (s.match(/I/gi) || []).length;
-    counts.P = (s.match(/P/gi) || []).length;
-
-    // 计算氢原子数（根据价态规则）
-    // 简化计算：不精确计算H，只比较重原子
-
-    return counts;
-  };
-
-  // 比较两个分子式是否相同
-  const compareMolecularFormulas = (formula1, formula2) => {
-    const atoms = ['C', 'N', 'O', 'S', 'F', 'Cl', 'Br', 'I', 'P'];
-    for (const atom of atoms) {
-      if ((formula1[atom] || 0) !== (formula2[atom] || 0)) {
-        return false;
+// --- Import / Export Logic ---
+const handleExportData = () => {
+  const data = {
+    version: "1.0",
+    exportedAt: new Date().toISOString(),
+    data: {
+      disabledDrugs,
+      progress: progress,
+      // Also export preferences if needed, but maybe optional
+      preferences: {
+        currentMajor,
+        realisticMode
       }
     }
-    return true;
   };
 
-  // --- Offline Verification Logic ---
-  const verifyStructureWithSmiles = async (smiles) => {
-    if (!currentCard || !smiles) {
-      return;
-    }
-    setUserSmiles(smiles);
-    setVerificationResult("loading");
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `drug_cards_backup_${new Date().toISOString().split('T')[0]}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
 
-    const target = currentCard.smiles;
+const handleImportData = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
 
-    if (!target) {
-      setVerificationResult("error");
-      console.warn("No target SMILES found for this card");
-      return;
-    }
-
-    const userS = smiles.trim();
-    const targetS = target.trim();
-
-    console.log('=== SMILES验证开始 ===');
-    console.log('用户输入:', userS);
-    console.log('目标答案:', targetS);
-
-    // 统一的成功处理函数：显示"正确"提示后自动跳转下一张
-    const handleSuccess = (methodName) => {
-      console.log(`✓ ${methodName}匹配成功`);
-      setVerificationResult("correct");
-
-      // 1.2秒后自动标记为"认识"并切换到下一张
-      setTimeout(() => {
-        markResult('known');
-      }, 1200);
-    };
-
-    // 1. 精确匹配
-    if (userS === targetS) {
-      handleSuccess('精确');
-      return;
-    }
-
-    // 2. 忽略大小写和立体化学后比较
-    const userNorm = sortSmiles(userS);
-    const targetNorm = sortSmiles(targetS);
-    console.log('规范化后 - 用户:', userNorm);
-    console.log('规范化后 - 目标:', targetNorm);
-
-    if (userNorm === targetNorm) {
-      handleSuccess('规范化');
-      return;
-    }
-
-    // 3. 比较分子式（处理芳香环格式差异）
-    const userFormula = extractMolecularFormula(userS);
-    const targetFormula = extractMolecularFormula(targetS);
-    console.log('分子式 - 用户:', JSON.stringify(userFormula));
-    console.log('分子式 - 目标:', JSON.stringify(targetFormula));
-
-    if (compareMolecularFormulas(userFormula, targetFormula)) {
-      handleSuccess('分子式');
-      return;
-    }
-
-    // 3. 尝试InChI比较
-    console.log('尝试InChI比较...');
+  const reader = new FileReader();
+  reader.onload = (event) => {
     try {
-      const [userInchi, targetInchi] = await Promise.all([
-        computeInchiFromSmiles(userS),
-        computeInchiFromSmiles(targetS)
-      ]);
+      const json = JSON.parse(event.target.result);
+      if (!json.data) throw new Error("无效的备份文件格式");
 
-      console.log('用户InChI:', userInchi);
-      console.log('目标InChI:', targetInchi);
-
-      if (userInchi && targetInchi) {
-        // 比较InChI核心部分（忽略立体化学层）
-        const extractCore = (inchi) => {
-          if (!inchi) return '';
-          const parts = inchi.split('/');
-          return parts.slice(0, 4).join('/');
-        };
-
-        const userCore = extractCore(userInchi);
-        const targetCore = extractCore(targetInchi);
-        console.log('InChI核心 - 用户:', userCore);
-        console.log('InChI核心 - 目标:', targetCore);
-
-        if (userCore === targetCore) {
-          handleSuccess('InChI');
-          return;
+      // Confirm before overwrite
+      if (window.confirm("确定要导入该文件吗？\n当前的所有学习进度将被覆盖，此操作不可撤销！")) {
+        if (json.data.disabledDrugs && Array.isArray(json.data.disabledDrugs)) {
+          setDisabledDrugs(json.data.disabledDrugs);
         }
-      } else {
-        console.warn('InChI计算失败或模块不可用');
+        if (json.data.progress && typeof json.data.progress === 'object') {
+          setProgress(json.data.progress);
+        }
+        // Optional: Restore preferences
+        if (json.data.preferences) {
+          if (json.data.preferences.currentMajor) setCurrentMajor(json.data.preferences.currentMajor);
+          if (json.data.preferences.realisticMode !== undefined) setRealisticMode(json.data.preferences.realisticMode);
+        }
+
+        alert("✅ 数据恢复成功！");
+        setShowSettingsModal(false);
       }
-    } catch (e) {
-      console.error('InChI比较出错:', e);
+    } catch (err) {
+      console.error(err);
+      alert("❌ 导入失败：文件格式错误或已损坏");
+    }
+  };
+  reader.readAsText(file);
+  // Reset input
+  e.target.value = null;
+};
+
+// View Switching Logic which prepares cards
+const enterMode = (mode, orderMode = 'sequential', chapter = 'all') => {
+  let cards = [];
+
+  // 获取基础卡片集（按章节筛选）
+  let baseCards = allCards;
+  if (chapter !== 'all') {
+    baseCards = allCards.filter(c => c.chapter === chapter);
+  }
+
+  // 全局过滤：移除被禁用的药物
+  // 注意：Catalog模式不过滤，因为我们需要在目录里去开关它
+  if (mode !== 'catalog') {
+    baseCards = baseCards.filter(c => !disabledDrugs.includes(c.id));
+  }
+
+  if (mode === 'learning') {
+    cards = generateLearningBatch(baseCards, progress, orderMode, 15);
+  } else if (mode === 'review') {
+    // Filter: Mastered
+    cards = baseCards.filter(c => progress[c.id]?.status === 'mastered');
+    // Inject review temp stage (if exists)
+    cards = cards.map(c => ({
+      ...c,
+      learningStage: 3,
+      reviewTempStage: (progress[c.id]?.reviewTempStage)
+    }));
+
+    // Sort: Prioritize those with reviewTempStage (in-progress re-learning)
+    cards.sort((a, b) => {
+      const aHas = a.reviewTempStage != null;
+      const bHas = b.reviewTempStage != null;
+      if (aHas && !bHas) return -1;
+      if (!aHas && bHas) return 1;
+      return Math.random() - 0.5;
+    });
+
+    // For normal review items, set tempStage to 'check' (special stage for Deep Review init)
+    cards = cards.map(c => c.reviewTempStage == null ? { ...c, reviewTempStage: 'check' } : c);
+
+  } else if (mode === 'card') {
+    // Classic Mode (Filtered by existing UI controls)
+    // Logic handled in existing useEffect, but we need to trigger it.
+    // We'll just set view.
+    // (Existing useEffect [allCards, selectedChapter...] will run and setFilteredCards)
+  } else if (mode === 'exam') {
+    // Exam setup mode - no card prep needed
+    setCurrentView('exam');
+    return;
+  } else if (mode === 'catalog') {
+    // Catalog mode doesn't need filtered cards, it manages its own state
+    setCurrentView(mode);
+    return;
+  }
+
+  if ((mode === 'learning' || mode === 'review') && cards.length === 0) {
+    alert(mode === 'learning' ? "太棒了！所有卡片都已掌握！(或者所有卡片都被禁用了)" : "暂无需要深度复习的卡片。");
+    return;
+  }
+
+  if (mode !== 'card') {
+    setFilteredCards(cards);
+  }
+  setCurrentView(mode);
+};
+
+// Keyboard Shortcuts
+useEffect(() => {
+  const handleKeyDown = (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.code === "Space") {
+      e.preventDefault();
+      setIsFlipped(prev => !prev);
+    } else if (e.code === "ArrowRight") {
+      if (isFlipped) markResult('known');
+    } else if (e.code === "ArrowLeft") {
+      if (isFlipped) markResult('unknown');
+    }
+  };
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+}, [isFlipped, markResult]);
+
+// --- 使用JSME内置的InChI功能进行离线验证 ---
+// InChI是标准化的分子标识符，同一分子会生成相同的InChI
+const computeInchiFromSmiles = async (smiles, timeout = 5000) => {
+  return new Promise((resolve) => {
+    // 设置超时
+    const timer = setTimeout(() => {
+      console.warn('InChI计算超时');
+      resolve(null);
+    }, timeout);
+
+    if (!window.JSApplet) {
+      console.warn('JSApplet未定义');
+      clearTimeout(timer);
+      resolve(null);
+      return;
     }
 
-    // 所有方法都失败，判定为错误
-    console.log('✗ 所有比较方法都未能匹配');
-    setVerificationResult("incorrect");
+    if (!window.JSApplet.Inchi) {
+      console.warn('JSME InChI模块未加载，尝试加载...');
+      // InChI模块可能需要单独加载
+      clearTimeout(timer);
+      resolve(null);
+      return;
+    }
+
+    try {
+      // JSME的InChI计算是异步的
+      window.JSApplet.Inchi.computeInchi(smiles, (inchi) => {
+        clearTimeout(timer);
+        console.log('InChI计算结果:', inchi);
+        resolve(inchi || null);
+      });
+    } catch (e) {
+      console.warn('InChI计算异常:', e);
+      clearTimeout(timer);
+      resolve(null);
+      return; // Fixed: returned early
+    }
+  });
+};
+
+// 对SMILES进行排序规范化（简单的离线规范化）
+const sortSmiles = (smiles) => {
+  if (!smiles) return '';
+  // 移除立体化学标记
+  let s = smiles.replace(/@+/g, '').replace(/[\/\\]/g, '');
+  // 分割成片段，排序后重组
+  const fragments = s.split('.');
+  return fragments.map(f => f.toUpperCase()).sort().join('.');
+};
+
+// 从SMILES提取精确的分子式（用于比较）
+const extractMolecularFormula = (smiles) => {
+  if (!smiles) return {};
+  const counts = { C: 0, H: 0, N: 0, O: 0, S: 0, F: 0, Cl: 0, Br: 0, I: 0, P: 0 };
+
+  // 移除立体化学标记和电荷
+  let s = smiles.replace(/@+/g, '').replace(/[\/\\]/g, '');
+
+  // 计算双键和环的数量（会影响氢原子数）
+  let doubleBonds = (s.match(/=/g) || []).length;
+  let tripleBonds = (s.match(/#/g) || []).length;
+  let rings = 0;
+  for (let i = 1; i <= 9; i++) {
+    const ringMatches = s.match(new RegExp(i.toString(), 'g')) || [];
+    rings += Math.floor(ringMatches.length / 2);
+  }
+
+  // 计算各原子数量
+  // 处理 Cl 和 Br（两个字符的原子）
+  const clMatches = s.match(/Cl/gi) || [];
+  counts.Cl = clMatches.length;
+  s = s.replace(/Cl/gi, '');
+
+  const brMatches = s.match(/Br/gi) || [];
+  counts.Br = brMatches.length;
+  s = s.replace(/Br/gi, '');
+
+  // 单字符原子
+  counts.C = (s.match(/c/gi) || []).length;
+  counts.N = (s.match(/n/gi) || []).length;
+  counts.O = (s.match(/o/gi) || []).length;
+  counts.S = (s.match(/s/gi) || []).length;
+  counts.F = (s.match(/F/gi) || []).length;
+  counts.I = (s.match(/I/gi) || []).length;
+  counts.P = (s.match(/P/gi) || []).length;
+
+  // 计算氢原子数（根据价态规则）
+  // 简化计算：不精确计算H，只比较重原子
+
+  return counts;
+};
+
+// 比较两个分子式是否相同
+const compareMolecularFormulas = (formula1, formula2) => {
+  const atoms = ['C', 'N', 'O', 'S', 'F', 'Cl', 'Br', 'I', 'P'];
+  for (const atom of atoms) {
+    if ((formula1[atom] || 0) !== (formula2[atom] || 0)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+// --- Offline Verification Logic ---
+const verifyStructureWithSmiles = async (smiles) => {
+  if (!currentCard || !smiles) {
+    return;
+  }
+  setUserSmiles(smiles);
+  setVerificationResult("loading");
+
+  const target = currentCard.smiles;
+
+  if (!target) {
+    setVerificationResult("error");
+    console.warn("No target SMILES found for this card");
+    return;
+  }
+
+  const userS = smiles.trim();
+  const targetS = target.trim();
+
+  console.log('=== SMILES验证开始 ===');
+  console.log('用户输入:', userS);
+  console.log('目标答案:', targetS);
+
+  // 统一的成功处理函数：显示"正确"提示后自动跳转下一张
+  const handleSuccess = (methodName) => {
+    console.log(`✓ ${methodName}匹配成功`);
+    setVerificationResult("correct");
+
+    // 1.2秒后自动标记为"认识"并切换到下一张
+    setTimeout(() => {
+      markResult('known');
+    }, 1200);
   };
 
-  const handleCheckDrawing = () => {
-    const applet = jsmeRef.current;
-    if (!applet) return;
-    verifyStructureWithSmiles(applet.smiles());
-  };
+  // 1. 精确匹配
+  if (userS === targetS) {
+    handleSuccess('精确');
+    return;
+  }
 
-  // --- Render Views ---
+  // 2. 忽略大小写和立体化学后比较
+  const userNorm = sortSmiles(userS);
+  const targetNorm = sortSmiles(targetS);
+  console.log('规范化后 - 用户:', userNorm);
+  console.log('规范化后 - 目标:', targetNorm);
 
-  if (currentView === 'home') {
-    return (
+  if (userNorm === targetNorm) {
+    handleSuccess('规范化');
+    return;
+  }
+
+  // 3. 比较分子式（处理芳香环格式差异）
+  const userFormula = extractMolecularFormula(userS);
+  const targetFormula = extractMolecularFormula(targetS);
+  console.log('分子式 - 用户:', JSON.stringify(userFormula));
+  console.log('分子式 - 目标:', JSON.stringify(targetFormula));
+
+  if (compareMolecularFormulas(userFormula, targetFormula)) {
+    handleSuccess('分子式');
+    return;
+  }
+
+  // 3. 尝试InChI比较
+  console.log('尝试InChI比较...');
+  try {
+    const [userInchi, targetInchi] = await Promise.all([
+      computeInchiFromSmiles(userS),
+      computeInchiFromSmiles(targetS)
+    ]);
+
+    console.log('用户InChI:', userInchi);
+    console.log('目标InChI:', targetInchi);
+
+    if (userInchi && targetInchi) {
+      // 比较InChI核心部分（忽略立体化学层）
+      const extractCore = (inchi) => {
+        if (!inchi) return '';
+        const parts = inchi.split('/');
+        return parts.slice(0, 4).join('/');
+      };
+
+      const userCore = extractCore(userInchi);
+      const targetCore = extractCore(targetInchi);
+      console.log('InChI核心 - 用户:', userCore);
+      console.log('InChI核心 - 目标:', targetCore);
+
+      if (userCore === targetCore) {
+        handleSuccess('InChI');
+        return;
+      }
+    } else {
+      console.warn('InChI计算失败或模块不可用');
+    }
+  } catch (e) {
+    console.error('InChI比较出错:', e);
+  }
+
+  // 所有方法都失败，判定为错误
+  console.log('✗ 所有比较方法都未能匹配');
+  setVerificationResult("incorrect");
+};
+
+const handleCheckDrawing = () => {
+  const applet = jsmeRef.current;
+  if (!applet) return;
+  verifyStructureWithSmiles(applet.smiles());
+};
+
+// --- Render Views ---
+
+if (currentView === 'home') {
+  return (
+    <>
       <MainMenu
         onSelectMode={enterMode}
         stats={stats}
@@ -2080,408 +2227,416 @@ function App() {
         chapters={chapters}
         realisticMode={realisticMode}
         onToggleRealisticMode={() => setRealisticMode(prev => !prev)}
+        onOpenSettings={() => setShowSettingsModal(true)}
       />
-    );
-  }
-
-  if (currentView === 'exam') {
-    return (
-      <ExamModeView
-        chapters={chapters}
-        allCards={allCards}
-        disabledDrugs={disabledDrugs}
-        onStartExam={(config) => {
-          setExamConfig(config);
-          setCurrentView('exam-test');
-        }}
-        onExit={() => setCurrentView('home')}
+      <DataManagementModal
+        isOpen={showSettingsModal}
+        onClose={() => setShowSettingsModal(false)}
+        onExport={handleExportData}
+        onImport={handleImportData}
       />
-    );
-  }
+    </>
+  );
+}
 
-  if (currentView === 'exam-test' && examConfig) {
-    return (
-      <ExamTestView
-        allCards={allCards.filter(c => !disabledDrugs.includes(c.id))}
-        config={examConfig}
-        getImagePath={getImagePath}
-        getRandomRotation={getRandomRotation}
-        onExit={() => {
-          setExamConfig(null);
-          setCurrentView('home');
-        }}
-      />
-    );
-  }
-
-  if (currentView === 'catalog') {
-    return (
-      <CatalogView
-        allCards={allCards}
-        chapters={chapters}
-        progress={progress}
-        onExit={() => setCurrentView('home')}
-        disabledDrugs={disabledDrugs}
-        onToggleDrug={toggleDrug}
-      />
-    );
-  }
-
-  if (!filteredCards.length) {
-    return (
-      <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-6 text-center">
-        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
-          <Flask size={64} weight="fill" className="text-indigo-300 mb-4 mx-auto" />
-          <h2 className="text-2xl font-bold text-slate-800 mb-2">暂无卡片</h2>
-          <p className="text-slate-500 mb-6">
-            {reviewWeakness
-              ? "太棒了！您目前没有标记为“不认识”的错题。"
-              : "当前筛选条件下没有找到卡片，请尝试调整章节或模式。"}
-          </p>
-          <button
-            onClick={() => { setReviewWeakness(false); setSelectedChapter("all"); }}
-            className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition"
-          >
-            重置所有筛选
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (currentView === 'learning') {
-    return (
-      <div className="min-h-screen bg-indigo-50">
-        <header className="bg-white px-4 py-3 shadow-sm flex items-center justify-between">
-          <button onClick={() => setCurrentView('home')} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"><CaretLeft size={24} /></button>
-          <div className="flex items-center gap-2">
-            <h1 className="font-bold text-slate-700">顺序学习</h1>
-            {realisticMode && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">拟真</span>}
-          </div>
-          <div className="w-10"></div>
-        </header>
-        <div className="h-[calc(100vh-64px)] overflow-hidden">
-          <LearningFlow
-            cards={filteredCards}
-            updateProgress={updateProgress}
-            onExit={() => setCurrentView('home')}
-            getImagePath={getImagePath}
-            realisticMode={realisticMode}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  if (currentView === 'review') {
-    return (
-      <div className="min-h-screen bg-purple-50">
-        <header className="bg-white px-4 py-3 shadow-sm flex items-center justify-between">
-          <button onClick={() => setCurrentView('home')} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"><CaretLeft size={24} /></button>
-          <div className="flex items-center gap-2">
-            <h1 className="font-bold text-slate-700">深度复习</h1>
-            {realisticMode && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">拟真</span>}
-          </div>
-          <div className="w-10"></div>
-        </header>
-        <div className="h-[calc(100vh-64px)] overflow-hidden">
-          <LearningFlow
-            cards={filteredCards}
-            initialReviewMode={true}
-            updateProgress={updateProgress}
-            onExit={() => setCurrentView('home')}
-            getImagePath={getImagePath}
-            realisticMode={realisticMode}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  // Fallback to Classic 'card' view (existing UI)
-  if (!currentCard) return <div className="min-h-screen flex items-center justify-center text-indigo-500">加载中...</div>;
-
-  const progressPercent = ((currentIndex + 1) / filteredCards.length) * 100;
-
-  const keyPoints = currentCard ? (KEY_POINTS_DB[currentCard.en] || KEY_POINTS_DB[currentCard.cn] || [
-    currentCard.type === 'master' ? "【掌握】结构、理化性质、体内代谢及临床用途" : "【熟悉】结构特点及临床用途",
-    "【提示】请参考教材详细内容"
-  ]) : [];
-
+if (currentView === 'exam') {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 font-sans">
+    <ExamModeView
+      chapters={chapters}
+      allCards={allCards}
+      disabledDrugs={disabledDrugs}
+      onStartExam={(config) => {
+        setExamConfig(config);
+        setCurrentView('exam-test');
+      }}
+      onExit={() => setCurrentView('home')}
+    />
+  );
+}
 
+if (currentView === 'exam-test' && examConfig) {
+  return (
+    <ExamTestView
+      allCards={allCards.filter(c => !disabledDrugs.includes(c.id))}
+      config={examConfig}
+      getImagePath={getImagePath}
+      getRandomRotation={getRandomRotation}
+      onExit={() => {
+        setExamConfig(null);
+        setCurrentView('home');
+      }}
+    />
+  );
+}
 
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-30 shadow-sm border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-4 py-3">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setCurrentView('home')} // Back to Menu
-                className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg transition"
-              >
-                <CaretLeft weight="bold" />
-              </button>
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-                <Flask weight="bold" className="text-xl" />
-              </div>
-              <h1 className="text-lg font-bold text-slate-800 tracking-tight">药化智能卡片 <span className="text-indigo-600 text-xs px-1.5 py-0.5 bg-indigo-100 rounded-full align-top ml-1">Pro Local</span></h1>
-            </div>
+if (currentView === 'catalog') {
+  return (
+    <CatalogView
+      allCards={allCards}
+      chapters={chapters}
+      progress={progress}
+      onExit={() => setCurrentView('home')}
+      disabledDrugs={disabledDrugs}
+      onToggleDrug={toggleDrug}
+    />
+  );
+}
 
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
-              <select
-                value={selectedChapter}
-                onChange={(e) => setSelectedChapter(e.target.value)}
-                className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm rounded-lg px-3 py-1.5 outline-none focus:ring-2 focus:ring-indigo-500/50 transition cursor-pointer appearance-none border-none min-w-[120px]"
-              >
-                <option value="all">📚 全书章节</option>
-                {chapters.map(ch => <option key={ch} value={ch}>{ch.split(" ")[0]}</option>)}
-              </select>
-
-              <select
-                value={studyMode}
-                onChange={(e) => setStudyMode(e.target.value)}
-                className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm rounded-lg px-3 py-1.5 outline-none focus:ring-2 focus:ring-indigo-500/50 transition cursor-pointer border-none"
-              >
-                <option value="mix">🔁 混合</option>
-                <option value="familiarize">👀 识图</option>
-                <option value="master">✏️ 默写</option>
-              </select>
-
-              <button
-                onClick={() => setReviewWeakness(!reviewWeakness)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition whitespace-nowrap ${reviewWeakness ? 'bg-amber-100 text-amber-700 ring-2 ring-amber-200' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
-              >
-                <WarningCircle weight="fill" /> 只看错题
-              </button>
-            </div>
-          </div>
-          <div className="w-full bg-slate-200 h-1 mt-3 rounded-full overflow-hidden">
-            <div className="bg-indigo-500 h-full transition-all duration-500 ease-out" style={{ width: `${progressPercent}%` }}></div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col items-center justify-center p-4 md:p-6 w-full mx-auto max-w-[1600px] transition-all duration-500">
-        <div className={`w-full flex flex-col lg:flex-row items-center ${showKeyPoints ? 'lg:items-start' : 'justify-center'} gap-6 transition-all duration-500 ${showKeyPoints ? 'max-w-full' : 'max-w-6xl mx-auto'}`}>
-
-          {/* Card Container */}
-          <div className={`relative w-full ${showKeyPoints ? 'lg:flex-1' : 'max-w-4xl'} aspect-[3/4] sm:aspect-[4/3] perspective-1000 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'} transition-all duration-500 ease-in-out`}>
-            <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d shadow-2xl rounded-3xl ${isFlipped ? "rotate-y-180" : ""}`}>
-
-              {/* --- Front --- */}
-              <div className="absolute w-full h-full bg-white rounded-3xl backface-hidden flex flex-col border border-slate-100 overflow-hidden">
-                <div className="p-4 flex justify-between items-start border-b border-slate-50 bg-slate-50/50">
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase ${currentCard.type === "master" ? "bg-amber-100 text-amber-700" : "bg-sky-100 text-sky-700"}`}>
-                    {currentCard.type === "master" ? "默写模式" : "识图模式"}
-                  </span>
-                  <div className="flex flex-col items-end">
-                    <span className="text-xs text-slate-400 font-medium">{currentCard.chapter.split(" ")[0]}</span>
-                    <span className="text-xs text-slate-300">Card {currentIndex + 1} / {filteredCards.length}</span>
-                  </div>
-                </div>
-
-                <div className="flex-grow relative flex flex-col items-center justify-center p-4 w-full h-full">
-                  {currentCard.type === "familiarize" ? (
-                    /* Changed Container and Image style for perfect fit */
-                    <div className="w-full h-full flex items-center justify-center p-2 relative">
-                      <img
-                        src={currentCard.image}
-                        alt="Structure"
-                        className="w-full h-full object-contain"
-                        onError={(e) => { e.currentTarget.style.opacity = 0.3; e.currentTarget.alt = "Image not found"; }}
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <div className="text-center mb-4 flex-shrink-0">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-800">{currentCard.cn}</h2>
-                        <p className="text-sm text-slate-400 font-mono mt-1">{currentCard.en}</p>
-                      </div>
-
-                      {/* Editor Container - Enhanced Height */}
-                      <div className="w-full flex-grow relative border-2 border-slate-100 rounded-xl bg-slate-50 overflow-hidden shadow-inner group min-h-[300px]">
-                        {showEditor ? (
-                          <JSMEEditor
-                            key={currentCard.id}
-                            id={`jsme_${currentCard.id}`}
-                            onReady={(applet) => { jsmeRef.current = applet; }}
-                            onSmilesChange={(s) => setUserSmiles(s)}
-                          />
-                        ) : (
-                          <div className="flex items-center justify-center h-full text-slate-400 gap-2">
-                            <Spinner className="animate-spin text-xl" /> 加载画布...
-                          </div>
-                        )}
-
-                        {/* Verification Overlay */}
-                        {verificationResult && (
-                          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-20 fade-in">
-                            {verificationResult === "loading" && (
-                              <div className="text-indigo-600 flex flex-col items-center">
-                                <Spinner className="animate-spin text-4xl mb-2" />
-                                <p className="font-medium">AI 正在验证...</p>
-                              </div>
-                            )}
-                            {verificationResult === "correct" && (
-                              <div className="text-emerald-500 flex flex-col items-center">
-                                <CheckCircle weight="fill" className="text-6xl mb-2 scale-110" />
-                                <p className="font-bold text-xl">回答正确！</p>
-                              </div>
-                            )}
-                            {verificationResult === "incorrect" && (
-                              <div className="text-rose-500 flex flex-col items-center">
-                                <XCircle weight="fill" className="text-6xl mb-2" />
-                                <p className="font-bold text-xl">结构不匹配</p>
-                                <button onClick={() => setVerificationResult(null)} className="mt-4 px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full text-sm font-medium transition">
-                                  再试一次
-                                </button>
-                              </div>
-                            )}
-                            {verificationResult === "error" && (
-                              <div className="text-amber-600 flex flex-col items-center text-center px-6">
-                                <Warning weight="fill" className="text-4xl mb-2" />
-                                <p>缺少标准数据，无法自动验证</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="p-4 bg-slate-50 border-t border-slate-100 flex justify-center flex-shrink-0">
-                  {currentCard.type === "master" ? (
-                    <div className="flex gap-3">
-                      <button
-                        onClick={handleCheckDrawing}
-                        disabled={verificationResult === "loading" || verificationResult === "correct"}
-                        className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-white shadow-lg shadow-indigo-200 transform hover:-translate-y-0.5 transition-all
-                        ${verificationResult === "correct" ? "bg-emerald-500" : "bg-indigo-600 hover:bg-indigo-700"} 
-                        disabled:opacity-70 disabled:cursor-not-allowed`}
-                      >
-                        <Check weight="bold" /> 提交验证
-                      </button>
-                      <button
-                        onClick={() => setIsFlipped(true)}
-                        className="px-4 py-2.5 rounded-xl font-medium text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition"
-                      >
-                        跳过，看答案
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => setIsFlipped(true)}
-                      className="w-full py-3 rounded-xl bg-white border border-indigo-100 text-indigo-600 font-bold hover:bg-indigo-50 hover:shadow-md transition-all flex items-center justify-center gap-2"
-                    >
-                      <Eye weight="bold" /> 点击查看答案 (Space)
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* --- Back --- */}
-              <div className="absolute w-full h-full bg-slate-800 text-white rounded-3xl backface-hidden rotate-y-180 flex flex-col overflow-hidden shadow-2xl ring-1 ring-white/10">
-                <div className="p-6 text-center border-b border-white/10 bg-slate-900/50 flex-shrink-0">
-                  <h2 className="text-2xl font-bold text-indigo-300 mb-1">{currentCard.cn}</h2>
-                  <p className="text-slate-400 font-mono text-sm">{currentCard.en}</p>
-                </div>
-
-                <div className="flex-grow flex items-center justify-center p-6 bg-white mx-4 my-4 rounded-xl shadow-inner overflow-hidden">
-                  <img
-                    src={currentCard.image}
-                    alt="Structure Answer"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-
-                <div className="px-6 pb-2 text-center text-slate-400 text-sm flex-shrink-0">
-                  {currentCard.type === "master" && <p className="mb-2">仔细观察与您画的有何不同？</p>}
-                  <p className="opacity-60 text-xs mt-4">← 左键忘 / 右键记 →</p>
-
-                  <button
-                    onClick={(e) => { e.stopPropagation(); setShowKeyPoints(!showKeyPoints); }}
-                    className={`mt-4 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 justify-center transition mx-auto ${showKeyPoints ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 hover:text-white'}`}
-                  >
-                    <BookOpen weight="bold" /> {showKeyPoints ? "关闭考点要求" : "查看考点要求"}
-                  </button>
-                </div>
-
-                <button
-                  onClick={() => setIsFlipped(false)}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-white/70 hover:text-white transition"
-                >
-                  <ArrowCounterClockwise weight="bold" />
-                </button>
-
-                <div className="p-4 grid grid-cols-2 gap-4 bg-slate-900/50 flex-shrink-0">
-                  <button
-                    onClick={() => markResult('unknown')}
-                    className="flex flex-col items-center justify-center py-3 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 transition group"
-                  >
-                    <XCircle weight="fill" className="text-2xl mb-1 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold">不认识 / 错了</span>
-                  </button>
-                  <button
-                    onClick={() => markResult('known')}
-                    className="flex flex-col items-center justify-center py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 hover:text-emerald-300 border border-emerald-500/20 transition group"
-                  >
-                    <CheckCircle weight="fill" className="text-2xl mb-1 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold">记住了 / 正确</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Side Panel for Key Points */}
-          {showKeyPoints && (
-            <div className="w-full lg:w-96 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 flex flex-col overflow-hidden animate-slide-in-right h-auto self-stretch max-h-[80vh] lg:max-h-auto flex-shrink-0 transition-all duration-500">
-              <div className="p-5 border-b border-slate-100 bg-white/50 flex justify-between items-center">
-                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                  <BookOpen className="text-indigo-600" weight="fill" /> 考点要求
-                </h3>
-                <button onClick={() => setShowKeyPoints(false)} className="text-slate-400 hover:text-slate-600 p-1.5 hover:bg-black/5 rounded-full transition">
-                  <X size={20} weight="bold" />
-                </button>
-              </div>
-
-              <div className="p-5 overflow-y-auto custom-scrollbar flex-grow space-y-4">
-                <div className="bg-slate-50/80 rounded-xl p-3 border border-slate-100 mb-2">
-                  <h4 className="text-sm font-bold text-slate-700 mb-1">{currentCard.cn}</h4>
-                  <p className="text-xs text-slate-400 font-mono">{currentCard.en}</p>
-                </div>
-
-                {keyPoints.map((point, idx) => (
-                  <div key={idx} className="flex gap-3 items-start group">
-                    <span className="text-indigo-400 font-bold text-lg mt-0 leading-none group-hover:text-indigo-600 transition-colors">•</span>
-                    <p className="text-slate-600 text-sm leading-relaxed font-medium border-b border-slate-50 pb-2 w-full group-hover:text-slate-800 transition-colors">
-                      {point}
-                    </p>
-                  </div>
-                ))}
-
-                <div className="pt-4 mt-2 border-t border-dashed border-slate-200">
-                  <p className="text-xs text-slate-400 text-center">
-                    {currentCard.type === 'master' ? '重点掌握药物，请结合教材深入复习' : '熟悉药物，主要掌握结构特征与用途'}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        <div className="mt-8 text-xs text-slate-400 hidden md:flex gap-6">
-          <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">Space</kbd> 翻页</span>
-          <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">←</kbd> 不认识</span>
-          <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">→</kbd> 认识</span>
-        </div>
-      </main>
+if (!filteredCards.length) {
+  return (
+    <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-6 text-center">
+      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
+        <Flask size={64} weight="fill" className="text-indigo-300 mb-4 mx-auto" />
+        <h2 className="text-2xl font-bold text-slate-800 mb-2">暂无卡片</h2>
+        <p className="text-slate-500 mb-6">
+          {reviewWeakness
+            ? "太棒了！您目前没有标记为“不认识”的错题。"
+            : "当前筛选条件下没有找到卡片，请尝试调整章节或模式。"}
+        </p>
+        <button
+          onClick={() => { setReviewWeakness(false); setSelectedChapter("all"); }}
+          className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition"
+        >
+          重置所有筛选
+        </button>
+      </div>
     </div>
   );
+}
+
+if (currentView === 'learning') {
+  return (
+    <div className="min-h-screen bg-indigo-50">
+      <header className="bg-white px-4 py-3 shadow-sm flex items-center justify-between">
+        <button onClick={() => setCurrentView('home')} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"><CaretLeft size={24} /></button>
+        <div className="flex items-center gap-2">
+          <h1 className="font-bold text-slate-700">顺序学习</h1>
+          {realisticMode && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">拟真</span>}
+        </div>
+        <div className="w-10"></div>
+      </header>
+      <div className="h-[calc(100vh-64px)] overflow-hidden">
+        <LearningFlow
+          cards={filteredCards}
+          updateProgress={updateProgress}
+          onExit={() => setCurrentView('home')}
+          getImagePath={getImagePath}
+          realisticMode={realisticMode}
+        />
+      </div>
+    </div>
+  );
+}
+
+if (currentView === 'review') {
+  return (
+    <div className="min-h-screen bg-purple-50">
+      <header className="bg-white px-4 py-3 shadow-sm flex items-center justify-between">
+        <button onClick={() => setCurrentView('home')} className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"><CaretLeft size={24} /></button>
+        <div className="flex items-center gap-2">
+          <h1 className="font-bold text-slate-700">深度复习</h1>
+          {realisticMode && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">拟真</span>}
+        </div>
+        <div className="w-10"></div>
+      </header>
+      <div className="h-[calc(100vh-64px)] overflow-hidden">
+        <LearningFlow
+          cards={filteredCards}
+          initialReviewMode={true}
+          updateProgress={updateProgress}
+          onExit={() => setCurrentView('home')}
+          getImagePath={getImagePath}
+          realisticMode={realisticMode}
+        />
+      </div>
+    </div>
+  );
+}
+
+// Fallback to Classic 'card' view (existing UI)
+if (!currentCard) return <div className="min-h-screen flex items-center justify-center text-indigo-500">加载中...</div>;
+
+const progressPercent = ((currentIndex + 1) / filteredCards.length) * 100;
+
+const keyPoints = currentCard ? (KEY_POINTS_DB[currentCard.en] || KEY_POINTS_DB[currentCard.cn] || [
+  currentCard.type === 'master' ? "【掌握】结构、理化性质、体内代谢及临床用途" : "【熟悉】结构特点及临床用途",
+  "【提示】请参考教材详细内容"
+]) : [];
+
+return (
+  <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 font-sans">
+
+
+    {/* Header */}
+    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-30 shadow-sm border-b border-slate-100">
+      <div className="max-w-5xl mx-auto px-4 py-3">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setCurrentView('home')} // Back to Menu
+              className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg transition"
+            >
+              <CaretLeft weight="bold" />
+            </button>
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+              <Flask weight="bold" className="text-xl" />
+            </div>
+            <h1 className="text-lg font-bold text-slate-800 tracking-tight">药化智能卡片 <span className="text-indigo-600 text-xs px-1.5 py-0.5 bg-indigo-100 rounded-full align-top ml-1">Pro Local</span></h1>
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
+            <select
+              value={selectedChapter}
+              onChange={(e) => setSelectedChapter(e.target.value)}
+              className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm rounded-lg px-3 py-1.5 outline-none focus:ring-2 focus:ring-indigo-500/50 transition cursor-pointer appearance-none border-none min-w-[120px]"
+            >
+              <option value="all">📚 全书章节</option>
+              {chapters.map(ch => <option key={ch} value={ch}>{ch.split(" ")[0]}</option>)}
+            </select>
+
+            <select
+              value={studyMode}
+              onChange={(e) => setStudyMode(e.target.value)}
+              className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm rounded-lg px-3 py-1.5 outline-none focus:ring-2 focus:ring-indigo-500/50 transition cursor-pointer border-none"
+            >
+              <option value="mix">🔁 混合</option>
+              <option value="familiarize">👀 识图</option>
+              <option value="master">✏️ 默写</option>
+            </select>
+
+            <button
+              onClick={() => setReviewWeakness(!reviewWeakness)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition whitespace-nowrap ${reviewWeakness ? 'bg-amber-100 text-amber-700 ring-2 ring-amber-200' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+            >
+              <WarningCircle weight="fill" /> 只看错题
+            </button>
+          </div>
+        </div>
+        <div className="w-full bg-slate-200 h-1 mt-3 rounded-full overflow-hidden">
+          <div className="bg-indigo-500 h-full transition-all duration-500 ease-out" style={{ width: `${progressPercent}%` }}></div>
+        </div>
+      </div>
+    </header>
+
+    {/* Main Content */}
+    <main className="flex-grow flex flex-col items-center justify-center p-4 md:p-6 w-full mx-auto max-w-[1600px] transition-all duration-500">
+      <div className={`w-full flex flex-col lg:flex-row items-center ${showKeyPoints ? 'lg:items-start' : 'justify-center'} gap-6 transition-all duration-500 ${showKeyPoints ? 'max-w-full' : 'max-w-6xl mx-auto'}`}>
+
+        {/* Card Container */}
+        <div className={`relative w-full ${showKeyPoints ? 'lg:flex-1' : 'max-w-4xl'} aspect-[3/4] sm:aspect-[4/3] perspective-1000 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'} transition-all duration-500 ease-in-out`}>
+          <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d shadow-2xl rounded-3xl ${isFlipped ? "rotate-y-180" : ""}`}>
+
+            {/* --- Front --- */}
+            <div className="absolute w-full h-full bg-white rounded-3xl backface-hidden flex flex-col border border-slate-100 overflow-hidden">
+              <div className="p-4 flex justify-between items-start border-b border-slate-50 bg-slate-50/50">
+                <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase ${currentCard.type === "master" ? "bg-amber-100 text-amber-700" : "bg-sky-100 text-sky-700"}`}>
+                  {currentCard.type === "master" ? "默写模式" : "识图模式"}
+                </span>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs text-slate-400 font-medium">{currentCard.chapter.split(" ")[0]}</span>
+                  <span className="text-xs text-slate-300">Card {currentIndex + 1} / {filteredCards.length}</span>
+                </div>
+              </div>
+
+              <div className="flex-grow relative flex flex-col items-center justify-center p-4 w-full h-full">
+                {currentCard.type === "familiarize" ? (
+                  /* Changed Container and Image style for perfect fit */
+                  <div className="w-full h-full flex items-center justify-center p-2 relative">
+                    <img
+                      src={currentCard.image}
+                      alt="Structure"
+                      className="w-full h-full object-contain"
+                      onError={(e) => { e.currentTarget.style.opacity = 0.3; e.currentTarget.alt = "Image not found"; }}
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center">
+                    <div className="text-center mb-4 flex-shrink-0">
+                      <h2 className="text-2xl md:text-3xl font-bold text-slate-800">{currentCard.cn}</h2>
+                      <p className="text-sm text-slate-400 font-mono mt-1">{currentCard.en}</p>
+                    </div>
+
+                    {/* Editor Container - Enhanced Height */}
+                    <div className="w-full flex-grow relative border-2 border-slate-100 rounded-xl bg-slate-50 overflow-hidden shadow-inner group min-h-[300px]">
+                      {showEditor ? (
+                        <JSMEEditor
+                          key={currentCard.id}
+                          id={`jsme_${currentCard.id}`}
+                          onReady={(applet) => { jsmeRef.current = applet; }}
+                          onSmilesChange={(s) => setUserSmiles(s)}
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center h-full text-slate-400 gap-2">
+                          <Spinner className="animate-spin text-xl" /> 加载画布...
+                        </div>
+                      )}
+
+                      {/* Verification Overlay */}
+                      {verificationResult && (
+                        <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-20 fade-in">
+                          {verificationResult === "loading" && (
+                            <div className="text-indigo-600 flex flex-col items-center">
+                              <Spinner className="animate-spin text-4xl mb-2" />
+                              <p className="font-medium">AI 正在验证...</p>
+                            </div>
+                          )}
+                          {verificationResult === "correct" && (
+                            <div className="text-emerald-500 flex flex-col items-center">
+                              <CheckCircle weight="fill" className="text-6xl mb-2 scale-110" />
+                              <p className="font-bold text-xl">回答正确！</p>
+                            </div>
+                          )}
+                          {verificationResult === "incorrect" && (
+                            <div className="text-rose-500 flex flex-col items-center">
+                              <XCircle weight="fill" className="text-6xl mb-2" />
+                              <p className="font-bold text-xl">结构不匹配</p>
+                              <button onClick={() => setVerificationResult(null)} className="mt-4 px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full text-sm font-medium transition">
+                                再试一次
+                              </button>
+                            </div>
+                          )}
+                          {verificationResult === "error" && (
+                            <div className="text-amber-600 flex flex-col items-center text-center px-6">
+                              <Warning weight="fill" className="text-4xl mb-2" />
+                              <p>缺少标准数据，无法自动验证</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="p-4 bg-slate-50 border-t border-slate-100 flex justify-center flex-shrink-0">
+                {currentCard.type === "master" ? (
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handleCheckDrawing}
+                      disabled={verificationResult === "loading" || verificationResult === "correct"}
+                      className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-white shadow-lg shadow-indigo-200 transform hover:-translate-y-0.5 transition-all
+                        ${verificationResult === "correct" ? "bg-emerald-500" : "bg-indigo-600 hover:bg-indigo-700"} 
+                        disabled:opacity-70 disabled:cursor-not-allowed`}
+                    >
+                      <Check weight="bold" /> 提交验证
+                    </button>
+                    <button
+                      onClick={() => setIsFlipped(true)}
+                      className="px-4 py-2.5 rounded-xl font-medium text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition"
+                    >
+                      跳过，看答案
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setIsFlipped(true)}
+                    className="w-full py-3 rounded-xl bg-white border border-indigo-100 text-indigo-600 font-bold hover:bg-indigo-50 hover:shadow-md transition-all flex items-center justify-center gap-2"
+                  >
+                    <Eye weight="bold" /> 点击查看答案 (Space)
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* --- Back --- */}
+            <div className="absolute w-full h-full bg-slate-800 text-white rounded-3xl backface-hidden rotate-y-180 flex flex-col overflow-hidden shadow-2xl ring-1 ring-white/10">
+              <div className="p-6 text-center border-b border-white/10 bg-slate-900/50 flex-shrink-0">
+                <h2 className="text-2xl font-bold text-indigo-300 mb-1">{currentCard.cn}</h2>
+                <p className="text-slate-400 font-mono text-sm">{currentCard.en}</p>
+              </div>
+
+              <div className="flex-grow flex items-center justify-center p-6 bg-white mx-4 my-4 rounded-xl shadow-inner overflow-hidden">
+                <img
+                  src={currentCard.image}
+                  alt="Structure Answer"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="px-6 pb-2 text-center text-slate-400 text-sm flex-shrink-0">
+                {currentCard.type === "master" && <p className="mb-2">仔细观察与您画的有何不同？</p>}
+                <p className="opacity-60 text-xs mt-4">← 左键忘 / 右键记 →</p>
+
+                <button
+                  onClick={(e) => { e.stopPropagation(); setShowKeyPoints(!showKeyPoints); }}
+                  className={`mt-4 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 justify-center transition mx-auto ${showKeyPoints ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 hover:text-white'}`}
+                >
+                  <BookOpen weight="bold" /> {showKeyPoints ? "关闭考点要求" : "查看考点要求"}
+                </button>
+              </div>
+
+              <button
+                onClick={() => setIsFlipped(false)}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full text-white/70 hover:text-white transition"
+              >
+                <ArrowCounterClockwise weight="bold" />
+              </button>
+
+              <div className="p-4 grid grid-cols-2 gap-4 bg-slate-900/50 flex-shrink-0">
+                <button
+                  onClick={() => markResult('unknown')}
+                  className="flex flex-col items-center justify-center py-3 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 transition group"
+                >
+                  <XCircle weight="fill" className="text-2xl mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-bold">不认识 / 错了</span>
+                </button>
+                <button
+                  onClick={() => markResult('known')}
+                  className="flex flex-col items-center justify-center py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 hover:text-emerald-300 border border-emerald-500/20 transition group"
+                >
+                  <CheckCircle weight="fill" className="text-2xl mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-bold">记住了 / 正确</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Side Panel for Key Points */}
+        {showKeyPoints && (
+          <div className="w-full lg:w-96 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 flex flex-col overflow-hidden animate-slide-in-right h-auto self-stretch max-h-[80vh] lg:max-h-auto flex-shrink-0 transition-all duration-500">
+            <div className="p-5 border-b border-slate-100 bg-white/50 flex justify-between items-center">
+              <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                <BookOpen className="text-indigo-600" weight="fill" /> 考点要求
+              </h3>
+              <button onClick={() => setShowKeyPoints(false)} className="text-slate-400 hover:text-slate-600 p-1.5 hover:bg-black/5 rounded-full transition">
+                <X size={20} weight="bold" />
+              </button>
+            </div>
+
+            <div className="p-5 overflow-y-auto custom-scrollbar flex-grow space-y-4">
+              <div className="bg-slate-50/80 rounded-xl p-3 border border-slate-100 mb-2">
+                <h4 className="text-sm font-bold text-slate-700 mb-1">{currentCard.cn}</h4>
+                <p className="text-xs text-slate-400 font-mono">{currentCard.en}</p>
+              </div>
+
+              {keyPoints.map((point, idx) => (
+                <div key={idx} className="flex gap-3 items-start group">
+                  <span className="text-indigo-400 font-bold text-lg mt-0 leading-none group-hover:text-indigo-600 transition-colors">•</span>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium border-b border-slate-50 pb-2 w-full group-hover:text-slate-800 transition-colors">
+                    {point}
+                  </p>
+                </div>
+              ))}
+
+              <div className="pt-4 mt-2 border-t border-dashed border-slate-200">
+                <p className="text-xs text-slate-400 text-center">
+                  {currentCard.type === 'master' ? '重点掌握药物，请结合教材深入复习' : '熟悉药物，主要掌握结构特征与用途'}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-8 text-xs text-slate-400 hidden md:flex gap-6">
+        <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">Space</kbd> 翻页</span>
+        <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">←</kbd> 不认识</span>
+        <span className="flex items-center gap-1"><kbd className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-sans shadow-sm">→</kbd> 认识</span>
+      </div>
+    </main>
+  </div>
+);
 }
 
 export default App;
