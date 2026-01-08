@@ -1,0 +1,528 @@
+非药化专业 SMILES 核查报告
+================================================================================
+核查时间: 2026-01-08 13:31:43
+数据库: PubChem, NCI CACTUS, ChEMBL
+
+统计结果:
+  多源验证通过: 77 个
+  部分验证: 1 个
+  存在不匹配: 53 个
+  未找到参考: 1 个
+  无 SMILES: 0 个
+
+================================================================================
+问题药物详情:
+================================================================================
+
+【马罗匹坦】Maropitant
+  当前 SMILES: CC(C)C1=C(C=C(F)C=C1)C(CC(=O)NC1CCC(C)C(N2CCOCC2)C1)C1=CC=CC=N1
+  当前分子式: C28H38FN3O2
+  当前 InChI Key: HKLPGXIRICNDHN-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C28H38FN3O2 vs C32H40N2O
+  ChEMBL SMILES: COc1ccc(C(C)(C)C)cc1CN[C@H]1C2CCN(CC2)[C@H]1C(c1ccccc1)c1ccccc1
+
+【西咪替丁】Cimetidine
+  当前 SMILES: CN=C(NCCSCc1nc[nH]c1C)NC#N
+  当前分子式: C10H16N6S
+  当前 InChI Key: AQIXAKUUQRKLND-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C10H16N6S vs C10H17ClN6S
+  ChEMBL SMILES: CN/C(=N\CCSCc1nc[nH]c1C)NC#N.Cl
+
+【雷尼替丁】Ranitidine
+  当前 SMILES: CNC(/NCCSCc1oc(CN(C)C)cc1)=C\[N+]([O-])=O
+  当前分子式: C13H22N4O3S
+  当前 InChI Key: VMXUWOKSQNHOCA-UKTHLTGXSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C13H22N4O3S vs C13H23ClN4O3S
+  ChEMBL SMILES: CNC(=C[N+](=O)[O-])NCCSCc1ccc(CN(C)C)o1.Cl
+
+【昂丹司琼】Ondansetron
+  当前 SMILES: Cn1c2CCC(Cn3ccnc3C)C(=O)c2c4ccccc14
+  当前分子式: C18H19N3O
+  当前 InChI Key: FELGMEQIXOGIFQ-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C18H19N3O vs C18H20ClN3O
+  ChEMBL SMILES: Cc1nccn1CC1CCc2c(c3ccccc3n2C)C1=O.Cl
+
+【莫沙必利】Mosapride
+  当前 SMILES: CCOc1cc(N)c(Cl)cc1C(=O)NCC2CN(CCO2)Cc3ccc(F)cc3
+  当前分子式: C21H25ClFN3O3
+  当前 InChI Key: YPELFRMCRYSPKZ-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C21H25ClFN3O3 vs C27H33ClFN3O10
+  ChEMBL SMILES: CCOc1cc(N)c(Cl)cc1C(=O)NCC1CN(Cc2ccc(F)cc2)CCO1.O=C(O)CC(O)(CC(=O)O)C(=O)O
+
+【吡罗昔康】Piroxicam
+  当前 SMILES: CN1C(=C(/O)Nc2ccccn2)/C(=O)c3ccccc3[S]1(=O)=O
+  当前分子式: C15H13N3O4S
+  当前 InChI Key: LDJVNWFKNMYYNT-FYWRMAATSA-N
+  问题: ChEMBL 不匹配: 分子式相同但结构不同
+  ChEMBL SMILES: CN1C(C(=O)Nc2ccccn2)=C(O)c2ccccc2S1(=O)=O
+
+【替诺昔康】Tenoxicam
+  当前 SMILES: CN1C(=C(\O)Nc2ccccn2)/C(=O)c3sccc3[S]1(=O)=O
+  当前分子式: C13H11N3O4S2
+  当前 InChI Key: WZWYJBNHTWCXIM-RAXLEYEMSA-N
+  问题: ChEMBL 不匹配: 分子式相同但结构不同
+  ChEMBL SMILES: CN1C(C(=O)Nc2ccccn2)=C(O)c2sccc2S1(=O)=O
+
+【对乙酰氨基酚】Acetaminophen
+  当前 SMILES: CC(=O)Nc1ccc(O)cc1
+  当前分子式: C8H9NO2
+  当前 InChI Key: RZVAJINKPMORJF-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C8H9NO2 vs C14H17NO8
+  ChEMBL SMILES: CC(=O)Nc1ccc(O[C@@H]2O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]2O)cc1
+
+【吲哚美辛】Indomethacin
+  当前 SMILES: COc1ccc2n(c(C)c(CC(O)=O)c2c1)C(=O)c3ccc(Cl)cc3
+  当前分子式: C19H16ClNO4
+  当前 InChI Key: CGIGDMFJXJATDK-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C19H16ClNO4 vs C19H21ClNNaO7
+  ChEMBL SMILES: COc1ccc2c(c1)c(CC(=O)[O-])c(C)n2C(=O)c1ccc(Cl)cc1.O.O.O.[Na+]
+
+【双氯芬酸钠】Diclofenac Sodium
+  当前 SMILES: OC(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl
+  当前分子式: C14H11Cl2NO2
+  当前 InChI Key: DCOPUUMXTXDBNB-UHFFFAOYSA-N
+  问题: NCI CACTUS 不匹配: 分子式不同: C14H11Cl2NO2 vs C14H10Cl2NNaO2
+  问题: ChEMBL 不匹配: 分子式不同: C14H11Cl2NO2 vs C14H10Cl2NNaO2
+  NCI SMILES: [Na+].[O-]C(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl
+  ChEMBL SMILES: O=C([O-])Cc1ccccc1Nc1c(Cl)cccc1Cl.[Na+]
+
+【美洛昔康】Meloxicam
+  当前 SMILES: CN1C(=C(/O)Nc2sc(C)cn2)/C(=O)c3ccccc3[S]1(=O)=O
+  当前分子式: C14H13N3O4S2
+  当前 InChI Key: DWMREKMVXIFPFM-ACCUITESSA-N
+  问题: ChEMBL 不匹配: 分子式相同但结构不同
+  ChEMBL SMILES: Cc1cnc(NC(=O)C2=C(O)c3ccccc3S(=O)(=O)N2C)s1
+
+【羟喜树碱】Hydroxycamptothecin
+  当前 SMILES: CC[C@@]1(O)C(=O)OCC2=C1C=C3N(Cc4cc5cc(O)ccc5nc34)C2=O
+  当前分子式: C20H16N2O5
+  当前 InChI Key: HAWSQZCWOQZXHI-FQEVSTJZSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C20H16N2O5 vs C22H20N2O5S
+  ChEMBL SMILES: CC[C@@]1(O)C(=O)OCc2c1cc1n(c2=O)Cc2cc3c(CSC)c(O)ccc3nc2-1
+
+【伊立替康】Irinotecan
+  当前 SMILES: CCc1c2CN3C(=O)C4=C(C=C3c2nc5ccc(OC(=O)N6CCC(CC6)N7CCCCC7)cc15)[C@@](O)(CC)C(=O)OC4
+  当前分子式: C33H38N4O6
+  当前 InChI Key: UWKQSNNFCGGAFS-XIFFEERXSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C33H38N4O6 vs C33H45ClN4O9
+  ChEMBL SMILES: CCc1c2c(nc3ccc(OC(=O)N4CCC(N5CCCCC5)CC4)cc13)-c1cc3c(c(=O)n1C2)COC(=O)[C@]3(O)CC.Cl.O.O.O
+
+【奥希替尼】Osimertinib
+  当前 SMILES: COC1=C(NC2=NC=CC(=N2)C2=CN(C)C3=CC=CC=C23)C=C(NC(=O)C=C)C(C)=C1NC1=NC=CC(N(C)CCN(C)C)=N1
+  当前分子式: C33H38N10O2
+  当前 InChI Key: DJVKYXYSFFRYSQ-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C33H38N10O2 vs C29H37N7O5S
+  ChEMBL SMILES: C=CC(=O)Nc1cc(Nc2nccc(-c3cn(C)c4ccccc34)n2)c(OC)cc1N(C)CCN(C)C.CS(=O)(=O)O
+
+【西达本胺】Chidamide
+  当前 SMILES: FC1=CC(N)=C(NC(C2=CC=C(CNC(/C=C/C3=CC=CN=C3)=O)C=C2)=O)C=C1
+  当前分子式: C22H19FN4O2
+  当前 InChI Key: SZMJVTADHFNAIS-BJMVGYQFSA-N
+  问题: ChEMBL 不匹配: 分子式相同但结构不同
+  ChEMBL SMILES: Nc1ccc(F)cc1NC(=O)c1ccc(CNC(=O)/C=C/c2cccnc2)cc1
+
+【环磷酰胺】Cyclophosphamide
+  当前 SMILES: ClCCN(CCCl)[P]1(=O)NCCCO1
+  当前分子式: C7H15Cl2N2O2P
+  当前 InChI Key: CMSMOCZEIVJLDB-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C7H15Cl2N2O2P vs C7H17Cl2N2O3P
+  ChEMBL SMILES: O.O=P1(N(CCCl)CCCl)NCCCO1
+
+【顺铂】Cisplatin
+  当前 SMILES: Cl[Pt](Cl)(N)N
+  当前分子式: H4Cl2N2Pt
+  当前 InChI Key: DQLATGHUWYMOKM-UHFFFAOYSA-L
+  问题: NCI CACTUS 不匹配: 分子式不同: H4Cl2N2Pt vs H6Cl2N2Pt
+  NCI SMILES: N.N.[Cl-].[Cl-].[Pt++]
+
+【阿糖胞苷】Cytarabine
+  当前 SMILES: NC1=NC(=O)N(C=C1)[C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O
+  当前分子式: C9H13N3O5
+  当前 InChI Key: UHDGCWIWMRVCDJ-CCXZUQQUSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C9H13N3O5 vs C68H104N10O19
+  ChEMBL SMILES: CC[C@H](C)[C@H]1N=C(O)[C@@H](NC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]2CCCN2C(=O)C(C)=O)[C@@H](C)CC(=O)[C@H](Cc2ccc(OC)cc2)N(C)CC(=O)[C@@H]2CCCN2C(=O)[C@H](CC(C)C)N=C(O)[C@@H](C)C(=O)[C@H](C(C)C)OC(=O)C[C@@H]1O.N=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O)c(O)n1
+
+【甲氨蝶呤】Methotrexate
+  当前 SMILES: CN(Cc1cnc2nc(N)nc(N)c2n1)c3ccc(cc3)C(=O)N[C@@H](CCC(O)=O)C(O)=O
+  当前分子式: C20H22N8O5
+  当前 InChI Key: FBOZXECLQNJBKD-ZDUSSCGKSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C20H22N8O5 vs C35H43N11O14
+  ChEMBL SMILES: CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)N[C@@H](CCC(=O)N[C@@H](CCC(=O)N[C@@H](CCC(=O)N[C@@H](CCC(=O)O)C(=O)O)C(=O)O)C(=O)O)C(=O)O)cc1
+
+【米托蒽醌】Mitoxantrone
+  当前 SMILES: OCCNCCNc1ccc(NCCNCCO)c2C(=O)c3c(O)ccc(O)c3C(=O)c12
+  当前分子式: C22H28N4O6
+  当前 InChI Key: KKZJGLLVHKMTCM-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C22H28N4O6 vs C22H30Cl2N4O6
+  ChEMBL SMILES: Cl.Cl.O=C1c2c(O)ccc(O)c2C(=O)c2c(NCCNCCO)ccc(NCCNCCO)c21
+
+【伊马替尼】Imatinib
+  当前 SMILES: CN1CCN(CC1)Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3.C[S](O)(=O)=O
+  当前分子式: C30H35N7O4S
+  当前 InChI Key: YLMAHDNUQAMNNX-UHFFFAOYSA-N
+  问题: NCI CACTUS 不匹配: 分子式不同: C30H35N7O4S vs C29H31N7O
+  问题: ChEMBL 不匹配: 分子式不同: C30H35N7O4S vs C29H31N7O
+  NCI SMILES: CN1CCN(CC1)Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3
+  ChEMBL SMILES: Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1
+
+【氨苄西林】Ampicillin
+  当前 SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(O)=O
+  当前分子式: C16H19N3O4S
+  当前 InChI Key: AVKUERGKIZMTKX-NJBDSQKTSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C16H19N3O4S vs C16H18N3NaO4S
+  ChEMBL SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(=O)[O-].[Na+]
+
+【哌拉西林】Piperacillin
+  当前 SMILES: O.CCN1CCN(C(=O)N[C@@H](C(=O)N[C@H]2[C@H]3SC(C)(C)[C@@H](N3C2=O)C(O)=O)c4ccccc4)C(=O)C1=O
+  当前分子式: C23H29N5O8S
+  当前 InChI Key: NBXPLBPWMYNZTC-IDYPWDAWSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C23H29N5O8S vs C23H26N5NaO7S
+  ChEMBL SMILES: CCN1CCN(C(=O)N[C@@H](C(=O)N[C@@H]2C(=O)N3[C@@H]2SC(C)(C)[C@@H]3C(=O)[O-])c2ccccc2)C(=O)C1=O.[Na+]
+
+【头孢匹罗】Cefpirome
+  当前 SMILES: CO/N=C(\C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C([O-])=O)C[n+]1ccc2CCCc2c1)/c1csc(N)n1
+  当前分子式: C22H22N6O5S2
+  当前 InChI Key: MKEVMFVLXGEORW-WHRDSVKCSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C22H22N6O5S2 vs C22H24N6O9S3
+  ChEMBL SMILES: CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)[O-])=C(C[n+]3cccc4c3CCC4)CS[C@H]12)c1csc(N)n1.O=S(=O)(O)O
+
+【舒他西林】Sultamicillin
+  当前 SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(O)=O.CC4(C)[C@@H](N5[C@@H](CC5=O)[S]4(=O)=O)C(O)=O
+  当前分子式: C24H30N4O9S2
+  当前 InChI Key: XBKAJGGBQLRIFJ-OUPOZMNRSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C24H30N4O9S2 vs C25H30N4O9S2
+  ChEMBL SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(=O)OCOC(=O)[C@@H]1N2C(=O)C[C@H]2S(=O)(=O)C1(C)C
+
+【四环素】Tetracycline
+  当前 SMILES: CN(C)[C@H]1[C@@H]2C[C@H]3C(=C(O)c4c(O)cccc4[C@@]3(C)O)C(=O)[C@]2(O)C(=O)\C(=C(N)/O)C1=O
+  当前分子式: C22H24N2O8
+  当前 InChI Key: JYHCQVWYCGHXGP-BPPSBWQWSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C22H24N2O8 vs C22H25ClN2O8
+  ChEMBL SMILES: CN(C)[C@@H]1C(O)=C(C(N)=O)C(=O)[C@@]2(O)C(O)=C3C(=O)c4c(O)cccc4[C@@](C)(O)[C@H]3C[C@@H]12.Cl
+
+【青霉素】Penicillin
+  当前 SMILES: [Na].CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(O)=O
+  当前分子式: C16H18N2NaO4S
+  当前 InChI Key: XFGIVHXZEANRAL-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C16H18N2NaO4S vs C16H18N2O4S
+  ChEMBL SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)Cc3ccccc3)C(=O)N2[C@H]1C(=O)O
+
+【氯唑西林】Cloxacillin
+  当前 SMILES: Cc1onc(c2ccccc2Cl)c1C(=O)N[C@H]3[C@H]4SC(C)(C)[C@@H](N4C3=O)C(O)=O
+  当前分子式: C19H18ClN3O5S
+  当前 InChI Key: LQOLIRLGBULYKD-JKIFEVAISA-N
+  问题: ChEMBL 不匹配: 分子式不同: C19H18ClN3O5S vs C19H19ClN3NaO6S
+  ChEMBL SMILES: Cc1onc(-c2ccccc2Cl)c1C(=O)N[C@@H]1C(=O)N2[C@@H]1SC(C)(C)[C@@H]2C(=O)[O-].O.[Na+]
+
+【阿莫西林】Amoxicillin
+  当前 SMILES: O.O.O.CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(O)=O
+  当前分子式: C16H25N3O8S
+  当前 InChI Key: MQXQVCLAUDMCEF-CWLIKTDRSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C16H25N3O8S vs C16H18N3NaO5S
+  ChEMBL SMILES: CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(=O)[O-].[Na+]
+
+【头孢氨苄】Cephalexin
+  当前 SMILES: O.CC1=C(N2[C@H](SC1)[C@H](NC(=O)[C@H](N)c3ccccc3)C2=O)C(O)=O
+  当前分子式: C16H19N3O5S
+  当前 InChI Key: AVGYWQBCYZHHPN-CYJZLJNKSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C16H19N3O5S vs C16H20ClN3O5S
+  ChEMBL SMILES: CC1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)[C@H](N)c3ccccc3)[C@H]2SC1.Cl.O
+
+【头孢曲松】Ceftriaxone
+  当前 SMILES: CO/N=C(C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C(O)=O)CSC3=NC(=O)C(=O)NN3C)/c4csc(N)n4
+  当前分子式: C18H18N8O7S3
+  当前 InChI Key: VAAUVRVFOQPIGI-SPQHTLEESA-N
+  问题: ChEMBL 不匹配: 分子式不同: C18H18N8O7S3 vs C36H46N16Na4O21S6
+  ChEMBL SMILES: CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)[O-])=C(CSc3nc(=O)c([O-])nn3C)CS[C@H]12)c1csc(N)n1.CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)[O-])=C(CSc3nc(=O)c([O-])nn3C)CS[C@H]12)c1csc(N)n1.O.O.O.O.O.O.O.[Na+].[Na+].[Na+].[Na+]
+
+【亚胺培南】Imipenem
+  当前 SMILES: O.C[C@H](O)[C@@H]1[C@H]2CC(=C(N2C1=O)C(O)=O)SCCN=CN
+  当前分子式: C12H19N3O5S
+  当前 InChI Key: GSOSVVULSKVSLQ-XMCAPODCSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C12H19N3O5S vs C12H17N3O4S
+  ChEMBL SMILES: C[C@@H](O)[C@H]1C(=O)N2C(C(=O)O)=C(SCCNC=N)C[C@H]12
+
+【氯霉素】Chloramphenicol
+  当前 SMILES: OCC(NC(=O)C(Cl)Cl)C(O)c1ccc(cc1)[N+]([O-])=O
+  当前分子式: C11H12Cl2N2O5
+  当前 InChI Key: WIIZWVCIJKGZOK-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C11H12Cl2N2O5 vs C15H15Cl2N2NaO8
+  ChEMBL SMILES: O=C([O-])CCC(=O)OC[C@@H](NC(=O)C(Cl)Cl)[C@H](O)c1ccc([N+](=O)[O-])cc1.[Na+]
+
+【莫西沙星】Moxifloxacin
+  当前 SMILES: COc1c(N2C[C@@H]3CCCN[C@@H]3C2)c(F)cc4C(=O)C(=CN(C5CC5)c14)C(O)=O
+  当前分子式: C21H24FN3O4
+  当前 InChI Key: FABPRXSRWADJSP-MEDUHNTESA-N
+  问题: ChEMBL 不匹配: 分子式不同: C21H24FN3O4 vs C21H25ClFN3O4
+  ChEMBL SMILES: COc1c(N2C[C@@H]3CCCN[C@@H]3C2)c(F)cc2c(=O)c(C(=O)O)cn(C3CC3)c12.Cl
+
+【特比萘芬】Terbinafine
+  当前 SMILES: CN(C\C=C\C#CC(C)(C)C)Cc1cccc2ccccc12
+  当前分子式: C21H25N
+  当前 InChI Key: DOMXUEMWDBAQBQ-WEVVVXLNSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C21H25N vs C21H26ClN
+  ChEMBL SMILES: CN(C/C=C/C#CC(C)(C)C)Cc1cccc2ccccc12.Cl
+
+【甲氧苄啶】Trimethoprim
+  当前 SMILES: COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC
+  当前分子式: C14H18N4O3
+  当前 InChI Key: IEDVJHCEMCRBQM-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C14H18N4O3 vs C14H19ClN4O3
+  ChEMBL SMILES: COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC.Cl
+
+【贝达喹啉】Bedaquiline
+  当前 SMILES: COC1=CC=C2C(C(C3=CC=CC=C3)[C@@H](C)C[N+](C)(C)[C@H](C)CC3=CC=CC4=CC(Br)=CC=C34)=C(C=C(O)C2=C1)C1=CC=CC=C1
+  当前分子式: C42H43BrNO2+
+  当前 InChI Key: MTBYZNMMAPCAEA-ISHPHABQSA-O
+  问题: ChEMBL 不匹配: 分子式不同: C42H43BrNO2+ vs C36H35BrN2O6
+  ChEMBL SMILES: COc1nc2ccc(Br)cc2cc1[C@@H](c1ccccc1)[C@@](O)(CCN(C)C)c1cccc2ccccc12.O=C(O)/C=C/C(=O)O
+
+【金刚烷胺】Amantadine
+  当前 SMILES: [Cl-].NC12CC3CC(CC(C3)C1)C2.[H+]
+  当前分子式: C10H18ClN
+  当前 InChI Key: WOLHOYHSEKDWQH-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C10H18ClN vs C10H17N
+  ChEMBL SMILES: NC12CC3CC(CC(C3)C1)C2
+
+【阿糖胞苷】Cytarabine
+  当前 SMILES: NC1=NC(=O)N(C=C1)[C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O
+  当前分子式: C9H13N3O5
+  当前 InChI Key: UHDGCWIWMRVCDJ-CCXZUQQUSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C9H13N3O5 vs C68H104N10O19
+  ChEMBL SMILES: CC[C@H](C)[C@H]1N=C(O)[C@@H](NC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]2CCCN2C(=O)C(C)=O)[C@@H](C)CC(=O)[C@H](Cc2ccc(OC)cc2)N(C)CC(=O)[C@@H]2CCCN2C(=O)[C@H](CC(C)C)N=C(O)[C@@H](C)C(=O)[C@H](C(C)C)OC(=O)C[C@@H]1O.N=c1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O)c(O)n1
+
+【更昔洛韦】Ganciclovir
+  当前 SMILES: NC1=NC(=O)c2ncn(COC(CO)CO)c2N1
+  当前分子式: C9H13N5O4
+  当前 InChI Key: IRSCQMHQWWYFCW-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C9H13N5O4 vs C9H12N5NaO4
+  ChEMBL SMILES: Nc1nc([O-])c2ncn(COC(CO)CO)c2n1.[Na+]
+
+【阿昔洛韦】Acyclovir
+  当前 SMILES: NC1=NC(=O)c2ncn(COCCO)c2N1
+  当前分子式: C8H11N5O3
+  当前 InChI Key: MKUXAQIIEYXACX-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C8H11N5O3 vs C8H10N5NaO3
+  ChEMBL SMILES: Nc1nc([O-])c2ncn(COCCO)c2n1.[Na+]
+
+【卡格列净】Canagliflozin
+  当前 SMILES: CC1=C(CC2=CC=C(C=C2F)[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)C=C(C=C1)C1=CC=C(S)C=C1
+  当前分子式: C26H27FO5S
+  当前 InChI Key: PNMDXXZZTAVEQR-WSGIOKLISA-N
+  问题: ChEMBL 不匹配: 分子式不同: C26H27FO5S vs C24H27FO6S
+  ChEMBL SMILES: Cc1ccc([C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)cc1Cc1ccc(-c2ccc(F)cc2)s1.O
+
+【利塞膦酸钠】Risedronate Sodium
+  当前 SMILES: OC(Cc1cccnc1)([P](O)(O)=O)[P](O)(O)=O
+  当前分子式: C7H11NO7P2
+  当前 InChI Key: IIDJRNMFWXDHID-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C7H11NO7P2 vs C7H10NNaO7P2
+  ChEMBL SMILES: O=P([O-])(O)C(O)(Cc1cccnc1)P(=O)(O)O.[Na+]
+
+【雷洛昔芬】Raloxifene
+  当前 SMILES: Oc1ccc(cc1)c2sc3cc(O)ccc3c2C(=O)c4ccc(OCCN5CCCCC5)cc4
+  当前分子式: C28H27NO4S
+  当前 InChI Key: GZUITABIAKMVPG-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C28H27NO4S vs C34H35NO10S
+  ChEMBL SMILES: O=C(c1ccc(OCCN2CCCCC2)cc1)c1c(-c2ccc(O[C@H]3O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]3O)cc2)sc2cc(O)ccc12
+
+【二甲双胍】Metformin
+  当前 SMILES: [H+].[Cl-].CN(C)C(=N)N=C(N)N
+  当前分子式: C4H12ClN5
+  当前 InChI Key: OETHQSJEHLVLGH-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C4H12ClN5 vs C4H11N5
+  ChEMBL SMILES: CN(C)C(=N)NC(=N)N
+
+【西格列汀】Sitagliptin
+  当前 SMILES: N[C@@H](CC(=O)N1CCn2c(C1)nnc2C(F)(F)F)Cc3cc(F)c(F)cc3F.O[P](O)(O)=O
+  当前分子式: C16H18F6N5O5P
+  当前 InChI Key: IQFYVLUXQXSJJN-SBSPUUFOSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C16H18F6N5O5P vs C16H20F6N5O6P
+  ChEMBL SMILES: N[C@@H](CC(=O)N1CCn2c(nnc2C(F)(F)F)C1)Cc1cc(F)c(F)cc1F.O.O=P(O)(O)O
+
+【阿仑膦酸钠】Alendronate Sodium
+  当前 SMILES: NCCCC(O)([P](O)(O)=O)[P](O)(O)=O
+  当前分子式: C4H13NO7P2
+  当前 InChI Key: OGSPWJRAVKPPFI-UHFFFAOYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C4H13NO7P2 vs C4H12NNaO7P2
+  ChEMBL SMILES: NCCCC(O)(P(=O)([O-])O)P(=O)(O)O.[Na+]
+
+【炔雌醇】Ethinylestradiol
+  当前 SMILES: C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@]2(O)C#C
+  当前分子式: C20H24O2
+  当前 InChI Key: BFPYWIDHMRZLRN-SLHNCBLASA-N
+  问题: ChEMBL 不匹配: 分子式不同: C20H24O2 vs C26H32O8
+  ChEMBL SMILES: C#C[C@]1(O)CC[C@H]2[C@@H]3CCc4cc(O[C@@H]5O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]5O)ccc4[C@H]3CC[C@@]21C
+
+【泼尼松龙】Prednisolone
+  当前 SMILES: C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)C=C[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO
+  当前分子式: C21H28O5
+  当前 InChI Key: OIGNJSKKLXVSLS-VWUMJDOOSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C21H28O5 vs C21H27Na2O8P
+  ChEMBL SMILES: C[C@]12C=CC(=O)C=C1CC[C@@H]1[C@@H]2[C@@H](O)C[C@@]2(C)[C@H]1CC[C@]2(O)C(=O)COP(=O)([O-])[O-].[Na+].[Na+]
+
+【雌二醇】Estradiol
+  当前 SMILES: C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@H]2O
+  当前分子式: C18H24O2
+  当前 InChI Key: VOXZDWNPVJITMN-ZBRFXRBCSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C18H24O2 vs C23H32O3
+  ChEMBL SMILES: CCCCC(=O)O[C@H]1CC[C@H]2[C@@H]3CCc4cc(O)ccc4[C@H]3CC[C@]12C
+
+【己烯雌酚】Diethylstilbestrol
+  当前 SMILES: CC\C(c1ccc(O)cc1)=C(CC)/c2ccc(O)cc2
+  当前分子式: C18H20O2
+  当前 InChI Key: RGLYKWWBQGJZGM-ISLYRVAYSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C18H20O2 vs C24H28O4
+  ChEMBL SMILES: CCC(=O)Oc1ccc(/C(CC)=C(\CC)c2ccc(OC(=O)CC)cc2)cc1
+
+【氢化可的松】Hydrocortisone
+  当前 SMILES: C[C@]12CCC(=O)C=C1CC[C@H]3[C@@H]4CC[C@](O)(C(=O)CO)[C@@]4(C)C[C@H](O)[C@H]23
+  当前分子式: C21H30O5
+  当前 InChI Key: JYGXADMDTFJGBT-VWUMJDOOSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C21H30O5 vs C26H36O7
+  ChEMBL SMILES: CCC(=O)O[C@]1(C(=O)COC(C)=O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3[C@@H](O)C[C@@]21C
+
+【地塞米松】Dexamethasone
+  当前 SMILES: C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CO
+  当前分子式: C22H29FO5
+  当前 InChI Key: UREBDLICKHMUKA-CXSFZGCWSA-N
+  问题: ChEMBL 不匹配: 分子式不同: C22H29FO5 vs C29H33FO8
+  ChEMBL SMILES: CC(=O)OCC(=O)[C@@]1(OC(=O)c2ccco2)[C@H](C)C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C
+
+
+================================================================================
+所有验证结果:
+================================================================================
+
+✓ 法莫替丁 | Famotidine - verified
+✓ 罗沙替丁 | Roxatidine - verified
+✓ 兰索拉唑 | Lansoprazole - verified
+✓ 泮托拉唑 | Pantoprazole - verified
+✓ 托烷司琼 | Tropisetron - verified
+✓ 帕洛诺司琼 | Palonosetron - verified
+✗ 马罗匹坦 | Maropitant - mismatch
+✗ 西咪替丁 | Cimetidine - mismatch
+✗ 雷尼替丁 | Ranitidine - mismatch
+✓ 奥美拉唑 | Omeprazole - verified
+✓ 雷贝拉唑 | Rabeprazole - verified
+✗ 昂丹司琼 | Ondansetron - mismatch
+✓ 阿瑞匹坦 | Aprepitant - verified
+✓ 多潘立酮 | Domperidone - verified
+✓ 伊托必利 | Itopride - verified
+✗ 莫沙必利 | Mosapride - mismatch
+✓ 贝诺酯 | Benorilate - verified
+✓ 舒林酸 | Sulindac - verified
+✓ 萘丁美酮 | Nabumetone - verified
+✓ 非诺洛芬 | Fenoprofen - verified
+✗ 吡罗昔康 | Piroxicam - mismatch
+✗ 替诺昔康 | Tenoxicam - mismatch
+✓ 艾瑞昔布 | Etoricoxib - verified
+✓ 别嘌醇 | Allopurinol - verified
+✓ 阿司匹林 | Aspirin - verified
+✗ 对乙酰氨基酚 | Acetaminophen - mismatch
+✗ 吲哚美辛 | Indomethacin - mismatch
+✗ 双氯芬酸钠 | Diclofenac Sodium - mismatch
+✓ 布洛芬 | Ibuprofen - verified
+✓ 萘普生 | Naproxen - verified
+✗ 美洛昔康 | Meloxicam - mismatch
+✓ 塞来昔布 | Celecoxib - verified
+✓ 非布司他 | Febuxostat - verified
+✓ 氮芥 | Mechlorethamine - verified
+✓ 塞替派 | Thiotepa - verified
+✓ 白消安 | Busulfan - verified
+○ 奥沙利铂 | Oxaliplatin - partial
+✓ 洛莫司汀 | Lomustine - verified
+✗ 羟喜树碱 | Hydroxycamptothecin - mismatch
+✗ 伊立替康 | Irinotecan - mismatch
+✗ 奥希替尼 | Osimertinib - mismatch
+✓ 伏立诺他 | Vorinostat - verified
+✗ 西达本胺 | Chidamide - mismatch
+✗ 环磷酰胺 | Cyclophosphamide - mismatch
+✓ 卡莫司汀 | Carmustine - verified
+✗ 顺铂 | Cisplatin - mismatch
+✓ 氟尿嘧啶 | Fluorouracil - verified
+✗ 阿糖胞苷 | Cytarabine - mismatch
+✓ 巯嘌呤 | Mercaptopurine - verified
+✗ 甲氨蝶呤 | Methotrexate - mismatch
+✗ 米托蒽醌 | Mitoxantrone - mismatch
+✗ 伊马替尼 | Imatinib - mismatch
+✓ 吉非替尼 | Gefitinib - verified
+✓ 苯唑西林 | Oxacillin - verified
+✗ 氨苄西林 | Ampicillin - mismatch
+✗ 哌拉西林 | Piperacillin - mismatch
+✓ 头孢他啶 | Ceftazidime - verified
+✓ 头孢克肟 | Cefixime - verified
+✗ 头孢匹罗 | Cefpirome - mismatch
+✗ 舒他西林 | Sultamicillin - mismatch
+✓ 他唑巴坦 | Tazobactam - verified
+✗ 四环素 | Tetracycline - mismatch
+✓ 阿奇霉素 | Azithromycin - verified
+✗ 青霉素 | Penicillin - mismatch
+✗ 氯唑西林 | Cloxacillin - mismatch
+✗ 阿莫西林 | Amoxicillin - mismatch
+✗ 头孢氨苄 | Cephalexin - mismatch
+✗ 头孢曲松 | Ceftriaxone - mismatch
+✓ 克拉维酸 | Clavulanic Acid - verified
+✗ 亚胺培南 | Imipenem - mismatch
+✓ 氨曲南 | Aztreonam - verified
+✗ 氯霉素 | Chloramphenicol - mismatch
+✓ 洛美沙星 | Lomefloxacin - verified
+✗ 莫西沙星 | Moxifloxacin - mismatch
+✓ 磺胺醋酰 | Sulfacetamide - verified
+✓ 乙胺丁醇 | Ethambutol - verified
+? 利福平 | Rifampicin - not_found
+✓ 克霉唑 | Clotrimazole - verified
+✓ 酮康唑 | Ketoconazole - verified
+✗ 特比萘芬 | Terbinafine - mismatch
+✓ 阿莫罗芬 | Amorolfine - verified
+✓ 诺氟沙星 | Norfloxacin - verified
+✓ 环丙沙星 | Ciprofloxacin - verified
+✓ 左氧氟沙星 | Levofloxacin - verified
+✓ 磺胺嘧啶 | Sulfadiazine - verified
+✓ 磺胺甲噁唑 | Sulfamethoxazole - verified
+✗ 甲氧苄啶 | Trimethoprim - mismatch
+✓ 异烟肼 | Isoniazid - verified
+✗ 贝达喹啉 | Bedaquiline - mismatch
+✓ 氟康唑 | Fluconazole - verified
+✗ 金刚烷胺 | Amantadine - mismatch
+✗ 阿糖胞苷 | Cytarabine - mismatch
+✗ 更昔洛韦 | Ganciclovir - mismatch
+✓ 司他夫定 | Stavudine - verified
+✓ 奈非那韦 | Nelfinavir - verified
+✓ 奥司他韦 | Oseltamivir - verified
+✗ 阿昔洛韦 | Acyclovir - mismatch
+✓ 利巴韦林 | Ribavirin - verified
+✓ 齐多夫定 | Zidovudine - verified
+✓ 奈韦拉平 | Nevirapine - verified
+✓ 格列美脲 | Glimepiride - verified
+✓ 格列吡嗪 | Glipizide - verified
+✓ 瑞格列奈 | Repaglinide - verified
+✓ 罗格列酮 | Rosiglitazone - verified
+✗ 卡格列净 | Canagliflozin - mismatch
+✗ 利塞膦酸钠 | Risedronate Sodium - mismatch
+✗ 雷洛昔芬 | Raloxifene - mismatch
+✓ 格列本脲 | Glibenclamide - verified
+✗ 二甲双胍 | Metformin - mismatch
+✗ 西格列汀 | Sitagliptin - mismatch
+✗ 阿仑膦酸钠 | Alendronate Sodium - mismatch
+✓ 依普黄酮 | Ipriflavone - verified
+✓ 氢氯噻嗪 | Hydrochlorothiazide - verified
+✓ 呋塞米 | Furosemide - verified
+✓ 螺内酯 | Spironolactone - verified
+✗ 炔雌醇 | Ethinylestradiol - mismatch
+✓ 氟维司群 | Fulvestrant - verified
+✓ 司坦唑醇 | Stanozolol - verified
+✓ 氟他胺 | Flutamide - verified
+✓ 尼鲁米特 | Nilutamide - verified
+✓ 黄体酮 | Progesterone - verified
+✗ 泼尼松龙 | Prednisolone - mismatch
+✓ 氟轻松 | Fluocinonide - verified
+✗ 雌二醇 | Estradiol - mismatch
+✗ 己烯雌酚 | Diethylstilbestrol - mismatch
+✓ 他莫昔芬 | Tamoxifen - verified
+✓ 丙酸睾酮 | Testosterone Propionate - verified
+✓ 甲羟孕酮 | Medroxyprogesterone Acetate - verified
+✓ 左炔诺孕酮 | Levonorgestrel - verified
+✓ 米非司酮 | Mifepristone - verified
+✗ 氢化可的松 | Hydrocortisone - mismatch
+✗ 地塞米松 | Dexamethasone - mismatch

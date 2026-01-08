@@ -1,0 +1,50 @@
+[
+  {
+    "en": "Maropitant",
+    "cn": "马罗匹坦",
+    "current_smiles": "CC(C)C1=C(C=C(F)C=C1)C(CC(=O)NC1CCC(C)C(N2CCOCC2)C1)C1=CC=CC=N1",
+    "pubchem_smiles": "",
+    "match": null,
+    "issue": "",
+    "recommendation": "",
+    "pubchem_formula": "C32H40N2O",
+    "pubchem_mw": "468.7",
+    "pubchem_inchi_key": "OMPCVMLFFSQFIX-CONSDPRKSA-N"
+  },
+  {
+    "en": "Bedaquiline",
+    "cn": "贝达喹啉",
+    "current_smiles": "COC1=CC=C2C(C(C3=CC=CC=C3)[C@@H](C)C[N+](C)(C)[C@H](C)CC3=CC=CC4=CC(Br)=CC=C34)=C(C=C(O)C2=C1)C1=CC=CC=C1",
+    "pubchem_smiles": "",
+    "match": null,
+    "issue": "",
+    "recommendation": "",
+    "pubchem_formula": "C32H31BrN2O2",
+    "pubchem_mw": "555.5",
+    "pubchem_inchi_key": "QUIJNHUBAXPXFS-XLJNKUFUSA-N"
+  },
+  {
+    "en": "Osimertinib",
+    "cn": "奥希替尼",
+    "current_smiles": "COC1=C(NC2=NC=CC(=N2)C2=CN(C)C3=CC=CC=C23)C=C(NC(=O)C=C)C(C)=C1NC1=NC=CC(N(C)CCN(C)C)=N1",
+    "pubchem_smiles": "",
+    "match": null,
+    "issue": "",
+    "recommendation": "",
+    "pubchem_formula": "C28H33N7O2",
+    "pubchem_mw": "499.6",
+    "pubchem_inchi_key": "DUYJMQONPNNFPI-UHFFFAOYSA-N"
+  },
+  {
+    "en": "Canagliflozin",
+    "cn": "卡格列净",
+    "current_smiles": "CC1=C(CC2=CC=C(C=C2F)[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)C=C(C=C1)C1=CC=C(S)C=C1",
+    "pubchem_smiles": "",
+    "match": null,
+    "issue": "",
+    "recommendation": "",
+    "pubchem_formula": "C24H25FO5S",
+    "pubchem_mw": "444.5",
+    "pubchem_inchi_key": "XTNGUQKDFGDXSJ-ZXGKGEBGSA-N"
+  }
+]
