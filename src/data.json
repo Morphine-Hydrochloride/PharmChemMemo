@@ -1122,7 +1122,7 @@
     "type": "familiarize",
     "id": "fam-Methyldopa",
     "image": "/assets/images/Methyldopa.svg",
-    "smiles": "COC(=O)[C@@H](N)Cc1ccc(O)c(O)c1"
+    "smiles": "N[C@@](C)(Cc1ccc(O)c(O)c1)C(O)=O"
   },
   {
     "cn": "莫索尼定",
@@ -1230,7 +1230,7 @@
     "type": "master",
     "id": "mas-Salbutamol-sulfate",
     "image": "/assets/images/Salbutamol-sulfate.svg",
-    "smiles": "CC(C)(C)NCC(O)c1ccc(O)c(CO)c1"
+    "smiles": "NCC(O)c1ccc(O)c(O)c1"
   },
   {
     "cn": "盐酸哌唑嗪",
