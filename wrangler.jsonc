@@ -1,0 +1,5 @@
+{
+    // Cloudflare Pages 配置文件
+    // 指定构建输出目录为 dist
+    "pages_build_output_dir": "./dist"
+}
