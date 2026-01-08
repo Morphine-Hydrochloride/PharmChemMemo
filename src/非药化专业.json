@@ -1,0 +1,1190 @@
+[
+  {
+    "cn": "法莫替丁",
+    "en": "Famotidine",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Famotidine",
+    "image": "/assets/images_non_med/fam-Ch7-Famotidine.svg",
+    "smiles": "NC(N)=Nc1scc(CSCCC(N)=N[S](N)(=O)=O)n1"
+  },
+  {
+    "cn": "罗沙替丁",
+    "en": "Roxatidine",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Roxatidine",
+    "image": "/assets/images_non_med/fam-Ch7-Roxatidine.svg",
+    "smiles": "OCC(=O)NCCCOc1cccc(CN2CCCCC2)c1"
+  },
+  {
+    "cn": "兰索拉唑",
+    "en": "Lansoprazole",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Lansoprazole",
+    "image": "/assets/images_non_med/fam-Ch7-Lansoprazole.svg",
+    "smiles": "Cc1c(C[S](=O)c2[nH]c3ccccc3n2)nccc1OCC(F)(F)F"
+  },
+  {
+    "cn": "泮托拉唑",
+    "en": "Pantoprazole",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Pantoprazole",
+    "image": "/assets/images_non_med/fam-Ch7-Pantoprazole.svg",
+    "smiles": "COc1ccnc(C[S](=O)c2[nH]c3cc(OC(F)F)ccc3n2)c1OC"
+  },
+  {
+    "cn": "托烷司琼",
+    "en": "Tropisetron",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Tropisetron",
+    "image": "/assets/images_non_med/fam-Ch7-Tropisetron.svg",
+    "smiles": "[H+].[Cl-].CN1C2CCC1CC(C2)OC(=O)c3c[nH]c4ccccc34"
+  },
+  {
+    "cn": "帕洛诺司琼",
+    "en": "Palonosetron",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Palonosetron",
+    "image": "/assets/images_non_med/fam-Ch7-Palonosetron.svg",
+    "smiles": "O=C1N(C[C@@H]2CCCc3cccc1c23)[C@@H]4CN5CCC4CC5"
+  },
+  {
+    "cn": "马罗匹坦",
+    "en": "Maropitant",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "familiarize",
+    "id": "fam-Ch7-Maropitant",
+    "image": "/assets/images_non_med/fam-Ch7-Maropitant.svg",
+    "smiles": "CC(C)(C)C1=CC(=C(C=C1)OC)CN[C@@H]2[C@@H](N3CCC2CC3)C(C4=CC=CC=C4)C5=CC=CC=C5"
+  },
+  {
+    "cn": "西咪替丁",
+    "en": "Cimetidine",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Cimetidine",
+    "image": "/assets/images_non_med/mas-Ch7-Cimetidine.svg",
+    "smiles": "CN=C(NCCSCc1nc[nH]c1C)NC#N"
+  },
+  {
+    "cn": "雷尼替丁",
+    "en": "Ranitidine",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Ranitidine",
+    "image": "/assets/images_non_med/mas-Ch7-Ranitidine.svg",
+    "smiles": "CNC(/NCCSCc1oc(CN(C)C)cc1)=C\\[N+]([O-])=O"
+  },
+  {
+    "cn": "奥美拉唑",
+    "en": "Omeprazole",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Omeprazole",
+    "image": "/assets/images_non_med/mas-Ch7-Omeprazole.svg",
+    "smiles": "COc1ccc2nc([nH]c2c1)[S](=O)Cc3ncc(C)c(OC)c3C"
+  },
+  {
+    "cn": "雷贝拉唑",
+    "en": "Rabeprazole",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Rabeprazole",
+    "image": "/assets/images_non_med/mas-Ch7-Rabeprazole.svg",
+    "smiles": "COCCCOc1ccnc(C[S](=O)c2[nH]c3ccccc3n2)c1C"
+  },
+  {
+    "cn": "昂丹司琼",
+    "en": "Ondansetron",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Ondansetron",
+    "image": "/assets/images_non_med/mas-Ch7-Ondansetron.svg",
+    "smiles": "Cn1c2CCC(Cn3ccnc3C)C(=O)c2c4ccccc14"
+  },
+  {
+    "cn": "阿瑞匹坦",
+    "en": "Aprepitant",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Aprepitant",
+    "image": "/assets/images_non_med/mas-Ch7-Aprepitant.svg",
+    "smiles": "C[C@@H](O[C@@H]1OCCN(CC2=NC(=O)NN2)[C@@H]1c3ccc(F)cc3)c4cc(cc(c4)C(F)(F)F)C(F)(F)F"
+  },
+  {
+    "cn": "多潘立酮",
+    "en": "Domperidone",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Domperidone",
+    "image": "/assets/images_non_med/mas-Ch7-Domperidone.svg",
+    "smiles": "Clc1ccc2N(C3CCN(CCCN4C(=O)Nc5ccccc45)CC3)C(=O)Nc2c1"
+  },
+  {
+    "cn": "伊托必利",
+    "en": "Itopride",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Itopride",
+    "image": "/assets/images_non_med/mas-Ch7-Itopride.svg",
+    "smiles": "COc1ccc(cc1OC)C(=O)NCc2ccc(OCCN(C)C)cc2"
+  },
+  {
+    "cn": "莫沙必利",
+    "en": "Mosapride",
+    "chapter": "第七章 抗溃疡药、镇吐药和胃肠促动药",
+    "type": "master",
+    "id": "mas-Ch7-Mosapride",
+    "image": "/assets/images_non_med/mas-Ch7-Mosapride.svg",
+    "smiles": "CCOc1cc(N)c(Cl)cc1C(=O)NCC2CN(CCO2)Cc3ccc(F)cc3"
+  },
+  {
+    "cn": "贝诺酯",
+    "en": "Benorilate",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Benorilate",
+    "image": "/assets/images_non_med/fam-Ch8-Benorilate.svg",
+    "smiles": "CC(=O)Nc1ccc(OC(=O)c2ccccc2OC(C)=O)cc1"
+  },
+  {
+    "cn": "舒林酸",
+    "en": "Sulindac",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Sulindac",
+    "image": "/assets/images_non_med/fam-Ch8-Sulindac.svg",
+    "smiles": "CC\\1=C(CC(O)=O)c2cc(F)ccc2C1=C\\c3ccc(cc3)[S](C)=O"
+  },
+  {
+    "cn": "萘丁美酮",
+    "en": "Nabumetone",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Nabumetone",
+    "image": "/assets/images_non_med/fam-Ch8-Nabumetone.svg",
+    "smiles": "COc1ccc2cc(CCC(C)=O)ccc2c1"
+  },
+  {
+    "cn": "非诺洛芬",
+    "en": "Fenoprofen",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Fenoprofen",
+    "image": "/assets/images_non_med/fam-Ch8-Fenoprofen.svg",
+    "smiles": "CC(C(O)=O)c1cccc(Oc2ccccc2)c1"
+  },
+  {
+    "cn": "吡罗昔康",
+    "en": "Piroxicam",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Piroxicam",
+    "image": "/assets/images_non_med/fam-Ch8-Piroxicam.svg",
+    "smiles": "CN1C(=C(/O)Nc2ccccn2)/C(=O)c3ccccc3[S]1(=O)=O"
+  },
+  {
+    "cn": "替诺昔康",
+    "en": "Tenoxicam",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Tenoxicam",
+    "image": "/assets/images_non_med/fam-Ch8-Tenoxicam.svg",
+    "smiles": "CN1C(=C(\\O)Nc2ccccn2)/C(=O)c3sccc3[S]1(=O)=O"
+  },
+  {
+    "cn": "艾瑞昔布",
+    "en": "Etoricoxib",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Etoricoxib",
+    "image": "/assets/images_non_med/fam-Ch8-Etoricoxib.svg",
+    "smiles": "Cc1ccc(cn1)c2ncc(Cl)cc2c3ccc(cc3)[S](C)(=O)=O"
+  },
+  {
+    "cn": "别嘌醇",
+    "en": "Allopurinol",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "familiarize",
+    "id": "fam-Ch8-Allopurinol",
+    "image": "/assets/images_non_med/fam-Ch8-Allopurinol.svg",
+    "smiles": "O=C1N=CN=C2NNC=C12"
+  },
+  {
+    "cn": "阿司匹林",
+    "en": "Aspirin",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Aspirin",
+    "image": "/assets/images_non_med/mas-Ch8-Aspirin.svg",
+    "smiles": "CC(=O)Oc1ccccc1C(O)=O"
+  },
+  {
+    "cn": "对乙酰氨基酚",
+    "en": "Acetaminophen",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Acetaminophen",
+    "image": "/assets/images_non_med/mas-Ch8-Acetaminophen.svg",
+    "smiles": "CC(=O)Nc1ccc(O)cc1"
+  },
+  {
+    "cn": "吲哚美辛",
+    "en": "Indomethacin",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Indomethacin",
+    "image": "/assets/images_non_med/mas-Ch8-Indomethacin.svg",
+    "smiles": "COc1ccc2n(c(C)c(CC(O)=O)c2c1)C(=O)c3ccc(Cl)cc3"
+  },
+  {
+    "cn": "双氯芬酸钠",
+    "en": "Diclofenac Sodium",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-DiclofenacSodium",
+    "image": "/assets/images_non_med/mas-Ch8-DiclofenacSodium.svg",
+    "smiles": "OC(=O)Cc1ccccc1Nc2c(Cl)cccc2Cl"
+  },
+  {
+    "cn": "布洛芬",
+    "en": "Ibuprofen",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Ibuprofen",
+    "image": "/assets/images_non_med/mas-Ch8-Ibuprofen.svg",
+    "smiles": "CC(C)Cc1ccc(cc1)C(C)C(O)=O"
+  },
+  {
+    "cn": "萘普生",
+    "en": "Naproxen",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Naproxen",
+    "image": "/assets/images_non_med/mas-Ch8-Naproxen.svg",
+    "smiles": "COc1ccc2cc(ccc2c1)C(C)C(O)=O"
+  },
+  {
+    "cn": "美洛昔康",
+    "en": "Meloxicam",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Meloxicam",
+    "image": "/assets/images_non_med/mas-Ch8-Meloxicam.svg",
+    "smiles": "CN1C(=C(/O)Nc2sc(C)cn2)/C(=O)c3ccccc3[S]1(=O)=O"
+  },
+  {
+    "cn": "塞来昔布",
+    "en": "Celecoxib",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Celecoxib",
+    "image": "/assets/images_non_med/mas-Ch8-Celecoxib.svg",
+    "smiles": "Cc1ccc(cc1)c2cc(nn2c3ccc(cc3)[S](N)(=O)=O)C(F)(F)F"
+  },
+  {
+    "cn": "非布司他",
+    "en": "Febuxostat",
+    "chapter": "第八章 解热镇痛药、非甾体抗炎药和抗痛风药",
+    "type": "master",
+    "id": "mas-Ch8-Febuxostat",
+    "image": "/assets/images_non_med/mas-Ch8-Febuxostat.svg",
+    "smiles": "CC(C)COc1ccc(cc1C#N)c2sc(C(O)=O)c(C)n2"
+  },
+  {
+    "cn": "氮芥",
+    "en": "Mechlorethamine",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Mechlorethamine",
+    "image": "/assets/images_non_med/fam-Ch9-Mechlorethamine.svg",
+    "smiles": "CN(CCCl)CCCl"
+  },
+  {
+    "cn": "塞替派",
+    "en": "Thiotepa",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Thiotepa",
+    "image": "/assets/images_non_med/fam-Ch9-Thiotepa.svg",
+    "smiles": "S=[P](N1CC1)(N2CC2)N3CC3"
+  },
+  {
+    "cn": "白消安",
+    "en": "Busulfan",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Busulfan",
+    "image": "/assets/images_non_med/fam-Ch9-Busulfan.svg",
+    "smiles": "C[S](=O)(=O)OCCCCO[S](C)(=O)=O"
+  },
+  {
+    "cn": "奥沙利铂",
+    "en": "Oxaliplatin",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Oxaliplatin",
+    "image": "/assets/images_non_med/fam-Ch9-Oxaliplatin.svg",
+    "smiles": "O=C1O[Pt]2(NC3CCCCC3N2)OC1=O"
+  },
+  {
+    "cn": "洛莫司汀",
+    "en": "Lomustine",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Lomustine",
+    "image": "/assets/images_non_med/fam-Ch9-Lomustine.svg",
+    "smiles": "ClCCN(N=O)C(=O)NC1CCCCC1"
+  },
+  {
+    "cn": "羟喜树碱",
+    "en": "Hydroxycamptothecin",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Hydroxycamptothecin",
+    "image": "/assets/images_non_med/fam-Ch9-Hydroxycamptothecin.svg",
+    "smiles": "CC[C@@]1(O)C(=O)OCC2=C1C=C3N(Cc4cc5cc(O)ccc5nc34)C2=O"
+  },
+  {
+    "cn": "伊立替康",
+    "en": "Irinotecan",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Irinotecan",
+    "image": "/assets/images_non_med/fam-Ch9-Irinotecan.svg",
+    "smiles": "CCc1c2CN3C(=O)C4=C(C=C3c2nc5ccc(OC(=O)N6CCC(CC6)N7CCCCC7)cc15)[C@@](O)(CC)C(=O)OC4"
+  },
+  {
+    "cn": "奥希替尼",
+    "en": "Osimertinib",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Osimertinib",
+    "image": "/assets/images_non_med/fam-Ch9-Osimertinib.svg",
+    "smiles": "CN1C=C(C2=CC=CC=C21)C3=NC(=NC=C3)NC4=C(C=C(C(=C4)NC(=O)C=C)N(C)CCN(C)C)OC"
+  },
+  {
+    "cn": "伏立诺他",
+    "en": "Vorinostat",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Vorinostat",
+    "image": "/assets/images_non_med/fam-Ch9-Vorinostat.svg",
+    "smiles": "ONC(=O)CCCCCCC(=O)Nc1ccccc1"
+  },
+  {
+    "cn": "西达本胺",
+    "en": "Chidamide",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "familiarize",
+    "id": "fam-Ch9-Chidamide",
+    "image": "/assets/images_non_med/fam-Ch9-Chidamide.svg",
+    "smiles": "FC1=CC(N)=C(NC(C2=CC=C(CNC(/C=C/C3=CC=CN=C3)=O)C=C2)=O)C=C1"
+  },
+  {
+    "cn": "环磷酰胺",
+    "en": "Cyclophosphamide",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Cyclophosphamide",
+    "image": "/assets/images_non_med/mas-Ch9-Cyclophosphamide.svg",
+    "smiles": "ClCCN(CCCl)[P]1(=O)NCCCO1"
+  },
+  {
+    "cn": "卡莫司汀",
+    "en": "Carmustine",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Carmustine",
+    "image": "/assets/images_non_med/mas-Ch9-Carmustine.svg",
+    "smiles": "ClCCNC(=O)N(CCCl)N=O"
+  },
+  {
+    "cn": "顺铂",
+    "en": "Cisplatin",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Cisplatin",
+    "image": "/assets/images_non_med/mas-Ch9-Cisplatin.svg",
+    "smiles": "Cl[Pt](Cl)(N)N"
+  },
+  {
+    "cn": "氟尿嘧啶",
+    "en": "Fluorouracil",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Fluorouracil",
+    "image": "/assets/images_non_med/mas-Ch9-Fluorouracil.svg",
+    "smiles": "FC1=CNC(=O)NC1=O"
+  },
+  {
+    "cn": "阿糖胞苷",
+    "en": "Cytarabine",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Cytarabine",
+    "image": "/assets/images_non_med/mas-Ch9-Cytarabine.svg",
+    "smiles": "NC1=NC(=O)N(C=C1)[C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O"
+  },
+  {
+    "cn": "巯嘌呤",
+    "en": "Mercaptopurine",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Mercaptopurine",
+    "image": "/assets/images_non_med/mas-Ch9-Mercaptopurine.svg",
+    "smiles": "S=C1N=CNc2nc[nH]c12"
+  },
+  {
+    "cn": "甲氨蝶呤",
+    "en": "Methotrexate",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Methotrexate",
+    "image": "/assets/images_non_med/mas-Ch9-Methotrexate.svg",
+    "smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c3ccc(cc3)C(=O)N[C@@H](CCC(O)=O)C(O)=O"
+  },
+  {
+    "cn": "米托蒽醌",
+    "en": "Mitoxantrone",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Mitoxantrone",
+    "image": "/assets/images_non_med/mas-Ch9-Mitoxantrone.svg",
+    "smiles": "OCCNCCNc1ccc(NCCNCCO)c2C(=O)c3c(O)ccc(O)c3C(=O)c12"
+  },
+  {
+    "cn": "伊马替尼",
+    "en": "Imatinib",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Imatinib",
+    "image": "/assets/images_non_med/mas-Ch9-Imatinib.svg",
+    "smiles": "CN1CCN(CC1)Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3.C[S](O)(=O)=O"
+  },
+  {
+    "cn": "吉非替尼",
+    "en": "Gefitinib",
+    "chapter": "第九章 抗肿瘤药物",
+    "type": "master",
+    "id": "mas-Ch9-Gefitinib",
+    "image": "/assets/images_non_med/mas-Ch9-Gefitinib.svg",
+    "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN4CCOCC4"
+  },
+  {
+    "cn": "苯唑西林",
+    "en": "Oxacillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Oxacillin",
+    "image": "/assets/images_non_med/fam-Ch10-Oxacillin.svg",
+    "smiles": "Cc1onc(c2ccccc2)c1C(=O)N[C@H]3[C@H]4SC(C)(C)[C@@H](N4C3=O)C(O)=O"
+  },
+  {
+    "cn": "氨苄西林",
+    "en": "Ampicillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Ampicillin",
+    "image": "/assets/images_non_med/fam-Ch10-Ampicillin.svg",
+    "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(O)=O"
+  },
+  {
+    "cn": "哌拉西林",
+    "en": "Piperacillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Piperacillin",
+    "image": "/assets/images_non_med/fam-Ch10-Piperacillin.svg",
+    "smiles": "O.CCN1CCN(C(=O)N[C@@H](C(=O)N[C@H]2[C@H]3SC(C)(C)[C@@H](N3C2=O)C(O)=O)c4ccccc4)C(=O)C1=O"
+  },
+  {
+    "cn": "头孢他啶",
+    "en": "Ceftazidime",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Ceftazidime",
+    "image": "/assets/images_non_med/fam-Ch10-Ceftazidime.svg",
+    "smiles": "CC(C)(O/N=C(C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C([O-])=O)C[n+]3ccccc3)/c4csc(N)n4)C(O)=O"
+  },
+  {
+    "cn": "头孢克肟",
+    "en": "Cefixime",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Cefixime",
+    "image": "/assets/images_non_med/fam-Ch10-Cefixime.svg",
+    "smiles": "Nc1scc(n1)\\C(=N\\OCC(O)=O)C(=O)N[C@H]2[C@H]3SCC(=C(N3C2=O)C(O)=O)C=C"
+  },
+  {
+    "cn": "头孢匹罗",
+    "en": "Cefpirome",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Cefpirome",
+    "image": "/assets/images_non_med/fam-Ch10-Cefpirome.svg",
+    "smiles": "CO/N=C(\\C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C([O-])=O)C[n+]1ccc2CCCc2c1)/c1csc(N)n1"
+  },
+  {
+    "cn": "舒他西林",
+    "en": "Sultamicillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Sultamicillin",
+    "image": "/assets/images_non_med/fam-Ch10-Sultamicillin.svg",
+    "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(O)=O.CC4(C)[C@@H](N5[C@@H](CC5=O)[S]4(=O)=O)C(O)=O"
+  },
+  {
+    "cn": "他唑巴坦",
+    "en": "Tazobactam",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Tazobactam",
+    "image": "/assets/images_non_med/fam-Ch10-Tazobactam.svg",
+    "smiles": "C[C@]1(Cn2ccnn2)[C@@H](N3[C@@H](CC3=O)[S]1(=O)=O)C(O)=O"
+  },
+  {
+    "cn": "四环素",
+    "en": "Tetracycline",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Tetracycline",
+    "image": "/assets/images_non_med/fam-Ch10-Tetracycline.svg",
+    "smiles": "CN(C)[C@H]1[C@@H]2C[C@H]3C(=C(O)c4c(O)cccc4[C@@]3(C)O)C(=O)[C@]2(O)C(=O)\\C(=C(N)/O)C1=O"
+  },
+  {
+    "cn": "阿奇霉素",
+    "en": "Azithromycin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "familiarize",
+    "id": "fam-Ch10-Azithromycin",
+    "image": "/assets/images_non_med/fam-Ch10-Azithromycin.svg",
+    "smiles": "CC[C@H]1OC(=O)[C@H](C)[C@@H](O[C@H]2C[C@@](C)(OC)[C@@H](O)[C@H](C)O2)C(C)[C@@H](O[C@@H]3O[C@H](C)C[C@@H]([C@H]3O)N(C)C)[C@](C)(O)C[C@@H](C)CN(C)[C@H](C)[C@@H](O)[C@]1(C)O"
+  },
+  {
+    "cn": "青霉素",
+    "en": "Penicillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Penicillin",
+    "image": "/assets/images_non_med/mas-Ch10-Penicillin.svg",
+    "smiles": "[Na].CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(O)=O"
+  },
+  {
+    "cn": "氯唑西林",
+    "en": "Cloxacillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Cloxacillin",
+    "image": "/assets/images_non_med/mas-Ch10-Cloxacillin.svg",
+    "smiles": "Cc1onc(c2ccccc2Cl)c1C(=O)N[C@H]3[C@H]4SC(C)(C)[C@@H](N4C3=O)C(O)=O"
+  },
+  {
+    "cn": "阿莫西林",
+    "en": "Amoxicillin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Amoxicillin",
+    "image": "/assets/images_non_med/mas-Ch10-Amoxicillin.svg",
+    "smiles": "O.O.O.CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(O)=O"
+  },
+  {
+    "cn": "头孢氨苄",
+    "en": "Cephalexin",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Cephalexin",
+    "image": "/assets/images_non_med/mas-Ch10-Cephalexin.svg",
+    "smiles": "O.CC1=C(N2[C@H](SC1)[C@H](NC(=O)[C@H](N)c3ccccc3)C2=O)C(O)=O"
+  },
+  {
+    "cn": "头孢曲松",
+    "en": "Ceftriaxone",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Ceftriaxone",
+    "image": "/assets/images_non_med/mas-Ch10-Ceftriaxone.svg",
+    "smiles": "CO/N=C(C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C(O)=O)CSC3=NC(=O)C(=O)NN3C)/c4csc(N)n4"
+  },
+  {
+    "cn": "克拉维酸",
+    "en": "Clavulanic Acid",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-ClavulanicAcid",
+    "image": "/assets/images_non_med/mas-Ch10-ClavulanicAcid.svg",
+    "smiles": "OC/C=C/1O[C@@H]2CC(=O)N2[C@H]1C(O)=O"
+  },
+  {
+    "cn": "亚胺培南",
+    "en": "Imipenem",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Imipenem",
+    "image": "/assets/images_non_med/mas-Ch10-Imipenem.svg",
+    "smiles": "O.C[C@H](O)[C@@H]1[C@H]2CC(=C(N2C1=O)C(O)=O)SCCN=CN"
+  },
+  {
+    "cn": "氨曲南",
+    "en": "Aztreonam",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Aztreonam",
+    "image": "/assets/images_non_med/mas-Ch10-Aztreonam.svg",
+    "smiles": "C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\\c2csc([NH3+])n2)C(=O)N1[S]([O-])(=O)=O"
+  },
+  {
+    "cn": "氯霉素",
+    "en": "Chloramphenicol",
+    "chapter": "第十章 抗生素类药物",
+    "type": "master",
+    "id": "mas-Ch10-Chloramphenicol",
+    "image": "/assets/images_non_med/mas-Ch10-Chloramphenicol.svg",
+    "smiles": "OCC(NC(=O)C(Cl)Cl)C(O)c1ccc(cc1)[N+]([O-])=O"
+  },
+  {
+    "cn": "洛美沙星",
+    "en": "Lomefloxacin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Lomefloxacin",
+    "image": "/assets/images_non_med/fam-Ch11-1-Lomefloxacin.svg",
+    "smiles": "CCN1C=C(C(O)=O)C(=O)c2cc(F)c(N3CCNC(C)C3)c(F)c12"
+  },
+  {
+    "cn": "莫西沙星",
+    "en": "Moxifloxacin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Moxifloxacin",
+    "image": "/assets/images_non_med/fam-Ch11-1-Moxifloxacin.svg",
+    "smiles": "COc1c(N2C[C@@H]3CCCN[C@@H]3C2)c(F)cc4C(=O)C(=CN(C5CC5)c14)C(O)=O"
+  },
+  {
+    "cn": "磺胺醋酰",
+    "en": "Sulfacetamide",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Sulfacetamide",
+    "image": "/assets/images_non_med/fam-Ch11-1-Sulfacetamide.svg",
+    "smiles": "CC(=O)N[S](=O)(=O)c1ccc(N)cc1"
+  },
+  {
+    "cn": "乙胺丁醇",
+    "en": "Ethambutol",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Ethambutol",
+    "image": "/assets/images_non_med/fam-Ch11-1-Ethambutol.svg",
+    "smiles": "CC[C@@H](CO)NCCN[C@@H](CC)CO"
+  },
+  {
+    "cn": "利福平",
+    "en": "Rifampicin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Rifampicin",
+    "image": "/assets/images_non_med/fam-Ch11-1-Rifampicin.svg",
+    "smiles": "C[C@H]1/C=C/C=C(\\C)/C(=O)NC2=C(C)C=C3C(O)=C4C(=O)C(=C(O)[C@@H](O)[C@@H](C)O[C@H](C)[C@H](O)[C@@H](C)[C@@H](OC(C)=O)[C@@H](C)/C=C/OC5(C)OC4=C3C2=O)C=NN5CCN(C)C"
+  },
+  {
+    "cn": "克霉唑",
+    "en": "Clotrimazole",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Clotrimazole",
+    "image": "/assets/images_non_med/fam-Ch11-1-Clotrimazole.svg",
+    "smiles": "Clc1ccccc1C(n2ccnc2)(c3ccccc3)c4ccccc4"
+  },
+  {
+    "cn": "酮康唑",
+    "en": "Ketoconazole",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Ketoconazole",
+    "image": "/assets/images_non_med/fam-Ch11-1-Ketoconazole.svg",
+    "smiles": "CC(=O)N1CCN(CC1)c2ccc(OC[C@H]3CO[C@@](Cn4ccnc4)(O3)c5ccc(Cl)cc5Cl)cc2"
+  },
+  {
+    "cn": "特比萘芬",
+    "en": "Terbinafine",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Terbinafine",
+    "image": "/assets/images_non_med/fam-Ch11-1-Terbinafine.svg",
+    "smiles": "CN(C\\C=C\\C#CC(C)(C)C)Cc1cccc2ccccc12"
+  },
+  {
+    "cn": "阿莫罗芬",
+    "en": "Amorolfine",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "familiarize",
+    "id": "fam-Ch11-1-Amorolfine",
+    "image": "/assets/images_non_med/fam-Ch11-1-Amorolfine.svg",
+    "smiles": "CCC(C)(C)c1ccc(CC(C)CN2C[C@H](C)O[C@H](C)C2)cc1"
+  },
+  {
+    "cn": "诺氟沙星",
+    "en": "Norfloxacin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Norfloxacin",
+    "image": "/assets/images_non_med/mas-Ch11-1-Norfloxacin.svg",
+    "smiles": "CCN1C=C(C(O)=O)C(=O)c2cc(F)c(cc12)N3CCNCC3"
+  },
+  {
+    "cn": "环丙沙星",
+    "en": "Ciprofloxacin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Ciprofloxacin",
+    "image": "/assets/images_non_med/mas-Ch11-1-Ciprofloxacin.svg",
+    "smiles": "OC(=O)C1=CN(C2CC2)c3cc(N4CCNCC4)c(F)cc3C1=O"
+  },
+  {
+    "cn": "左氧氟沙星",
+    "en": "Levofloxacin",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Levofloxacin",
+    "image": "/assets/images_non_med/mas-Ch11-1-Levofloxacin.svg",
+    "smiles": "C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc4C(=O)C(=CN1c24)C(O)=O"
+  },
+  {
+    "cn": "磺胺嘧啶",
+    "en": "Sulfadiazine",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Sulfadiazine",
+    "image": "/assets/images_non_med/mas-Ch11-1-Sulfadiazine.svg",
+    "smiles": "Nc1ccc(cc1)[S](=O)(=O)Nc2ncccn2"
+  },
+  {
+    "cn": "磺胺甲噁唑",
+    "en": "Sulfamethoxazole",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Sulfamethoxazole",
+    "image": "/assets/images_non_med/mas-Ch11-1-Sulfamethoxazole.svg",
+    "smiles": "Cc1onc(N[S](=O)(=O)c2ccc(N)cc2)c1"
+  },
+  {
+    "cn": "甲氧苄啶",
+    "en": "Trimethoprim",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Trimethoprim",
+    "image": "/assets/images_non_med/mas-Ch11-1-Trimethoprim.svg",
+    "smiles": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC"
+  },
+  {
+    "cn": "异烟肼",
+    "en": "Isoniazid",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Isoniazid",
+    "image": "/assets/images_non_med/mas-Ch11-1-Isoniazid.svg",
+    "smiles": "NNC(=O)c1ccncc1"
+  },
+  {
+    "cn": "贝达喹啉",
+    "en": "Bedaquiline",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Bedaquiline",
+    "image": "/assets/images_non_med/mas-Ch11-1-Bedaquiline.svg",
+    "smiles": "CN(C)CC[C@@](C1=CC=CC2=CC=CC=C21)([C@H](C3=CC=CC=C3)C4=C(N=C5C=CC(=CC5=C4)Br)OC)O"
+  },
+  {
+    "cn": "氟康唑",
+    "en": "Fluconazole",
+    "chapter": "第十一章-1 喹诺酮类抗菌药、磺胺类药物及抗菌增效剂、抗结核药、抗真菌药",
+    "type": "master",
+    "id": "mas-Ch11-1-Fluconazole",
+    "image": "/assets/images_non_med/mas-Ch11-1-Fluconazole.svg",
+    "smiles": "OC(Cn1cncn1)(Cn2cncn2)c3ccc(F)cc3F"
+  },
+  {
+    "cn": "金刚烷胺",
+    "en": "Amantadine",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "familiarize",
+    "id": "fam-Ch11-2-Amantadine",
+    "image": "/assets/images_non_med/fam-Ch11-2-Amantadine.svg",
+    "smiles": "[Cl-].NC12CC3CC(CC(C3)C1)C2.[H+]"
+  },
+  {
+    "cn": "阿糖胞苷",
+    "en": "Cytarabine",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "familiarize",
+    "id": "fam-Ch11-2-Cytarabine",
+    "image": "/assets/images_non_med/fam-Ch11-2-Cytarabine.svg",
+    "smiles": "NC1=NC(=O)N(C=C1)[C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2O"
+  },
+  {
+    "cn": "更昔洛韦",
+    "en": "Ganciclovir",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "familiarize",
+    "id": "fam-Ch11-2-Ganciclovir",
+    "image": "/assets/images_non_med/fam-Ch11-2-Ganciclovir.svg",
+    "smiles": "NC1=NC(=O)c2ncn(COC(CO)CO)c2N1"
+  },
+  {
+    "cn": "司他夫定",
+    "en": "Stavudine",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "familiarize",
+    "id": "fam-Ch11-2-Stavudine",
+    "image": "/assets/images_non_med/fam-Ch11-2-Stavudine.svg",
+    "smiles": "CC1=CN([C@@H]2O[C@H](CO)C=C2)C(=O)NC1=O"
+  },
+  {
+    "cn": "奈非那韦",
+    "en": "Nelfinavir",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "familiarize",
+    "id": "fam-Ch11-2-Nelfinavir",
+    "image": "/assets/images_non_med/fam-Ch11-2-Nelfinavir.svg",
+    "smiles": "Cc1c(O)cccc1C(=O)N[C@@H](CSc2ccccc2)[C@H](O)CN3C[C@H]4CCCC[C@H]4C[C@H]3C(=O)NC(C)(C)C"
+  },
+  {
+    "cn": "奥司他韦",
+    "en": "Oseltamivir",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "master",
+    "id": "mas-Ch11-2-Oseltamivir",
+    "image": "/assets/images_non_med/mas-Ch11-2-Oseltamivir.svg",
+    "smiles": "CCOC(=O)C1=C[C@@H](OC(CC)CC)[C@H](NC(C)=O)[C@@H](N)C1"
+  },
+  {
+    "cn": "阿昔洛韦",
+    "en": "Acyclovir",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "master",
+    "id": "mas-Ch11-2-Acyclovir",
+    "image": "/assets/images_non_med/mas-Ch11-2-Acyclovir.svg",
+    "smiles": "NC1=NC(=O)c2ncn(COCCO)c2N1"
+  },
+  {
+    "cn": "利巴韦林",
+    "en": "Ribavirin",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "master",
+    "id": "mas-Ch11-2-Ribavirin",
+    "image": "/assets/images_non_med/mas-Ch11-2-Ribavirin.svg",
+    "smiles": "NC(=O)c1ncn(n1)[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O"
+  },
+  {
+    "cn": "齐多夫定",
+    "en": "Zidovudine",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "master",
+    "id": "mas-Ch11-2-Zidovudine",
+    "image": "/assets/images_non_med/mas-Ch11-2-Zidovudine.svg",
+    "smiles": "CC1=CN([C@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)C(=O)NC1=O"
+  },
+  {
+    "cn": "奈韦拉平",
+    "en": "Nevirapine",
+    "chapter": "第十一章-2 抗病毒药",
+    "type": "master",
+    "id": "mas-Ch11-2-Nevirapine",
+    "image": "/assets/images_non_med/mas-Ch11-2-Nevirapine.svg",
+    "smiles": "Cc1ccnc2N(C3CC3)c4ncccc4C(=O)Nc12"
+  },
+  {
+    "cn": "格列美脲",
+    "en": "Glimepiride",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Glimepiride",
+    "image": "/assets/images_non_med/fam-Ch12-Glimepiride.svg",
+    "smiles": "CCC1=C(C)CN(C(=O)NCCc2ccc(cc2)[S](=O)(=O)NC(=O)NC3CCC(C)CC3)C1=O"
+  },
+  {
+    "cn": "格列吡嗪",
+    "en": "Glipizide",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Glipizide",
+    "image": "/assets/images_non_med/fam-Ch12-Glipizide.svg",
+    "smiles": "Cc1cnc(cn1)C(=O)NCCc2ccc(cc2)[S](=O)(=O)NC(=O)NC3CCCCC3"
+  },
+  {
+    "cn": "瑞格列奈",
+    "en": "Repaglinide",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Repaglinide",
+    "image": "/assets/images_non_med/fam-Ch12-Repaglinide.svg",
+    "smiles": "CCOc1cc(CC(=O)N[C@@H](CC(C)C)c2ccccc2N3CCCCC3)ccc1C(O)=O"
+  },
+  {
+    "cn": "罗格列酮",
+    "en": "Rosiglitazone",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Rosiglitazone",
+    "image": "/assets/images_non_med/fam-Ch12-Rosiglitazone.svg",
+    "smiles": "CN(CCOc1ccc(C[C@@H]2SC(=O)NC2=O)cc1)c3ccccn3"
+  },
+  {
+    "cn": "卡格列净",
+    "en": "Canagliflozin",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Canagliflozin",
+    "image": "/assets/images_non_med/fam-Ch12-Canagliflozin.svg",
+    "smiles": "CC1=C(C=C(C=C1)[C@@H]2[C@@H]([C@H]([C@@H]([C@H](O2)CO)O)O)O)CC3=CC=C(S3)C4=CC=C(C=C4)F"
+  },
+  {
+    "cn": "利塞膦酸钠",
+    "en": "Risedronate Sodium",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-RisedronateSodium",
+    "image": "/assets/images_non_med/fam-Ch12-RisedronateSodium.svg",
+    "smiles": "OC(Cc1cccnc1)([P](O)(O)=O)[P](O)(O)=O"
+  },
+  {
+    "cn": "雷洛昔芬",
+    "en": "Raloxifene",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "familiarize",
+    "id": "fam-Ch12-Raloxifene",
+    "image": "/assets/images_non_med/fam-Ch12-Raloxifene.svg",
+    "smiles": "Oc1ccc(cc1)c2sc3cc(O)ccc3c2C(=O)c4ccc(OCCN5CCCCC5)cc4"
+  },
+  {
+    "cn": "格列本脲",
+    "en": "Glibenclamide",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Glibenclamide",
+    "image": "/assets/images_non_med/mas-Ch12-Glibenclamide.svg",
+    "smiles": "COc1ccc(Cl)cc1C(=O)NCCc2ccc(cc2)[S](=O)(=O)NC(=O)NC3CCCCC3"
+  },
+  {
+    "cn": "二甲双胍",
+    "en": "Metformin",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Metformin",
+    "image": "/assets/images_non_med/mas-Ch12-Metformin.svg",
+    "smiles": "[H+].[Cl-].CN(C)C(=N)N=C(N)N"
+  },
+  {
+    "cn": "西格列汀",
+    "en": "Sitagliptin",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Sitagliptin",
+    "image": "/assets/images_non_med/mas-Ch12-Sitagliptin.svg",
+    "smiles": "N[C@@H](CC(=O)N1CCn2c(C1)nnc2C(F)(F)F)Cc3cc(F)c(F)cc3F.O[P](O)(O)=O"
+  },
+  {
+    "cn": "阿仑膦酸钠",
+    "en": "Alendronate Sodium",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-AlendronateSodium",
+    "image": "/assets/images_non_med/mas-Ch12-AlendronateSodium.svg",
+    "smiles": "NCCCC(O)([P](O)(O)=O)[P](O)(O)=O"
+  },
+  {
+    "cn": "依普黄酮",
+    "en": "Ipriflavone",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Ipriflavone",
+    "image": "/assets/images_non_med/mas-Ch12-Ipriflavone.svg",
+    "smiles": "CC(C)Oc1ccc2c(OC=C(C2=O)c3ccccc3)c1"
+  },
+  {
+    "cn": "氢氯噻嗪",
+    "en": "Hydrochlorothiazide",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Hydrochlorothiazide",
+    "image": "/assets/images_non_med/mas-Ch12-Hydrochlorothiazide.svg",
+    "smiles": "N[S](=O)(=O)c1cc2c(NCN[S]2(=O)=O)cc1Cl"
+  },
+  {
+    "cn": "呋塞米",
+    "en": "Furosemide",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Furosemide",
+    "image": "/assets/images_non_med/mas-Ch12-Furosemide.svg",
+    "smiles": "N[S](=O)(=O)c1cc(C(O)=O)c(NCc2occc2)cc1Cl"
+  },
+  {
+    "cn": "螺内酯",
+    "en": "Spironolactone",
+    "chapter": "第十二章 降血糖药、骨质疏松治疗药和利尿药",
+    "type": "master",
+    "id": "mas-Ch12-Spironolactone",
+    "image": "/assets/images_non_med/mas-Ch12-Spironolactone.svg",
+    "smiles": "CC(=O)S[C@@H]1CC2=CC(=O)CC[C@]2(C)[C@H]3CC[C@@]4(C)[C@@H](CC[C@@]45CCC(=O)O5)[C@H]13"
+  },
+  {
+    "cn": "炔雌醇",
+    "en": "Ethinylestradiol",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Ethinylestradiol",
+    "image": "/assets/images_non_med/fam-Ch13-Ethinylestradiol.svg",
+    "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@]2(O)C#C"
+  },
+  {
+    "cn": "氟维司群",
+    "en": "Fulvestrant",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Fulvestrant",
+    "image": "/assets/images_non_med/fam-Ch13-Fulvestrant.svg",
+    "smiles": "C[C@]12CC[C@H]3[C@@H]([C@H](CCCCCCCCC[S](=O)CCCC(F)(F)C(F)(F)F)Cc4cc(O)ccc34)[C@@H]1CC[C@@H]2O"
+  },
+  {
+    "cn": "司坦唑醇",
+    "en": "Stanozolol",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Stanozolol",
+    "image": "/assets/images_non_med/fam-Ch13-Stanozolol.svg",
+    "smiles": "C[C@]1(O)CC[C@H]2[C@@H]3CC[C@H]4Cc5[nH]ncc5C[C@]4(C)[C@H]3CC[C@]12C"
+  },
+  {
+    "cn": "氟他胺",
+    "en": "Flutamide",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Flutamide",
+    "image": "/assets/images_non_med/fam-Ch13-Flutamide.svg",
+    "smiles": "CC(C)C(=O)Nc1ccc(c(c1)C(F)(F)F)[N+]([O-])=O"
+  },
+  {
+    "cn": "尼鲁米特",
+    "en": "Nilutamide",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Nilutamide",
+    "image": "/assets/images_non_med/fam-Ch13-Nilutamide.svg",
+    "smiles": "CC1(C)NC(=O)N(c2ccc(c(c2)C(F)(F)F)[N+]([O-])=O)C1=O"
+  },
+  {
+    "cn": "黄体酮",
+    "en": "Progesterone",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Progesterone",
+    "image": "/assets/images_non_med/fam-Ch13-Progesterone.svg",
+    "smiles": "CC(=O)[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C"
+  },
+  {
+    "cn": "泼尼松龙",
+    "en": "Prednisolone",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Prednisolone",
+    "image": "/assets/images_non_med/fam-Ch13-Prednisolone.svg",
+    "smiles": "C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)C=C[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO"
+  },
+  {
+    "cn": "氟轻松",
+    "en": "Fluocinonide",
+    "chapter": "第十三章 甾体激素类",
+    "type": "familiarize",
+    "id": "fam-Ch13-Fluocinonide",
+    "image": "/assets/images_non_med/fam-Ch13-Fluocinonide.svg",
+    "smiles": "CC(=O)OCC(=O)[C@@]12OC(C)(C)O[C@@H]1C[C@H]3[C@@H]4C[C@H](F)C5=CC(=O)C=C[C@]5(C)[C@@]4(F)[C@@H](O)C[C@]23C"
+  },
+  {
+    "cn": "雌二醇",
+    "en": "Estradiol",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Estradiol",
+    "image": "/assets/images_non_med/mas-Ch13-Estradiol.svg",
+    "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@H]2O"
+  },
+  {
+    "cn": "己烯雌酚",
+    "en": "Diethylstilbestrol",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Diethylstilbestrol",
+    "image": "/assets/images_non_med/mas-Ch13-Diethylstilbestrol.svg",
+    "smiles": "CC\\C(c1ccc(O)cc1)=C(CC)/c2ccc(O)cc2"
+  },
+  {
+    "cn": "他莫昔芬",
+    "en": "Tamoxifen",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Tamoxifen",
+    "image": "/assets/images_non_med/mas-Ch13-Tamoxifen.svg",
+    "smiles": "CC/C(c1ccccc1)=C(c2ccccc2)/c3ccc(OCCN(C)C)cc3"
+  },
+  {
+    "cn": "丙酸睾酮",
+    "en": "Testosterone Propionate",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-TestosteronePropionate",
+    "image": "/assets/images_non_med/mas-Ch13-TestosteronePropionate.svg",
+    "smiles": "CCC(=O)O[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C"
+  },
+  {
+    "cn": "甲羟孕酮",
+    "en": "Medroxyprogesterone Acetate",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-MedroxyprogesteroneAcetate",
+    "image": "/assets/images_non_med/mas-Ch13-MedroxyprogesteroneAcetate.svg",
+    "smiles": "C[C@H]1C[C@@H]2[C@H](CC[C@@]3(C)[C@H]2CC[C@]3(OC(C)=O)C(C)=O)[C@@]4(C)CCC(=O)C=C14"
+  },
+  {
+    "cn": "左炔诺孕酮",
+    "en": "Levonorgestrel",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Levonorgestrel",
+    "image": "/assets/images_non_med/mas-Ch13-Levonorgestrel.svg",
+    "smiles": "CC[C@]12CC[C@H]3[C@@H](CCC4=CC(=O)CC[C@H]34)[C@@H]1CC[C@@]2(O)C#C"
+  },
+  {
+    "cn": "米非司酮",
+    "en": "Mifepristone",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Mifepristone",
+    "image": "/assets/images_non_med/mas-Ch13-Mifepristone.svg",
+    "smiles": "CC#C[C@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CCC4=C3[C@H](C[C@]12C)c5ccc(cc5)N(C)C"
+  },
+  {
+    "cn": "氢化可的松",
+    "en": "Hydrocortisone",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Hydrocortisone",
+    "image": "/assets/images_non_med/mas-Ch13-Hydrocortisone.svg",
+    "smiles": "C[C@]12CCC(=O)C=C1CC[C@H]3[C@@H]4CC[C@](O)(C(=O)CO)[C@@]4(C)C[C@H](O)[C@H]23"
+  },
+  {
+    "cn": "地塞米松",
+    "en": "Dexamethasone",
+    "chapter": "第十三章 甾体激素类",
+    "type": "master",
+    "id": "mas-Ch13-Dexamethasone",
+    "image": "/assets/images_non_med/mas-Ch13-Dexamethasone.svg",
+    "smiles": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CO"
+  }
+]
