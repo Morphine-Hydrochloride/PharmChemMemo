@@ -168,7 +168,7 @@ const generateEfficacyOptions = (correctCard, allCards, count = 4) => {
 
 
 // --- Component: Data Management Modal ---
-function DataManagementModal({ isOpen, onClose, onImport, onExport }) {
+function DataManagementModal({ isOpen, onClose, onImport, onExport, enableBreaks, onToggleBreak }) {
   if (!isOpen) return null;
 
   return (
@@ -184,6 +184,23 @@ function DataManagementModal({ isOpen, onClose, onImport, onExport }) {
         </div>
 
         <div className="p-8 space-y-6">
+          {/* Break Toggle */}
+          <div className="bg-sky-50 rounded-2xl p-6 border border-sky-100 hover:shadow-md transition flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-sky-100 text-sky-600 rounded-xl">
+                <Brain size={24} weight="bold" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-1">学习间歇</h3>
+                <p className="text-sm text-slate-500">每学习一组卡片后休息一下</p>
+              </div>
+            </div>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" checked={enableBreaks} onChange={onToggleBreak} className="sr-only peer" />
+              <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-sky-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-sky-600"></div>
+            </label>
+          </div>
+
           {/* Export */}
           <div className="bg-indigo-50 rounded-2xl p-6 border border-indigo-100 hover:shadow-md transition">
             <div className="flex items-start gap-4">
@@ -566,7 +583,7 @@ function QuizView({ card, mode, onAnswer, options, onNext, progress, getImagePat
 
 // --- Component: Learning Flow ---
 // --- Component: Learning Flow ---
-function LearningFlow({ cards: initialCards, onExit, updateProgress, initialReviewMode = false, getImagePath, realisticMode }) {
+function LearningFlow({ cards: initialCards, onExit, updateProgress, initialReviewMode = false, getImagePath, realisticMode, enableBreaks = true, onFetchMore }) {
   const [cards, setCards] = useState(initialCards);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentCard, setCurrentCard] = useState(initialCards[0]);
@@ -625,12 +642,25 @@ function LearningFlow({ cards: initialCards, onExit, updateProgress, initialRevi
     if (currentIndex < cards.length - 1) {
       setCurrentIndex(prev => prev + 1);
     } else {
-      // Check if there are any cards left that are not mastered in this batch?
-      // Actually, the queue logic ensures we only finish when we fall off the end.
-      // But let's verify if we should just loop? 
-      // No, the re-insertion logic handles the loop. If we reach the end, it means everything before is done or pushed back.
-      alert("🎉 本组学习完成！休息一下吧！");
-      onExit();
+      if (!enableBreaks && onFetchMore) {
+        // Continuous Mode: Fetch more
+        const more = onFetchMore(cards);
+        if (more && more.length > 0) {
+          // Add new cards to the queue
+          setCards(prev => [...prev, ...more]);
+          setCurrentIndex(prev => prev + 1);
+          // Note: This relies on React state update batching or next render to pick up new card
+          // Actually we need to be careful. currentIndex update happens in next tick implies render?
+          // Yes.
+        } else {
+          alert(initialReviewMode ? "暂无更多复习内容。" : "太棒了！所有卡片都已掌握！");
+          onExit();
+        }
+      } else {
+        // Standard Mode: Break
+        alert("🎉 本组学习完成！休息一下吧！");
+        onExit();
+      }
     }
   };
 
@@ -702,8 +732,21 @@ function LearningFlow({ cards: initialCards, onExit, updateProgress, initialRevi
       if (currentIndex < newCards.length - 1) {
         setCurrentIndex(prev => prev + 1);
       } else {
-        alert("🎉 本组学习完成！休息一下吧！");
-        onExit();
+        if (!enableBreaks && onFetchMore) {
+          const more = onFetchMore(newCards); // Use updated array
+          if (more && more.length > 0) {
+            setCards(prev => [...prev, ...more]); // This might conflict with previous setCards? 
+            // Better approach: merge updates
+            setCards([...newCards, ...more]);
+            setCurrentIndex(prev => prev + 1);
+          } else {
+            alert("暂无更多内容！");
+            onExit();
+          }
+        } else {
+          alert("🎉 本组学习完成！休息一下吧！");
+          onExit();
+        }
       }
     }
   };
@@ -872,9 +915,16 @@ function ModeSetupView({
 }) {
   const [selectedChapters, setSelectedChapters] = useState([]);
   const [isRandom, setIsRandom] = useState(false);
+  const [onlyMaster, setOnlyMaster] = useState(false);
 
   const availableCount = useMemo(() => {
-    const selectedCards = allCards.filter(c => selectedChapters.includes(c.chapter));
+    let selectedCards = allCards.filter(c => selectedChapters.includes(c.chapter));
+
+    // Applying Master Filter
+    if (onlyMaster) {
+      selectedCards = selectedCards.filter(c => c.type === 'master');
+    }
+
     if (mode === 'learning') {
       return selectedCards.filter(c => {
         const p = progress[c.id] || Object.values(progress).find(v => v.en === c.en);
@@ -907,7 +957,7 @@ function ModeSetupView({
 
   const handleStart = () => {
     if (selectedChapters.length === 0) return;
-    onStart(selectedChapters, isRandom ? 'random' : 'sequential');
+    onStart(selectedChapters, isRandom ? 'random' : 'sequential', onlyMaster);
   };
 
   const config = {
@@ -988,6 +1038,17 @@ function ModeSetupView({
                   </button>
                 </div>
               )}
+              <div className="flex items-center gap-2 border-l border-slate-200 pl-4 ml-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={onlyMaster}
+                    onChange={(e) => setOnlyMaster(e.target.checked)}
+                    className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <span className="text-sm font-bold text-slate-600">只看掌握药</span>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -1017,12 +1078,14 @@ function ExamModeView({ chapters, allCards, disabledDrugs, onStartExam, onExit }
   const [nameQuestionCount, setNameQuestionCount] = useState(10);
   const [structureQuestionCount, setStructureQuestionCount] = useState(5);
   const [useRealisticMode, setUseRealisticMode] = useState(true);
+  const [onlyMaster, setOnlyMaster] = useState(false);
 
   // 计算可用药物数量
   const availableStats = useMemo(() => {
     const filtered = allCards.filter(c =>
       (selectedChapters.length === 0 || selectedChapters.includes(c.chapter)) &&
-      !disabledDrugs.includes(c.id)
+      !disabledDrugs.includes(c.id) &&
+      (onlyMaster ? c.type === 'master' : true)
     );
     const allCount = filtered.length;
     const masterCount = filtered.filter(c => c.type === 'master').length;
@@ -1050,7 +1113,8 @@ function ExamModeView({ chapters, allCards, disabledDrugs, onStartExam, onExit }
       selectedChapters,
       nameQuestionCount,
       structureQuestionCount,
-      useRealisticMode
+      useRealisticMode,
+      onlyMaster
     });
   };
 
@@ -1139,6 +1203,20 @@ function ExamModeView({ chapters, allCards, disabledDrugs, onStartExam, onExit }
             </div>
           </div>
 
+          {/* Master Only Toggle */}
+          <label className="flex items-center gap-3 p-4 bg-indigo-50 rounded-xl cursor-pointer border border-indigo-100">
+            <input
+              type="checkbox"
+              checked={onlyMaster}
+              onChange={(e) => setOnlyMaster(e.target.checked)}
+              className="w-5 h-5 rounded border-indigo-300 text-indigo-600 focus:ring-indigo-500"
+            />
+            <div>
+              <span className="font-bold text-indigo-800">只考掌握药</span>
+              <p className="text-xs text-indigo-600">写药名题也将只从掌握药中抽取</p>
+            </div>
+          </label>
+
           {/* 拟真模式 */}
           <label className="flex items-center gap-3 p-4 bg-amber-50 rounded-xl cursor-pointer border border-amber-100">
             <input
@@ -1179,11 +1257,15 @@ function ExamModeView({ chapters, allCards, disabledDrugs, onStartExam, onExit }
 
 // --- Component: Exam Test View (模拟考试执行) ---
 function ExamTestView({ allCards, config, getImagePath, getRandomRotation, onExit }) {
-  const { selectedChapters, nameQuestionCount, structureQuestionCount, useRealisticMode } = config;
+  const { selectedChapters, nameQuestionCount, structureQuestionCount, useRealisticMode, onlyMaster } = config;
 
   // 生成题目
   const { nameQuestions, structureQuestions } = useMemo(() => {
-    const pool = allCards.filter(c => selectedChapters.includes(c.chapter));
+    let pool = allCards.filter(c => selectedChapters.includes(c.chapter));
+
+    if (onlyMaster) {
+      pool = pool.filter(c => c.type === 'master');
+    }
 
     // 随机打乱
     const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
@@ -2019,7 +2101,8 @@ function App() {
       backupData.disabledDrugs = disabledDrugs;
       backupData.preferences = {
         currentMajor,
-        realisticMode
+        realisticMode,
+        enableBreaks,
       };
     }
 
@@ -2082,6 +2165,7 @@ function App() {
           if (json.data.preferences) {
             if (json.data.preferences.currentMajor) setCurrentMajor(json.data.preferences.currentMajor);
             if (json.data.preferences.realisticMode !== undefined) setRealisticMode(json.data.preferences.realisticMode);
+            if (json.data.preferences.enableBreaks !== undefined) setEnableBreaks(json.data.preferences.enableBreaks);
           }
 
           let successMsg = "✅ 数据恢复成功！\n";
@@ -2100,10 +2184,16 @@ function App() {
     e.target.value = null;
   };
 
+  // Session Configuration for Continuous Learning
+  const [sessionConfig, setSessionConfig] = useState(null);
+
   // View Switching Logic which prepares cards
-  const enterMode = (mode, orderMode = 'sequential', chapterInput = 'all') => {
-    let cards = [];
+  const enterMode = (mode, orderMode = 'sequential', chapterInput = 'all', onlyMaster = false) => {
+    // Save Config for Continuous Fetching
     const chaptersToUse = Array.isArray(chapterInput) ? chapterInput : [chapterInput];
+    setSessionConfig({ mode, orderMode, chapters: chaptersToUse, onlyMaster });
+
+    let cards = [];
 
     // 获取基础卡片集（按章节筛选）
     let baseCards = allCards;
@@ -2114,6 +2204,11 @@ function App() {
     // 全局过滤：移除被禁用的药物
     if (mode !== 'catalog') {
       baseCards = baseCards.filter(c => !disabledDrugs.includes(c.id));
+    }
+
+    // Master Only Filter (Inject filter here)
+    if (onlyMaster) {
+      baseCards = baseCards.filter(c => c.type === 'master');
     }
 
     if (mode === 'learning') {
@@ -2160,6 +2255,32 @@ function App() {
     }
     setCurrentView(mode);
   };
+
+  const handleFetchMore = useCallback((currentCards) => {
+    if (!sessionConfig || !sessionConfig.chapters) return [];
+
+    let baseCards = allCards;
+    if (!sessionConfig.chapters.includes('all')) {
+      baseCards = allCards.filter(c => sessionConfig.chapters.includes(c.chapter));
+    }
+    // Filter disabled
+    baseCards = baseCards.filter(c => !disabledDrugs.includes(c.id));
+
+    // Filter master only
+    if (sessionConfig.onlyMaster) {
+      baseCards = baseCards.filter(c => c.type === 'master');
+    }
+
+    if (sessionConfig.mode === 'learning') {
+      // Generate next batch
+      console.log("Fetching more cards for continuous learning...");
+      // Note: generateLearningBatch picks up 'active' (learning status) and 'new' (stage 0) cards.
+      // It filters out 'mastered'.
+      return generateLearningBatch(baseCards, progress, sessionConfig.orderMode, 15);
+    }
+
+    return [];
+  }, [allCards, disabledDrugs, progress, sessionConfig]);
 
   // Keyboard Shortcuts
   useEffect(() => {
@@ -2410,6 +2531,8 @@ function App() {
           onClose={() => setShowSettingsModal(false)}
           onExport={handleExportData}
           onImport={handleImportData}
+          enableBreaks={enableBreaks}
+          onToggleBreak={() => setEnableBreaks(prev => !prev)}
         />
       </>
     );
@@ -2452,7 +2575,7 @@ function App() {
         chapters={chapters}
         allCards={allCards}
         disabledDrugs={disabledDrugs}
-        onStart={(selected, order) => enterMode('learning', order, selected)}
+        onStart={(selected, order, onlyMaster) => enterMode('learning', order, selected, onlyMaster)}
         onExit={() => setCurrentView('home')}
         progress={progress}
       />
@@ -2466,7 +2589,7 @@ function App() {
         chapters={chapters}
         allCards={allCards}
         disabledDrugs={disabledDrugs}
-        onStart={(selected) => enterMode('review', 'sequential', selected)}
+        onStart={(selected, options) => enterMode('review', 'sequential', selected, options?.onlyMaster)}
         onExit={() => setCurrentView('home')}
         progress={progress}
       />
@@ -2526,6 +2649,8 @@ function App() {
             onExit={() => setCurrentView('home')}
             getImagePath={getImagePath}
             realisticMode={realisticMode}
+            enableBreaks={enableBreaks}
+            onFetchMore={handleFetchMore}
           />
         </div>
       </div>
@@ -2551,6 +2676,9 @@ function App() {
             onExit={() => setCurrentView('home')}
             getImagePath={getImagePath}
             realisticMode={realisticMode}
+            enableBreaks={enableBreaks}
+          // Review mode currently doesn't support infinite fetch as it loads all due cards at once.
+          // But we pass it just in case we want to support it later or if logic changes.
           />
         </div>
       </div>
