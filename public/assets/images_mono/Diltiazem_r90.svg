@@ -36,7 +36,7 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path class='bond-20 atom-20 atom-21' d='M 169.9,179.4 L 145.6,187.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-20 atom-20 atom-21' d='M 171.6,185.1 L 147.4,192.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-21 atom-20 atom-22' d='M 169.4,182.7 L 196.4,211.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
-<path class='bond-22 atom-22 atom-23' d='M 196.4,211.7 L 191.4,232.6 L 185.9,230.5 Z' style='fill:#000000;fill-rule:evenodd;fill-opacity:1;stroke:#000000;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='bond-22 atom-22 atom-23' d='M 196.4,211.7 L 188.1,232.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-23 atom-23 atom-24' d='M 167.0,250.9 L 142.8,254.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-24 atom-24 atom-25' d='M 142.8,254.6 L 118.0,223.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-25 atom-24 atom-26' d='M 140.7,252.0 L 131.9,274.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -58,7 +58,6 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path d='M 143.3,121.9 L 142.3,121.3 L 142.5,119.3' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 145.0,83.7 L 145.2,81.7 L 144.2,81.1' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 169.6,181.5 L 169.4,182.7 L 170.7,184.1' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
-<path d='M 195.0,210.3 L 196.4,211.7 L 198.3,211.5' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 144.1,254.4 L 142.8,254.6 L 141.6,253.1' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 237.1,275.5 L 236.1,277.2 L 237.1,278.9' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 255.0,309.8 L 256.0,311.5 L 258.0,311.5' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
@@ -255,60 +254,5 @@ Q 259.9 206.4, 259.1 205.0
 L 259.8 204.5
 Q 260.8 206.1, 261.3 207.5
 Q 261.8 208.9, 261.8 210.6
-' fill='#000000'/>
-<path class='CIP_Code' d='M 170.8 216.7
-Q 170.8 215.0, 171.3 213.6
-Q 171.8 212.3, 172.7 210.7
-L 173.4 211.1
-Q 172.6 212.6, 172.2 213.8
-Q 171.9 215.1, 171.9 216.7
-Q 171.9 218.4, 172.2 219.6
-Q 172.6 220.9, 173.4 222.3
-L 172.7 222.8
-Q 171.8 221.3, 171.3 219.9
-Q 170.8 218.5, 170.8 216.7
-' fill='#000000'/>
-<path class='CIP_Code' d='M 174.4 218.8
-Q 174.5 218.9, 174.9 219.0
-Q 175.3 219.2, 175.7 219.3
-Q 176.1 219.4, 176.6 219.4
-Q 177.4 219.4, 177.8 219.0
-Q 178.3 218.6, 178.3 218.0
-Q 178.3 217.5, 178.0 217.2
-Q 177.8 216.9, 177.5 216.8
-Q 177.1 216.6, 176.5 216.4
-Q 175.8 216.2, 175.3 216.0
-Q 174.9 215.8, 174.6 215.3
-Q 174.2 214.9, 174.2 214.1
-Q 174.2 213.1, 175.0 212.4
-Q 175.7 211.7, 177.1 211.7
-Q 178.1 211.7, 179.2 212.2
-L 178.9 213.1
-Q 177.9 212.7, 177.1 212.7
-Q 176.3 212.7, 175.9 213.1
-Q 175.4 213.4, 175.4 214.0
-Q 175.4 214.4, 175.7 214.7
-Q 175.9 215.0, 176.2 215.1
-Q 176.6 215.3, 177.1 215.5
-Q 177.9 215.7, 178.4 215.9
-Q 178.8 216.2, 179.1 216.7
-Q 179.5 217.1, 179.5 218.0
-Q 179.5 219.1, 178.7 219.7
-Q 177.9 220.4, 176.6 220.4
-Q 175.9 220.4, 175.3 220.2
-Q 174.7 220.0, 174.1 219.8
-L 174.4 218.8
-' fill='#000000'/>
-<path class='CIP_Code' d='M 183.0 216.7
-Q 183.0 218.5, 182.5 219.9
-Q 182.0 221.3, 181.0 222.8
-L 180.4 222.3
-Q 181.1 220.9, 181.5 219.6
-Q 181.9 218.4, 181.9 216.7
-Q 181.9 215.1, 181.5 213.8
-Q 181.1 212.6, 180.4 211.1
-L 181.0 210.7
-Q 182.0 212.3, 182.5 213.6
-Q 183.0 215.0, 183.0 216.7
 ' fill='#000000'/>
 </svg>

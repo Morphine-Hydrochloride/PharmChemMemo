@@ -68,6 +68,14 @@ def render_molecule_from_inchi(inchi, output_path, width=400, height=400):
         mol = MolFromInchi(inchi)
         if mol is None:
             return False
+
+        # Tautomer canonicalization (Restore Keto form)
+        try:
+            from rdkit.Chem.MolStandardize import rdMolStandardize
+            enumerator = rdMolStandardize.TautomerEnumerator()
+            mol = enumerator.Canonicalize(mol)
+        except Exception:
+            pass
         
         # 优先使用 CoordGen (Schrodinger) 算法，对大环分子布局更好
         if hasattr(rdDepictor, 'SetPreferCoordGen'):

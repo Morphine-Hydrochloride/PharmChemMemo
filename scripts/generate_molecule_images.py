@@ -240,6 +240,14 @@ def main():
                 from rdkit.Chem.inchi import MolFromInchi
                 mol_from_inchi = MolFromInchi(inchi)
                 if mol_from_inchi:
+                    # 尝试规范化互变异构体（恢复酮式结构，解决 Enol 问题）
+                    try:
+                        from rdkit.Chem.MolStandardize import rdMolStandardize
+                        enumerator = rdMolStandardize.TautomerEnumerator()
+                        mol_from_inchi = enumerator.Canonicalize(mol_from_inchi)
+                    except Exception as te:
+                        print(f"Tautomer canonicalization failed for {en_name}: {te}")
+
                     smiles = Chem.MolToSmiles(mol_from_inchi)
                     # print(f"Using InChI for {en_name}") 
             except Exception as e:

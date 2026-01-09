@@ -14,9 +14,9 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path class='bond-4 atom-4 atom-5' d='M 326.1,145.0 L 355.7,127.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-4 atom-4 atom-5' d='M 322.2,138.2 L 351.7,121.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-5 atom-4 atom-6' d='M 326.1,140.5 L 280.9,114.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
-<path class='bond-6 atom-6 atom-7' d='M 280.9,114.6 L 280.8,81.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-6 atom-6 atom-7' d='M 284.8,116.9 L 284.7,81.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-6 atom-6 atom-7' d='M 277.0,116.9 L 276.9,81.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-7 atom-6 atom-8' d='M 280.9,114.6 L 236.0,140.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
-<path class='bond-7 atom-6 atom-8' d='M 281.0,123.7 L 243.8,145.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-8 atom-8 atom-9' d='M 236.0,140.8 L 190.8,115.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-9 atom-9 atom-10' d='M 190.8,115.0 L 145.9,141.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-10 atom-10 atom-11' d='M 145.9,141.1 L 146.1,193.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -57,6 +57,7 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path d='M 279.1,217.4 L 281.3,218.7 L 283.6,217.4' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 324.0,193.8 L 326.3,192.5 L 326.3,189.9' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 326.1,143.1 L 326.1,140.5 L 323.8,139.2' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 283.2,115.9 L 280.9,114.6 L 278.7,116.0' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 193.1,116.3 L 190.8,115.0 L 188.6,116.3' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 148.1,139.8 L 145.9,141.1 L 145.9,143.7' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 191.4,268.4 L 191.4,271.0 L 189.2,272.3' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
@@ -101,20 +102,6 @@ Q 278.2 56.0, 276.7 57.6
 Q 275.3 59.3, 275.3 62.7
 Q 275.3 66.1, 276.7 67.8
 Q 278.2 69.6, 280.7 69.6
-' fill='#000000'/>
-<path class='atom-7' d='M 291.2 54.2
-L 293.5 54.2
-L 293.5 61.5
-L 302.2 61.5
-L 302.2 54.2
-L 304.5 54.2
-L 304.5 71.2
-L 302.2 71.2
-L 302.2 63.4
-L 293.5 63.4
-L 293.5 71.2
-L 291.2 71.2
-L 291.2 54.2
 ' fill='#000000'/>
 <path class='atom-18' d='M 28.2 337.2
 Q 28.2 333.1, 30.2 330.8

@@ -7,7 +7,7 @@
 width='400px' height='400px' viewBox='0 0 400 400'>
 <!-- END OF HEADER -->
 <rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='400.0' height='400.0' x='0.0' y='0.0'> </rect>
-<path class='bond-0 atom-1 atom-0' d='M 115.1,102.9 L 138.3,85.4 L 141.9,91.7 Z' style='fill:#000000;fill-rule:evenodd;fill-opacity:1;stroke:#000000;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path class='bond-0 atom-0 atom-1' d='M 141.7,87.7 L 115.1,102.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-1 atom-1 atom-2' d='M 115.1,102.9 L 115.0,151.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-2 atom-2 atom-3' d='M 115.0,151.2 L 156.8,175.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-3 atom-3 atom-4' d='M 156.8,175.4 L 198.6,151.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -30,7 +30,6 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path class='bond-16 atom-16 atom-17' d='M 77.0,80.8 L 49.9,96.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-17 atom-16 atom-18' d='M 73.3,78.7 L 73.4,48.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-18 atom-15 atom-3' d='M 156.7,223.7 L 156.8,175.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
-<path d='M 115.1,105.3 L 115.1,102.9 L 113.0,101.7' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 115.0,148.8 L 115.0,151.2 L 117.1,152.4' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 196.5,152.6 L 198.6,151.4 L 200.7,152.6' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 238.3,174.4 L 240.4,175.6 L 240.4,178.0' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
@@ -204,60 +203,5 @@ L 86.2 31.2
 L 86.2 39.0
 L 83.9 39.0
 L 83.9 22.0
-' fill='#000000'/>
-<path class='CIP_Code' d='M 119.4 110.3
-Q 119.4 108.6, 119.9 107.2
-Q 120.4 105.8, 121.4 104.2
-L 122.0 104.7
-Q 121.2 106.1, 120.9 107.4
-Q 120.5 108.7, 120.5 110.3
-Q 120.5 111.9, 120.9 113.2
-Q 121.2 114.5, 122.0 116.0
-L 121.4 116.4
-Q 120.4 114.9, 119.9 113.5
-Q 119.4 112.1, 119.4 110.3
-' fill='#000000'/>
-<path class='CIP_Code' d='M 123.0 112.4
-Q 123.1 112.5, 123.5 112.6
-Q 123.9 112.8, 124.3 112.9
-Q 124.8 113.0, 125.2 113.0
-Q 126.0 113.0, 126.5 112.6
-Q 126.9 112.2, 126.9 111.5
-Q 126.9 111.1, 126.7 110.8
-Q 126.5 110.5, 126.1 110.3
-Q 125.8 110.2, 125.2 110.0
-Q 124.4 109.8, 123.9 109.6
-Q 123.5 109.3, 123.2 108.9
-Q 122.9 108.4, 122.9 107.7
-Q 122.9 106.6, 123.6 105.9
-Q 124.3 105.3, 125.8 105.3
-Q 126.7 105.3, 127.9 105.7
-L 127.6 106.7
-Q 126.6 106.2, 125.8 106.2
-Q 125.0 106.2, 124.5 106.6
-Q 124.1 106.9, 124.1 107.5
-Q 124.1 108.0, 124.3 108.2
-Q 124.5 108.5, 124.9 108.7
-Q 125.2 108.8, 125.8 109.0
-Q 126.6 109.3, 127.0 109.5
-Q 127.5 109.7, 127.8 110.2
-Q 128.1 110.7, 128.1 111.5
-Q 128.1 112.7, 127.3 113.3
-Q 126.6 114.0, 125.3 114.0
-Q 124.5 114.0, 123.9 113.8
-Q 123.4 113.6, 122.7 113.4
-L 123.0 112.4
-' fill='#000000'/>
-<path class='CIP_Code' d='M 131.7 110.3
-Q 131.7 112.1, 131.2 113.5
-Q 130.7 114.9, 129.7 116.4
-L 129.1 116.0
-Q 129.8 114.5, 130.2 113.2
-Q 130.6 111.9, 130.6 110.3
-Q 130.6 108.7, 130.2 107.4
-Q 129.8 106.1, 129.1 104.7
-L 129.7 104.2
-Q 130.7 105.8, 131.2 107.2
-Q 131.7 108.6, 131.7 110.3
 ' fill='#000000'/>
 </svg>

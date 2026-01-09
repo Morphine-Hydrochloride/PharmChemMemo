@@ -235,6 +235,14 @@ def process_data_file(data_file):
             try:
                 mol = MolFromInchi(inchi)
                 if mol:
+                    # 尝试规范化互变异构体（恢复酮式结构）
+                    try:
+                        from rdkit.Chem.MolStandardize import rdMolStandardize
+                        enumerator = rdMolStandardize.TautomerEnumerator()
+                        mol = enumerator.Canonicalize(mol)
+                    except Exception:
+                        pass
+
                     raw_smiles = Chem.MolToSmiles(mol)
                     used_source = "InChI"
             except:
