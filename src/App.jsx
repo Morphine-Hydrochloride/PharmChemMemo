@@ -867,19 +867,32 @@ function ModeSetupView({
   disabledDrugs,
   onStart,
   onExit,
-  stats
+  stats,
+  progress // Added progress prop
 }) {
   const [selectedChapters, setSelectedChapters] = useState([]);
   const [isRandom, setIsRandom] = useState(false);
 
-  // 计算可用药物数量
   const availableCount = useMemo(() => {
-    return allCards.filter(c =>
-      (selectedChapters.length === 0 || selectedChapters.includes(c.chapter)) &&
-      !disabledDrugs.includes(c.id) &&
-      (mode === 'review' ? (c.status === 'mastered') : true)
-    ).length;
-  }, [allCards, selectedChapters, disabledDrugs, mode]);
+    const selectedCards = allCards.filter(c => selectedChapters.includes(c.chapter));
+    if (mode === 'learning') {
+      return selectedCards.filter(c => {
+        const p = progress[c.id] || Object.values(progress).find(v => v.en === c.en);
+        return !p || p.status !== 'mastered';
+      }).length;
+    } else {
+      // Review mode: Mastered cards
+      return selectedCards.filter(c => {
+        const p = progress[c.id];
+        // Fallback check if ID changed but en matches
+        if (p?.status === 'mastered') return true;
+
+        // Search by English name in progress values if ID lookup fails
+        const legacyProgress = Object.values(progress).find(v => v.en === c.en);
+        return legacyProgress?.status === 'mastered';
+      }).length;
+    }
+  }, [allCards, mode, selectedChapters, progress]);
 
   const toggleChapter = (chapter) => {
     setSelectedChapters(prev =>
@@ -1855,6 +1868,30 @@ function App() {
     localStorage.setItem('drug_cards_progress', JSON.stringify(progress));
   }, [progress]);
 
+  // Data Migration: Heal old IDs from earlier versions (e.g. non-medical chapter prefix changes)
+  useEffect(() => {
+    if (Object.keys(progress).length === 0 || allCards.length === 0) return;
+
+    let hasChanges = false;
+    const newProgress = { ...progress };
+
+    allCards.forEach(card => {
+      // If current card ID has no progress, attempt to recover by English name
+      if (!newProgress[card.id]) {
+        // Look for any existing key that ends with the same English name
+        const oldId = Object.keys(newProgress).find(id => id.endsWith(`-${card.en}`));
+        if (oldId) {
+          newProgress[card.id] = { ...newProgress[oldId] };
+          hasChanges = true;
+        }
+      }
+    });
+
+    if (hasChanges) {
+      setProgress(newProgress);
+    }
+  }, [allCards]);
+
 
   const resetCardState = useCallback(() => {
     setIsFlipped(false);
@@ -2431,7 +2468,6 @@ function App() {
         disabledDrugs={disabledDrugs}
         onStart={(selected) => enterMode('review', 'sequential', selected)}
         onExit={() => setCurrentView('home')}
-        stats={stats}
         progress={progress}
       />
     );
