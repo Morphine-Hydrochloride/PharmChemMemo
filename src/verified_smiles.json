@@ -6,7 +6,7 @@
   "Zolpidem tartrate": "CN(C)C(=O)Cc1n2cc(C)ccc2nc1c3ccc(C)cc3",
   "Ramelteon": "CCC(=O)NCC[C@@H]1CCc2ccc3OCCc3c12",
   "Phenobarbital": "CCC1(C(=O)NC(=O)NC1=O)c2ccccc2",
-  "Phenytoin sodium": "[Na+].[N-]1C(=O)NC(=O)C1(c2ccccc2)c3ccccc3",
+  "Phenytoin sodium": "[Na+].[O-]C1=NC(=O)C(c2ccccc2)(c3ccccc3)[NH]1",
   "Carbamazepine": "NC(=O)N1c2ccccc2C=Cc3ccccc13",
   "Pregabalin": "CC(C)C[C@H](CN)CC(O)=O",
   "Chlorpromazine hydrochloride": "CN(C)CCCN1c2ccccc2Sc3ccc(Cl)cc13",
@@ -100,7 +100,7 @@
   "Oseltamivir phosphate": "CCOC(=O)C1=C[C@@H](OC(CC)CC)[C@H](NC(C)=O)[C@@H](N)C1",
   "Ribavirin": "NC(=O)c1ncn(n1)[C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O",
   "Cyclophosphamide": "ClCCN(CCCl)[P]1(=O)NCCCO1",
-  "Cisplatin": "Cl[Pt](Cl)(N)N",
+  "Cisplatin": "N[Pt](Cl)(Cl)N",
   "Methotrexate": "CN(Cc1cnc2nc(N)nc(N)c2n1)c3ccc(cc3)C(=O)N[C@@H](CCC(O)=O)C(O)=O",
   "Fluorouracil": "FC1=CNC(=O)NC1=O",
   "Imatinib mesylate": "CN1CCN(CC1)Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3.C[S](O)(=O)=O",
@@ -256,8 +256,11 @@
   "Chidamide": "FC1=CC(N)=C(NC(C2=CC=C(CNC(/C=C/C3=CC=CN=C3)=O)C=C2)=O)C=C1",
   "Piribedil": "C1CN(CCN1CC2=CC3=C(C=C2)OCO3)C4=NC=CC=N4",
   "Empagliflozin": "OC[C@H]1O[C@@H](c2ccc(Cc3ccc(OC4CCCO4)cc3Cl)cc2)[C@H](O)[C@@H](O)[C@@H]1O",
-  "Mirabegron": "NC(=O)Nc1ccc(CCNC[C@H](O)c2cccc(Br)c2)cc1",
+  "Mirabegron": "C1=CC=C(C=C1)[C@H](CNCCC2=CC=C(C=C2)NC(=O)CC3=CSC(=N3)N)O",
   "Cefpirome": "CO/N=C(\\C(=O)N[C@H]1[C@H]2SCC(=C(N2C1=O)C([O-])=O)C[n+]1ccc2CCCc2c1)/c1csc(N)n1",
   "Rifampicin": "C[C@H]1/C=C/C=C(\\C)/C(=O)NC2=C(C)C=C3C(O)=C4C(=O)C(=C(O)[C@@H](O)[C@@H](C)O[C@H](C)[C@H](O)[C@@H](C)[C@@H](OC(C)=O)[C@@H](C)/C=C/OC5(C)OC4=C3C2=O)C=NN5CCN(C)C",
-  "Imrecoxib": "CCCN1CC(=C(C1=O)C2=CC=C(C=C2)C)C3=CC=C(C=C3)S(=O)(=O)C"
+  "Imrecoxib": "CCCN1CC(=C(C1=O)C2=CC=C(C=C2)C)C3=CC=C(C=C3)S(=O)(=O)C",
+  "Carboplatin": "N[Pt]1(N)OC(=O)C2(CCC2)C(=O)O1",
+  "Oxaliplatin": "[H][C@]12CCCC[C@]1([H])N[Pt]3(OC(=O)C(=O)O3)N2",
+  "Nedaplatin": "N[Pt]1(N)OCC(=O)O1"
 }

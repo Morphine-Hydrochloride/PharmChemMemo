@@ -62,6 +62,11 @@ def extract_parent_molecule(smiles, keep_sodium=False):
     best_size = 0
 
     base_salts = ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[K+]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]
+    
+    # 【修复】对于铂类药物 (Pt)，如顺铂，必须保留所有配体 (Cl, NH3 等)，不能拆分
+    if "Pt" in smiles or "[Pt" in smiles or "pt" in smiles.lower():
+        return smiles
+
     if not keep_sodium:
         base_salts.extend(["[Na+]", "[Na]"])
     
@@ -152,6 +157,10 @@ def render_molecule_svg_monochrome(smiles, output_path, width=400, height=400, r
         if mol is None:
             return False
         
+        # 优先使用 CoordGen 算法
+        if hasattr(rdDepictor, 'SetPreferCoordGen'):
+            rdDepictor.SetPreferCoordGen(True)
+
         AllChem.Compute2DCoords(mol)
         
         # 应用旋转
@@ -160,15 +169,12 @@ def render_molecule_svg_monochrome(smiles, output_path, width=400, height=400, r
         
         drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
         
-        if hasattr(rdDepictor, 'SetPreferCoordGen'):
-            rdDepictor.SetPreferCoordGen(True)
-
         opts = drawer.drawOptions()
-        opts.bondLineWidth = 2.5
-        opts.minFontSize = 16
+        opts.bondLineWidth = 2.5           # 加粗键线
+        opts.minFontSize = 16              # 增大字体
         opts.maxFontSize = 24
         opts.additionalAtomLabelPadding = 0.15
-        opts.addStereoAnnotation = True
+        opts.addStereoAnnotation = True    # 显示立体化学
         opts.addAtomIndices = False
         opts.padding = 0.05
         
@@ -206,6 +212,12 @@ def process_data_file(data_file):
     
     count = 0
     
+    try:
+        from rdkit.Chem.inchi import MolFromInchi
+        HAS_INCHI = True
+    except ImportError:
+        HAS_INCHI = False
+    
     for i, drug in enumerate(drugs):
         en_name = drug.get("en", "").strip()
         cn_name = drug.get("cn", "")
@@ -214,25 +226,43 @@ def process_data_file(data_file):
         if not drug_id: 
             continue
 
-        smiles = ""
-        
-        if en_name in LOCAL_SMILES_DB:
-            smiles = LOCAL_SMILES_DB[en_name]
-        else:
-             base_name = en_name.replace(" hydrochloride", "").replace(" hydrobromide", "").replace(" sodium", "")
-             if base_name in LOCAL_SMILES_DB:
-                 smiles = LOCAL_SMILES_DB[base_name]
+        raw_smiles = ""
+        used_source = ""
 
-        if not smiles:
-             smiles = drug.get("smiles", "")
+        # 1. 优先使用 data.json 中的 InChI (如果存在且有效)
+        inchi = drug.get("inchi", "")
+        if HAS_INCHI and inchi:
+            try:
+                mol = MolFromInchi(inchi)
+                if mol:
+                    raw_smiles = Chem.MolToSmiles(mol)
+                    used_source = "InChI"
+            except:
+                pass
         
-        if not smiles:
+        # 2. 其次使用 verified_smiles.json
+        if not raw_smiles:
+            if en_name in LOCAL_SMILES_DB:
+                raw_smiles = LOCAL_SMILES_DB[en_name]
+                used_source = "VerifiedDB"
+            else:
+                base_name = en_name.replace(" hydrochloride", "").replace(" hydrobromide", "").replace(" sodium", "")
+                if base_name in LOCAL_SMILES_DB:
+                    raw_smiles = LOCAL_SMILES_DB[base_name]
+                    used_source = "VerifiedDB(Base)"
+
+        # 3. 最后使用 data.json 中的 smiles
+        if not raw_smiles:
+             raw_smiles = drug.get("smiles", "")
+             used_source = "DataJSON"
+        
+        if not raw_smiles:
             print(f"[{i+1}] 跳过 (无数据): {cn_name} | {en_name}")
             continue
             
-        # Check for sodium salt to keep Na+
+        # 提取母核 (去除盐)
         is_sodium_salt = "sodium" in en_name.lower() or "钠" in cn_name
-        parent_smiles = extract_parent_molecule(smiles, keep_sodium=is_sodium_salt)
+        parent_smiles = extract_parent_molecule(raw_smiles, keep_sodium=is_sodium_salt)
         
         # 为每个旋转角度生成图像
         for angle in ROTATION_ANGLES:
@@ -245,7 +275,8 @@ def process_data_file(data_file):
             
             if render_molecule_svg_monochrome(parent_smiles, output_path, rotation=angle):
                 if angle == 0:
-                    print(f"[{i+1}] 生成: {cn_name} (4个角度)")
+                    source_info = f"[{used_source}]" if used_source != "DataJSON" else ""
+                    print(f"[{i+1}] 生成: {cn_name} {source_info}")
                 count += 1
             else:
                 print(f"   -> 失败! ({angle}°)")

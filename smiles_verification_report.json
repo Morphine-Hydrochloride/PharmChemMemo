@@ -1,0 +1,1328 @@
+{
+  "summary": {
+    "total": 263,
+    "verified": 0,
+    "warnings": 0,
+    "errors": 0,
+    "not_found": 263
+  },
+  "errors": [],
+  "warnings": [],
+  "not_found": [
+    {
+      "drug": "奥沙西泮",
+      "en": "Oxazepam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "替马西泮",
+      "en": "Temazepam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硝西泮",
+      "en": "Nitrazepam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "三唑仑",
+      "en": "Triazolam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "扎来普隆",
+      "en": "Zaleplon",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "异戊巴比妥",
+      "en": "Amobarbital",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "加巴喷丁",
+      "en": "Gabapentin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "丙戊酸钠",
+      "en": "Sodium valproate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "拉莫三嗪",
+      "en": "Lamotrigine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "唑尼沙胺",
+      "en": "Zonisamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "地西泮",
+      "en": "Diazepam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "艾司唑仑",
+      "en": "Estazolam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "咪达唑仑",
+      "en": "Midazolam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "佐匹克隆",
+      "en": "Zopiclone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "酒石酸唑吡坦",
+      "en": "Zolpidem tartrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "雷美替胺",
+      "en": "Ramelteon",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苯巴比妥",
+      "en": "Phenobarbital",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苯妥英钠",
+      "en": "Phenytoin sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "卡马西平",
+      "en": "Carbamazepine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "普瑞巴林",
+      "en": "Pregabalin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟奋乃静",
+      "en": "Fluphenazine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利培酮",
+      "en": "Risperidone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "奥氮平",
+      "en": "Olanzapine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吗氯贝胺",
+      "en": "Moclobemide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟西汀",
+      "en": "Fluoxetine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "舍曲林",
+      "en": "Sertraline",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米氮平",
+      "en": "Mirtazapine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸文拉法辛",
+      "en": "Venlafaxine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "丁螺环酮",
+      "en": "Buspirone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸氯丙嗪",
+      "en": "Chlorpromazine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "奋乃静",
+      "en": "Perphenazine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯普噻吨",
+      "en": "Chlorprothixene",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟哌啶醇",
+      "en": "Haloperidol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "舒必利",
+      "en": "Sulpiride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯氮平",
+      "en": "Clozapine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸阿米替林",
+      "en": "Amitriptyline hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "草酸艾司西酞普兰",
+      "en": "Escitalopram oxalate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吡贝地尔",
+      "en": "Piribedil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "他利克索",
+      "en": "Talipexole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "卡比多巴",
+      "en": "Carbidopa",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "雷沙吉兰",
+      "en": "Rasagiline",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "托卡硼",
+      "en": "Tolcapone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "石杉碱甲",
+      "en": "Huperzine A",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸罗匹尼罗",
+      "en": "Ropinirole hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸普拉克索",
+      "en": "Pramipexole hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "左旋多巴",
+      "en": "Levodopa",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸多奈哌齐",
+      "en": "Donepezil hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "重酒石酸卡巴拉汀",
+      "en": "Rivastigmine tartrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸美金刚",
+      "en": "Memantine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "可待因",
+      "en": "Codeine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "海洛因",
+      "en": "Heroin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "纳洛酮",
+      "en": "Naloxone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "布托啡诺",
+      "en": "Butorphanol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿芬太尼",
+      "en": "Alfentanil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "瑞芬太尼",
+      "en": "Remifentanil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸吗啡",
+      "en": "Morphine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "喷他佐辛",
+      "en": "Pentazocine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸哌替啶",
+      "en": "Pethidine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "枸橼酸芬太尼",
+      "en": "Fentanyl citrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸美沙酮",
+      "en": "Methadone hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "曲马多",
+      "en": "Tramadol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "贝诺酯",
+      "en": "Benorilate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "舒林酸",
+      "en": "Sulindac",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "萘丁美酮",
+      "en": "Nabumetone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "酮洛芬",
+      "en": "Ketoprofen",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "美洛昔康",
+      "en": "Meloxicam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "替诺昔康",
+      "en": "Tenoxicam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "塞来昔布",
+      "en": "Celecoxib",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "来司诺雷钠",
+      "en": "Lesinurad",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "非布司他",
+      "en": "Febuxostat",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "对乙酰氨基酚",
+      "en": "Paracetamol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿司匹林",
+      "en": "Aspirin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吲哚美辛",
+      "en": "Indomethacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "双氯芬酸钠",
+      "en": "Diclofenac sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "布洛芬",
+      "en": "Ibuprofen",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "萘普生",
+      "en": "Naproxen",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吡罗昔康",
+      "en": "Piroxicam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "艾瑞昔布",
+      "en": "Imrecoxib",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "别嘌醇",
+      "en": "Allopurinol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氢溴酸东莨菪碱",
+      "en": "Scopolamine hydrobromide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氢溴酸山莨菪碱",
+      "en": "Anisodamine hydrobromide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "樟柳碱",
+      "en": "Anisodine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "溴丙胺太林",
+      "en": "Propantheline bromide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯化琥珀胆碱",
+      "en": "Suxamethonium chloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硝酸毛果芸香碱",
+      "en": "Pilocarpine nitrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "溴新斯的明",
+      "en": "Neostigmine bromide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硫酸阿托品",
+      "en": "Atropine sulfate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸苯海索",
+      "en": "Trihexyphenidyl hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苯磺酸阿曲库铵",
+      "en": "Atracurium besilate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸苯海拉明",
+      "en": "Diphenhydramine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿伐斯汀",
+      "en": "Acrivastine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿司咪唑",
+      "en": "Astemizole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "曲尼司特",
+      "en": "Tranilast",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "孟鲁司特钠",
+      "en": "Montelukast sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "马来酸氯苯那敏",
+      "en": "Chlorphenamine maleate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸赛庚啶",
+      "en": "Cyproheptadine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸西替利嗪",
+      "en": "Cetirizine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯雷他定",
+      "en": "Loratadine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸非索非那定",
+      "en": "Fexofenadine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "法莫替丁",
+      "en": "Famotidine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "兰索拉唑",
+      "en": "Lansoprazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "枸橼酸莫沙必利",
+      "en": "Mosapride citrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸托烷司琼",
+      "en": "Tropisetron hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸帕洛诺司琼",
+      "en": "Palonosetron hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿瑞匹坦",
+      "en": "Aprepitant",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "西咪替丁",
+      "en": "Cimetidine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "奥美拉唑",
+      "en": "Omeprazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "多潘立酮",
+      "en": "Domperidone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸伊托必利",
+      "en": "Itopride hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸昂丹司琼",
+      "en": "Ondansetron hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "格列本脲",
+      "en": "Glibenclamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "格列吡嗪",
+      "en": "Glipizide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "恩格列净",
+      "en": "Empagliflozin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "帕立骨化醇",
+      "en": "Paricalcitol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "依普黄酮",
+      "en": "Ipriflavone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利塞膦酸钠",
+      "en": "Risedronate sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "格列美脲",
+      "en": "Glimepiride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸二甲双胍",
+      "en": "Metformin hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "瑞格列奈",
+      "en": "Repaglinide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "马来酸罗格列酮",
+      "en": "Rosiglitazone maleate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米格列醇",
+      "en": "Miglitol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "磷酸西格列汀",
+      "en": "Sitagliptin phosphate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿仑膦酸钠",
+      "en": "Alendronate sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "去甲肾上腺素",
+      "en": "Norepinephrine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "甲基多巴",
+      "en": "Methyldopa",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "莫索尼定",
+      "en": "Moxonidine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸异丙肾上腺素",
+      "en": "Isoprenaline hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "克仑特罗",
+      "en": "Clenbuterol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "特布他林",
+      "en": "Terbutaline",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米拉贝隆",
+      "en": "Mirabegron",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "特拉唑嗪",
+      "en": "Terazosin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "艾司洛尔",
+      "en": "Esmolol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "肾上腺素",
+      "en": "Epinephrine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸麻黄碱",
+      "en": "Ephedrine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸可乐定",
+      "en": "Clonidine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸多巴酚丁胺",
+      "en": "Dobutamine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硫酸沙丁胺醇",
+      "en": "Salbutamol sulfate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸哌唑嗪",
+      "en": "Prazosin hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸普萘洛尔",
+      "en": "Propranolol hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "酒石酸美托洛尔",
+      "en": "Metoprolol tartrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利血平",
+      "en": "Reserpine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米诺地尔",
+      "en": "Minoxidil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "福辛普利",
+      "en": "Fosinopril",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "厄贝沙坦",
+      "en": "Irbesartan",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "尼群地平",
+      "en": "Nitrendipine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟桂利嗪",
+      "en": "Flunarizine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苄普地尔",
+      "en": "Bepridil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "螺内酯",
+      "en": "Spironolactone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "依普利酮",
+      "en": "Eplerenone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "卡托普利",
+      "en": "Captopril",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "马来酸依那普利",
+      "en": "Enalapril maleate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯沙坦",
+      "en": "Losartan",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硝苯地平",
+      "en": "Nifedipine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氨氯地平",
+      "en": "Amlodipine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "地尔硫䓬",
+      "en": "Diltiazem",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸维拉帕米",
+      "en": "Verapamil hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氢氯噻嗪",
+      "en": "Hydrochlorothiazide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "呋塞米",
+      "en": "Furosemide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "扎莫特罗",
+      "en": "Xamoterol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米力农",
+      "en": "Milrinone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "左西孟旦",
+      "en": "Levosimendan",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "奎尼丁",
+      "en": "Quinidine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "普鲁卡因胺",
+      "en": "Procainamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "美西律",
+      "en": "Mexiletine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "索他洛尔",
+      "en": "Sotalol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "曲美他嗪",
+      "en": "Trimetazidine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "依折麦布",
+      "en": "Ezetimibe",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯贝丁酯",
+      "en": "Clofibrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "非洛贝特",
+      "en": "Fenofibrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "普罗帕酮",
+      "en": "Propafenone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸胺碘酮",
+      "en": "Amiodarone hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硝酸甘油",
+      "en": "Nitroglycerin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "硝酸异山梨酯",
+      "en": "Isosorbide dinitrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "洛伐他汀",
+      "en": "Lovastatin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟伐他汀钠",
+      "en": "Fluvastatin sodium",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吉非罗齐",
+      "en": "Gemfibrozil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "炔雌醇",
+      "en": "Ethinylestradiol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟维司群",
+      "en": "Fulvestrant",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苯丙酸诺龙",
+      "en": "Nandrolone phenylpropionate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "醋酸甲地孕酮",
+      "en": "Megestrol acetate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "黄体酮",
+      "en": "Progesterone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "非那雄胺",
+      "en": "Finasteride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "醋酸氢化可的松",
+      "en": "Hydrocortisone acetate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "醋酸氢化泼尼松",
+      "en": "Prednisolone acetate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "曲安奈德",
+      "en": "Triamcinolone acetonide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "雌二醇",
+      "en": "Estradiol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "己烯雌酚",
+      "en": "Diethylstilbestrol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "枸橼酸氯米芬",
+      "en": "Clomifene citrate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "福美司坦",
+      "en": "Formestane",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "丙酸睾酮",
+      "en": "Testosterone propionate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "炔诺酮",
+      "en": "Norethisterone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "左炔诺孕酮",
+      "en": "Levonorgestrel",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米非司酮",
+      "en": "Mifepristone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "他莫昔芬",
+      "en": "Tamoxifen",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "醋酸地塞米松",
+      "en": "Dexamethasone acetate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "苯唑西林",
+      "en": "Oxacillin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "头孢他啶",
+      "en": "Ceftazidime",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "头孢匹罗",
+      "en": "Cefpirome",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "亚胺培南",
+      "en": "Imipenem",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氨曲南",
+      "en": "Aztreonam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸多西环素",
+      "en": "Doxycycline hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿米卡星",
+      "en": "Amikacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "红霉素",
+      "en": "Erythromycin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "罗红霉素",
+      "en": "Roxithromycin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿奇霉素",
+      "en": "Azithromycin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "克拉霉素",
+      "en": "Clarithromycin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "青霉素",
+      "en": "Penicillin G",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿莫西林",
+      "en": "Amoxicillin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "头孢氨苄",
+      "en": "Cefalexin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "头孢噻肟",
+      "en": "Cefotaxime",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "克拉维酸",
+      "en": "Clavulanic acid",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "舒巴坦",
+      "en": "Sulbactam",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氯霉素",
+      "en": "Chloramphenicol",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "磺胺嘧啶",
+      "en": "Sulfadiazine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "甲氧苄啶",
+      "en": "Trimethoprim",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "加替沙星",
+      "en": "Gatifloxacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利福平",
+      "en": "Rifampicin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吡嗪酰胺",
+      "en": "Pyrazinamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "克霉唑",
+      "en": "Clotrimazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "布替萘酚",
+      "en": "Butenafine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "伊曲康唑",
+      "en": "Itraconazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "磺胺甲噁唑",
+      "en": "Sulfamethoxazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "诺氟沙星",
+      "en": "Norfloxacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "环丙沙星",
+      "en": "Ciprofloxacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "左氧氟沙星",
+      "en": "Levofloxacin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利奈唑胺",
+      "en": "Linezolid",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "异烟肼",
+      "en": "Isoniazid",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸乙胺丁醇",
+      "en": "Ethambutol hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟康唑",
+      "en": "Fluconazole",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "特比萘芬",
+      "en": "Terbinafine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸金刚烷胺",
+      "en": "Amantadine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "更昔洛韦",
+      "en": "Ganciclovir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "埃替格韦",
+      "en": "Elvitegravir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿德福韦",
+      "en": "Adefovir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "拉米夫定",
+      "en": "Lamivudine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "茚地那韦",
+      "en": "Indinavir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "沙奎那韦",
+      "en": "Saquinavir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "磷酸奥司他韦",
+      "en": "Oseltamivir phosphate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "碘苷",
+      "en": "Idoxuridine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "索磷布韦",
+      "en": "Sofosbuvir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "阿昔洛韦",
+      "en": "Acyclovir",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利巴韦林",
+      "en": "Ribavirin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "利匹韦林",
+      "en": "Rilpivirine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "齐多夫啶",
+      "en": "Zidovudine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸氮芥",
+      "en": "Chlormethine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "美法仑",
+      "en": "Melphalan",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "异环磷酰胺",
+      "en": "Ifosfamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸多柔比星",
+      "en": "Doxorubicin hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "拓扑替康",
+      "en": "Topotecan",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "卡莫氟",
+      "en": "Carmofur",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "巯嘌呤",
+      "en": "Mercaptopurine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "紫杉醇",
+      "en": "Paclitaxel",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "吉非替尼",
+      "en": "Gefitinib",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "西达本胺",
+      "en": "Chidamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氮芥",
+      "en": "Chlormethine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "环磷酰胺",
+      "en": "Cyclophosphamide",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "卡莫司汀",
+      "en": "Carmustine",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "顺铂",
+      "en": "Cisplatin",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "米托蒽醌",
+      "en": "Mitoxantrone",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "甲氨蝶呤",
+      "en": "Methotrexate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "氟尿嘧啶",
+      "en": "Fluorouracil",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "盐酸阿糖胞苷",
+      "en": "Cytarabine hydrochloride",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    },
+    {
+      "drug": "甲磺酸伊马替尼",
+      "en": "Imatinib mesylate",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1028)>"
+    }
+  ]
+}

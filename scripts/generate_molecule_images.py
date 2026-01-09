@@ -66,6 +66,11 @@ def extract_parent_molecule(smiles, keep_sodium=False):
     
     # Define salt/ion list
     base_salts = ["Cl", "[Cl-]", "Br", "[Br-]", "[I-]", "[K+]", "[K]", "[Li+]", "[Ca+2]", "[Mg+2]", "[H+]"]
+    
+    # 【修复】对于铂类药物 (Pt)，如顺铂，必须保留所有配体 (Cl, NH3 等)，不能拆分
+    if "Pt" in smiles or "[Pt" in smiles or "pt" in smiles.lower():
+        return smiles
+
     if not keep_sodium:
         base_salts.extend(["[Na+]", "[Na]"])
     
@@ -228,15 +233,28 @@ def main():
 
         smiles = ""
         
-        # 1. 优先从 verified_smiles.json 中查找 (这就是"Reliable Source")
-        # 匹配全名
-        if en_name in LOCAL_SMILES_DB:
-            smiles = LOCAL_SMILES_DB[en_name]
-        # 匹配去盐后的名称 (如果 verified database 用的是 base name)
-        else:
-             base_name = en_name.replace(" hydrochloride", "").replace(" hydrobromide", "").replace(" sodium", "")
-             if base_name in LOCAL_SMILES_DB:
-                 smiles = LOCAL_SMILES_DB[base_name]
+        # 0. 【新增】优先使用 data.json 中的 InChI (最可靠来源)
+        inchi = drug.get("inchi", "")
+        if inchi:
+            try:
+                from rdkit.Chem.inchi import MolFromInchi
+                mol_from_inchi = MolFromInchi(inchi)
+                if mol_from_inchi:
+                    smiles = Chem.MolToSmiles(mol_from_inchi)
+                    # print(f"Using InChI for {en_name}") 
+            except Exception as e:
+                print(f"Warning: Failed to parse InChI for {en_name}: {e}")
+
+        # 1. 如果没有 InChI，则从 verified_smiles.json 中查找
+        if not smiles:
+            # 匹配全名
+            if en_name in LOCAL_SMILES_DB:
+                smiles = LOCAL_SMILES_DB[en_name]
+            # 匹配去盐后的名称 (如果 verified database 用的是 base name)
+            else:
+                 base_name = en_name.replace(" hydrochloride", "").replace(" hydrobromide", "").replace(" sodium", "")
+                 if base_name in LOCAL_SMILES_DB:
+                     smiles = LOCAL_SMILES_DB[base_name]
 
         # 2. 如果 verified db 没找到，才用 data.json 中原有的 (作为 fallback)
         if not smiles:
