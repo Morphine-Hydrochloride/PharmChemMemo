@@ -2601,7 +2601,7 @@ function App() {
         chapters={chapters}
         allCards={allCards}
         disabledDrugs={disabledDrugs}
-        onStart={(selected, options) => enterMode('review', 'sequential', selected, options?.onlyMaster)}
+        onStart={(selected, orderMode, onlyMaster) => enterMode('review', 'sequential', selected, onlyMaster)}
         onExit={() => setCurrentView('home')}
         progress={progress}
       />
