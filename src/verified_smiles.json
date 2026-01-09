@@ -18,7 +18,7 @@
   "Amitriptyline hydrochloride": "CN(C)CCC=C1c2ccccc2CCc3ccccc13",
   "Escitalopram oxalate": "CN(C)CCC[C@]1(OCc2cc(ccc12)C#N)c3ccc(F)cc3.OC(=O)C(O)=O",
   "Morphine hydrochloride": "CN1CC[C@]23[C@H]4Oc5c(O)ccc(C[C@@H]1[C@@H]2C=C[C@@H]4O)c35",
-  "Pentazocine": "CC=C(C)C1CC2Cc3ccc(O)cc3[C@]1(C)C2",
+  "Pentazocine": "C[C@@H]1[C@@H]2CC3=C([C@]1(CCN2CC=C(C)C)C)C=C(C=C3)O",
   "Pethidine hydrochloride": "CCOC(=O)C1(CCN(C)CC1)c2ccccc2",
   "Fentanyl citrate": "CCC(=O)N(C1CCN(CC1)CCc2ccccc2)c3ccccc3",
   "Methadone hydrochloride": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c2ccccc2",

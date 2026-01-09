@@ -510,7 +510,7 @@
     "type": "master",
     "id": "mas-Pentazocine",
     "image": "/assets/images/Pentazocine.svg",
-    "smiles": "CC=C(C)C1CC2Cc3ccc(O)cc3[C@]1(C)C2"
+    "smiles": "C[C@@H]1[C@@H]2CC3=C([C@]1(CCN2CC=C(C)C)C)C=C(C=C3)O"
   },
   {
     "cn": "盐酸哌替啶",
@@ -681,7 +681,7 @@
     "type": "master",
     "id": "mas-Naproxen",
     "image": "/assets/images/Naproxen.svg",
-    "smiles": "COc1ccc2cc(ccc2c1)C(C)C(O)=O"
+    "smiles": "C[C@@H](c1ccc2cc(OC)ccc2c1)C(O)=O"
   },
   {
     "cn": "吡罗昔康",
@@ -1113,7 +1113,7 @@
     "type": "familiarize",
     "id": "fam-Norepinephrine",
     "image": "/assets/images/Norepinephrine.svg",
-    "smiles": "NCC(O)c1ccc(O)c(O)c1"
+    "smiles": "NC[C@H](O)c1ccc(O)c(O)c1"
   },
   {
     "cn": "甲基多巴",
@@ -1140,7 +1140,7 @@
     "type": "familiarize",
     "id": "fam-Isoprenaline-hydrochloride",
     "image": "/assets/images/Isoprenaline-hydrochloride.svg",
-    "smiles": "CC(C)NCC(O)c1ccc(O)c(O)c1"
+    "smiles": "CC(C)NC[C@H](O)c1ccc(O)c(O)c1"
   },
   {
     "cn": "克仑特罗",
@@ -1230,7 +1230,7 @@
     "type": "master",
     "id": "mas-Salbutamol-sulfate",
     "image": "/assets/images/Salbutamol-sulfate.svg",
-    "smiles": "CC(C)(C)NCC(O)c1ccc(O)c(CO)c1"
+    "smiles": "CC(C)(C)NC[C@H](O)c1ccc(O)c(CO)c1"
   },
   {
     "cn": "盐酸哌唑嗪",
@@ -1248,7 +1248,7 @@
     "type": "master",
     "id": "mas-Propranolol-hydrochloride",
     "image": "/assets/images/Propranolol-hydrochloride.svg",
-    "smiles": "CC(C)NCC(O)COc1cccc2ccccc12"
+    "smiles": "CC(C)NC[C@@H](O)COc1cccc2ccccc12"
   },
   {
     "cn": "酒石酸美托洛尔",
@@ -1257,7 +1257,7 @@
     "type": "master",
     "id": "mas-Metoprolol-tartrate",
     "image": "/assets/images/Metoprolol-tartrate.svg",
-    "smiles": "COCCc1ccc(OCC(O)CNC(C)C)cc1"
+    "smiles": "COCCc1ccc(OC[C@@H](O)CNC(C)C)cc1"
   },
   {
     "cn": "利血平",
@@ -1914,7 +1914,7 @@
     "type": "master",
     "id": "mas-Chloramphenicol",
     "image": "/assets/images/Chloramphenicol.svg",
-    "smiles": "OCC(NC(=O)C(Cl)Cl)C(O)c1ccc(cc1)[N+]([O-])=O"
+    "smiles": "OC[C@@H](NC(=O)C(Cl)Cl)[C@H](O)c1ccc(cc1)[N+]([O-])=O"
   },
   {
     "cn": "磺胺嘧啶",
@@ -2211,7 +2211,7 @@
     "type": "familiarize",
     "id": "fam-Melphalan",
     "image": "/assets/images/Melphalan.svg",
-    "smiles": "NC(Cc1ccc(cc1)N(CCCl)CCCl)C(O)=O"
+    "smiles": "N[C@@H](Cc1ccc(cc1)N(CCCl)CCCl)C(O)=O"
   },
   {
     "cn": "异环磷酰胺",
