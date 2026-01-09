@@ -1866,6 +1866,18 @@ function App() {
     localStorage.setItem('drug_cards_realistic', realisticMode.toString());
   }, [realisticMode]);
 
+  // Enable Breaks State
+  const [enableBreaks, setEnableBreaks] = useState(() => {
+    try {
+      const saved = localStorage.getItem('enable_breaks');
+      return saved !== null ? JSON.parse(saved) : true;
+    } catch (e) { return true; }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('enable_breaks', JSON.stringify(enableBreaks));
+  }, [enableBreaks]);
+
   // Helper: Get image path based on realistic mode (with random rotation suffix)
   const getImagePath = useCallback((imagePath, rotation = null) => {
     if (realisticMode && imagePath) {
