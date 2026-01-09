@@ -12,7 +12,7 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path class='bond-2 atom-1 atom-3' d='M 137.8,68.0 L 164.1,83.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-3 atom-3 atom-4' d='M 179.3,109.3 L 179.3,140.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-4 atom-4 atom-5' d='M 179.3,140.0 L 220.8,164.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
-<path class='bond-5 atom-5 atom-6' d='M 220.8,164.0 L 245.8,149.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-5 atom-5 atom-6' d='M 220.8,164.0 L 242.4,147.4 L 246.0,153.7 Z' style='fill:#000000;fill-rule:evenodd;fill-opacity:1;stroke:#000000;stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path class='bond-6 atom-5 atom-7' d='M 220.8,164.0 L 220.8,212.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-7 atom-7 atom-8' d='M 220.8,212.0 L 245.7,226.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-8 atom-8 atom-9' d='M 262.3,253.7 L 262.3,284.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -33,6 +33,7 @@ width='400px' height='400px' viewBox='0 0 400 400'>
 <path class='bond-18 atom-18 atom-9' d='M 220.7,308.0 L 262.3,284.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path class='bond-19 atom-18 atom-13' d='M 220.7,308.0 L 220.6,356.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path d='M 179.3,138.5 L 179.3,140.0 L 181.3,141.2' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 218.7,162.8 L 220.8,164.0 L 220.8,166.4' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 220.8,209.6 L 220.8,212.0 L 222.0,212.7' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 301.7,306.9 L 303.8,308.1 L 303.8,310.5' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
 <path d='M 303.8,353.6 L 303.8,356.0 L 301.7,357.2' style='fill:none;stroke:#000000;stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
@@ -122,5 +123,52 @@ Q 259.7 229.4, 258.3 231.0
 Q 256.9 232.7, 256.9 236.1
 Q 256.9 239.5, 258.3 241.2
 Q 259.7 243.0, 262.3 243.0
+' fill='#000000'/>
+<path class='CIP_Code' d='M 225.0 171.4
+Q 225.0 169.6, 225.5 168.2
+Q 226.0 166.8, 226.9 165.3
+L 227.6 165.7
+Q 226.8 167.1, 226.4 168.4
+Q 226.0 169.7, 226.0 171.4
+Q 226.0 173.0, 226.4 174.3
+Q 226.8 175.5, 227.6 177.0
+L 226.9 177.5
+Q 226.0 175.9, 225.5 174.5
+Q 225.0 173.1, 225.0 171.4
+' fill='#000000'/>
+<path class='CIP_Code' d='M 232.9 174.8
+L 230.8 171.3
+L 230.8 171.3
+L 229.4 171.3
+L 229.4 174.8
+L 228.3 174.8
+L 228.3 166.3
+L 230.8 166.3
+Q 232.2 166.3, 233.0 167.0
+Q 233.7 167.6, 233.7 168.8
+Q 233.7 169.7, 233.3 170.3
+Q 232.8 170.9, 232.0 171.1
+L 234.1 174.8
+L 232.9 174.8
+M 229.4 170.3
+L 230.8 170.3
+Q 231.6 170.3, 232.1 169.9
+Q 232.5 169.5, 232.5 168.8
+Q 232.5 168.0, 232.1 167.6
+Q 231.6 167.3, 230.8 167.3
+L 229.4 167.3
+L 229.4 170.3
+' fill='#000000'/>
+<path class='CIP_Code' d='M 237.4 171.4
+Q 237.4 173.1, 236.9 174.5
+Q 236.4 175.9, 235.4 177.5
+L 234.8 177.0
+Q 235.6 175.5, 235.9 174.3
+Q 236.3 173.0, 236.3 171.4
+Q 236.3 169.7, 235.9 168.4
+Q 235.6 167.1, 234.8 165.7
+L 235.4 165.3
+Q 236.4 166.8, 236.9 168.2
+Q 237.4 169.6, 237.4 171.4
 ' fill='#000000'/>
 </svg>
