@@ -303,7 +303,10 @@ function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, 
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl w-full">
         {/* 顺序学习 - 带章节选择 */}
-        <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 text-left relative overflow-hidden">
+        <button
+          onClick={() => onSelectMode('learning-setup')}
+          className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 text-left relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
           <div className="relative z-10 w-full">
             <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:rotate-12 transition-transform">
@@ -312,61 +315,20 @@ function MainMenu({ onSelectMode, stats, currentMajor, onSwitchMajor, chapters, 
             <h3 className="text-xl font-bold text-slate-800 mb-2">顺序学习</h3>
             <p className="text-slate-500 text-sm mb-4">循序渐进的记忆流程：<br />辨识 → 熟悉 → 疗效 → 掌握</p>
 
-            {/* 章节选择器 */}
-            <div className="relative mb-4">
-              <button
-                onClick={(e) => { e.stopPropagation(); setShowChapterDropdown(!showChapterDropdown); }}
-                className="w-full flex items-center justify-between px-3 py-2 bg-slate-50 hover:bg-slate-100 rounded-lg text-sm text-slate-600 border border-slate-200 transition"
-              >
-                <span className="truncate">{selectedChapter === 'all' ? '📚 全部章节' : selectedChapter.split(' ')[0]}</span>
-                <CaretDown size={16} className={`transition-transform ${showChapterDropdown ? 'rotate-180' : ''}`} />
-              </button>
-              {showChapterDropdown && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-lg shadow-xl z-50 max-h-48 overflow-y-auto">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); setSelectedChapter('all'); setShowChapterDropdown(false); }}
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-indigo-50 ${selectedChapter === 'all' ? 'bg-indigo-100 text-indigo-700 font-bold' : 'text-slate-600'}`}
-                  >
-                    📚 全部章节
-                  </button>
-                  {chapters.map(ch => (
-                    <button
-                      key={ch}
-                      onClick={(e) => { e.stopPropagation(); setSelectedChapter(ch); setShowChapterDropdown(false); }}
-                      className={`w-full text-left px-3 py-2 text-sm hover:bg-indigo-50 ${selectedChapter === ch ? 'bg-indigo-100 text-indigo-700 font-bold' : 'text-slate-600'}`}
-                    >
-                      {ch.split(' ')[0]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full w-fit">
                 待学: {stats.learningCount}
               </div>
-              <div
-                onClick={(e) => { e.stopPropagation(); setIsRandom(!isRandom); }}
-                className={`flex items-center gap-1 px-2 py-1 rounded-full cursor-pointer transition-colors text-xs ${isRandom ? 'bg-indigo-100 text-indigo-700' : 'bg-slate-100 text-slate-500'}`}
-              >
-                <ArrowCounterClockwise size={12} className={isRandom ? 'rotate-180 transition-transform' : ''} />
-                <span className="font-bold">{isRandom ? "乱序" : "顺序"}</span>
+              <div className="flex items-center gap-1 px-3 py-1 bg-slate-50 text-slate-400 rounded-full text-xs">
+                <CaretRight size={14} weight="bold" />
               </div>
             </div>
-
-            <button
-              onClick={() => onSelectMode('learning', isRandom ? 'random' : 'sequential', selectedChapter)}
-              className="w-full mt-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition shadow-lg shadow-blue-200"
-            >
-              开始学习
-            </button>
           </div>
-        </div>
+        </button>
 
         {/* 深度复习 */}
         <button
-          onClick={() => onSelectMode('review')}
+          onClick={() => onSelectMode('review-setup')}
           className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 text-left relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
@@ -894,6 +856,143 @@ function LearningFlow({ cards: initialCards, onExit, updateProgress, initialRevi
       getImagePath={getImagePath}
       imageRotation={imageRotation}
     />
+  );
+}
+
+// --- Component: Mode Setup (通用配置界面) ---
+function ModeSetupView({
+  mode, // 'learning' or 'review'
+  chapters,
+  allCards,
+  disabledDrugs,
+  onStart,
+  onExit,
+  stats
+}) {
+  const [selectedChapters, setSelectedChapters] = useState([]);
+  const [isRandom, setIsRandom] = useState(false);
+
+  // 计算可用药物数量
+  const availableCount = useMemo(() => {
+    return allCards.filter(c =>
+      (selectedChapters.length === 0 || selectedChapters.includes(c.chapter)) &&
+      !disabledDrugs.includes(c.id) &&
+      (mode === 'review' ? (c.status === 'mastered') : true)
+    ).length;
+  }, [allCards, selectedChapters, disabledDrugs, mode]);
+
+  const toggleChapter = (chapter) => {
+    setSelectedChapters(prev =>
+      prev.includes(chapter)
+        ? prev.filter(c => c !== chapter)
+        : [...prev, chapter]
+    );
+  };
+
+  const selectAll = () => setSelectedChapters([...chapters]);
+  const deselectAll = () => setSelectedChapters([]);
+
+  const handleStart = () => {
+    if (selectedChapters.length === 0) return;
+    onStart(selectedChapters, isRandom ? 'random' : 'sequential');
+  };
+
+  const config = {
+    learning: {
+      title: '顺序学习',
+      subtitle: '选择章节开始系统学习',
+      color: 'from-blue-500 to-indigo-600',
+      icon: <PlayCircle size={28} weight="fill" />,
+      btnText: '开始学习',
+      shadow: 'shadow-blue-200'
+    },
+    review: {
+      title: '深度复习',
+      subtitle: '对已掌握的药物进行强化复习',
+      color: 'from-purple-500 to-indigo-600',
+      icon: <Brain size={28} weight="fill" />,
+      btnText: '开始复习',
+      shadow: 'shadow-purple-200'
+    }
+  }[mode];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-slate-100 flex flex-col items-center justify-center p-6">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-100">
+        <div className={`bg-gradient-to-r ${config.color} p-6 text-white`}>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+              {config.icon}
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">{config.title}</h2>
+              <p className="text-white/80 text-sm">{config.subtitle}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 space-y-6">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-bold text-slate-800">选择章节</h3>
+              <div className="flex gap-2">
+                <button onClick={selectAll} className="text-xs px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full hover:bg-indigo-100 transition">全选</button>
+                <button onClick={deselectAll} className="text-xs px-3 py-1 bg-slate-50 text-slate-500 rounded-full hover:bg-slate-100 transition">清空</button>
+              </div>
+            </div>
+            <div className="max-h-64 overflow-y-auto border border-slate-200 rounded-xl p-2 space-y-1">
+              {chapters.map(ch => (
+                <label
+                  key={ch}
+                  className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition ${selectedChapters.includes(ch) ? 'bg-indigo-50 text-indigo-700' : 'hover:bg-slate-50'}`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedChapters.includes(ch)}
+                    onChange={() => toggleChapter(ch)}
+                    className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <span className="text-sm font-medium">{ch}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl">
+            <div className="flex items-center gap-4">
+              <div className="text-sm">
+                <span className="text-slate-500">待处理药物: </span>
+                <span className="font-bold text-indigo-600">{availableCount}</span>
+              </div>
+              {mode === 'learning' && (
+                <div className="flex items-center gap-2 border-l border-slate-200 pl-4">
+                  <span className="text-sm text-slate-500">乱序模式</span>
+                  <button
+                    onClick={() => setIsRandom(!isRandom)}
+                    className={`w-12 h-6 rounded-full transition-colors relative ${isRandom ? 'bg-indigo-600' : 'bg-slate-300'}`}
+                  >
+                    <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${isRandom ? 'left-7' : 'left-1'}`} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="flex gap-3">
+            <button onClick={onExit} className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition">返回</button>
+            <button
+              onClick={handleStart}
+              disabled={selectedChapters.length === 0 || availableCount === 0}
+              className={`flex-1 py-3 rounded-xl font-bold transition shadow-lg ${selectedChapters.length > 0 && availableCount > 0
+                ? `bg-gradient-to-r ${config.color} text-white hover:opacity-90 ${config.shadow}`
+                : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'}`}
+            >
+              {config.btnText}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1965,17 +2064,17 @@ function App() {
   };
 
   // View Switching Logic which prepares cards
-  const enterMode = (mode, orderMode = 'sequential', chapter = 'all') => {
+  const enterMode = (mode, orderMode = 'sequential', chapterInput = 'all') => {
     let cards = [];
+    const chaptersToUse = Array.isArray(chapterInput) ? chapterInput : [chapterInput];
 
     // 获取基础卡片集（按章节筛选）
     let baseCards = allCards;
-    if (chapter !== 'all') {
-      baseCards = allCards.filter(c => c.chapter === chapter);
+    if (!chaptersToUse.includes('all')) {
+      baseCards = allCards.filter(c => chaptersToUse.includes(c.chapter));
     }
 
     // 全局过滤：移除被禁用的药物
-    // 注意：Catalog模式不过滤，因为我们需要在目录里去开关它
     if (mode !== 'catalog') {
       baseCards = baseCards.filter(c => !disabledDrugs.includes(c.id));
     }
@@ -2005,16 +2104,11 @@ function App() {
       cards = cards.map(c => c.reviewTempStage == null ? { ...c, reviewTempStage: 'check' } : c);
 
     } else if (mode === 'card') {
-      // Classic Mode (Filtered by existing UI controls)
-      // Logic handled in existing useEffect, but we need to trigger it.
-      // We'll just set view.
-      // (Existing useEffect [allCards, selectedChapter...] will run and setFilteredCards)
-    } else if (mode === 'exam') {
-      // Exam setup mode - no card prep needed
-      setCurrentView('exam');
+      // Classic Mode handled by separate effect
+    } else if (mode === 'exam' || mode === 'learning-setup' || mode === 'review-setup') {
+      setCurrentView(mode);
       return;
     } else if (mode === 'catalog') {
-      // Catalog mode doesn't need filtered cards, it manages its own state
       setCurrentView(mode);
       return;
     }
@@ -2310,6 +2404,35 @@ function App() {
           setExamConfig(null);
           setCurrentView('home');
         }}
+      />
+    );
+  }
+
+  if (currentView === 'learning-setup') {
+    return (
+      <ModeSetupView
+        mode="learning"
+        chapters={chapters}
+        allCards={allCards}
+        disabledDrugs={disabledDrugs}
+        onStart={(selected, order) => enterMode('learning', order, selected)}
+        onExit={() => setCurrentView('home')}
+        progress={progress}
+      />
+    );
+  }
+
+  if (currentView === 'review-setup') {
+    return (
+      <ModeSetupView
+        mode="review"
+        chapters={chapters}
+        allCards={allCards}
+        disabledDrugs={disabledDrugs}
+        onStart={(selected) => enterMode('review', 'sequential', selected)}
+        onExit={() => setCurrentView('home')}
+        stats={stats}
+        progress={progress}
       />
     );
   }
